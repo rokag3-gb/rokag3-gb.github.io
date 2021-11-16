@@ -1,6 +1,6 @@
 ---
 # Common-Defined params
-title: "Example article title"
+title: "GarlicBread blog"
 date: "2017-08-21"
 description: "Example article description"
 categories:
