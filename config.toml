@@ -1,9 +1,8 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://rokag3-gb.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'GarlicBread blog'
 theme = "github.com/Vimux/Mainroad"
-paginate = "10" 
-
+paginate = "10"
 
 [Author] # Used in authorbox
   name = "Jungwoo Kim"
