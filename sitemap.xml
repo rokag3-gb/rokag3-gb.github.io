@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/tags/another-test/</loc>
+    <loc>https://rokag3-gb.github.io/tags/another-test/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://rokag3-gb.github.io/categories/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/category-1/</loc>
+    <loc>https://rokag3-gb.github.io/categories/category-1/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/category-2/</loc>
+    <loc>https://rokag3-gb.github.io/categories/category-2/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/post/my-post/</loc>
+    <loc>https://rokag3-gb.github.io/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>https://rokag3-gb.github.io/post/my-post/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/post/</loc>
+    <loc>https://rokag3-gb.github.io/post/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://rokag3-gb.github.io/tags/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/test/</loc>
+    <loc>https://rokag3-gb.github.io/tags/test/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
   </url>
 </urlset>
