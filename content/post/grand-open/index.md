@@ -4,12 +4,13 @@ title: "Grand open"
 date: "2015-11-02"
 description: "Example article description"
 categories:
+  - "blog"
 tags:
   - "Grand open"
 menu: main # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
-thumbnail: "img/avatar.jpg" # Thumbnail image
+thumbnail: "img/text_logo.png" # Thumbnail image
 lead: "rokag3-gb.github.io 블로그를 개설하였습니다." # Lead text
 comments: false # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
@@ -22,10 +23,38 @@ widgets: # Enable sidebar widgets in given order per page
   - "taglist"
 ---
 
+# 대제목
+
 Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
-GarlicBread IT
-# 블라블라1
 
-## 블라블라2
+GarlicBread IT 입니다.
 
-### 블라블라3
+널리 많은 분들이 보셨으면 좋겠습니다.
+
+## 중간 제목
+
+[Params.style.vars]
+  highlightColor = "#125ea6" # "#e22d30" # Override highlight color
+
+[Params.thumbnail]
+  visibility = ["list", "post"] # Control thumbnail visibility
+
+''sql
+select  getdate();
+''
+
+### 상세 제목
+
+![](img/giftcard.png)
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "left"  # Configure layout for list pages
+  single = true # Configure layout for single pages
+  #widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
+  widgets = ["recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets]
+  recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  categories_counter = true # Enable counter for each category in "Categories" widget
+  tags_counter = true # Enable counter for each tag in "Tags" widget

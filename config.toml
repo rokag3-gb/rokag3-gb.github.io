@@ -1,76 +1,95 @@
-baseURL = 'https://rokag3-gb.github.io/'
-languageCode = 'ko-kr'
-title = 'GarlicBread Tech Blog'
-theme = "github.com/Vimux/Mainroad"
-paginate = "10"
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "GarlicBread Blog"
+theme = "github.com/monkeyWzr/hugo-theme-cactus"
+#copyright = "You" # cactus will use title if copyright is not set
+copyright = "Jungwoo Kim"
+disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
+# googleAnalytics = "UA-1234-5"
 
-[Author] # Used in authorbox
-  name = "Jungwoo Kim"
-  bio = "Azure, AWS 환경에서 .NET, SQL 등의 기술로 서비스를 개발하는 일을 합니다."
-  avatar = "img/avatar.jpg"
 
-[Params]
-  subtitle = "" # Deprecated in favor of .Site.Params.logo.subtitle
-  description = "Jungwoo Kim's Personal IT blog" # Site description. Used in meta description
-  copyright = "Copyright Jungwoo Kim@rokag3-gb.github.io" # Footer copyright holder, otherwise will use site title
-  opengraph = true # Enable OpenGraph if true
-  schema = true # Enable Schema
-  twitter_cards = false # Enable Twitter Cards if true
-  readmore = true # Show "Read more" button in list if true
-  authorbox = true # Show authorbox at bottom of pages if true
-  toc = true # Enable Table of Contents
-  pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
-  post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
-  mainSections = ["post", "blog", "news"] # Specify section pages to show on home page and the "Recent articles" widget
-  dateformat = "2006-01-02" # Change the format of dates
-  mathjax = true # Enable MathJax
-  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
-  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
-  googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
-  highlightColor = "#12a683" # Deprecated in favor of .Site.Params.style.vars.highlightColor
-  customCSS = ["css/custom.css"] # Include custom CSS files
-  customJS = ["js/custom.js"] # Include custom JS files
+# summaryLength = 2
 
-[Params.style.vars]
-  highlightColor = "#125ea6" # "#e22d30" # Override highlight color
+# Main menu which appears below site header.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-  # Override font-family sets. Secondary font-family set responsible for pre, code, kbd, and samp tags font
-  # Take care of different quotes OR escaping symbols in these params if necessary
-  fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
-  fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+#[[menu.main]]
+#name = "Writings"
+#url = "/posts"
+#weight = 2
 
-[Params.logo]
-  # image = "img/giftcard.png" # "img/placeholder.png" # Logo image. Path relative to "static"
-  title = "Tech Blog" # Logo title, otherwise will use site title
-  subtitle = "" # Logo subtitle
-  image = "img/text_logo.png"
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
 
-[Params.thumbnail]
-  visibility = ["list", "post"] # Control thumbnail visibility
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
 
-[Params.sidebar]
-  home = "right" # Configure layout for home page
-  list = "left"  # Configure layout for list pages
-  single = true # Configure layout for single pages
-  # Enable widgets in given order
-  #widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
-  widgets = ["recent", "categories", "taglist", "social", "languages"]
-  # alternatively "ddg-search" can be used, to search via DuckDuckGo
-  # widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = true
+    style = "consolas" #"dracula"
+    tabWidth = 4
 
-[Params.widgets]
-  recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  categories_counter = true # Enable counter for each category in "Categories" widget
-  tags_counter = true # Enable counter for each tag in "Tags" widget
+[params]
 
-[Params.widgets.social]
-  # Enable parts of social widget
-  facebook = "jungwoo.kim1230"
-  #twitter = "username"
-  # instagram = "username"
-  linkedin = "jungwoo-kim-4975b3198"
-  # telegram = "username"
-  github = "rokag3-gb"
-  # gitlab = "username"
-  # bitbucket = "username"
-  email = "rokag3@gmail.com"
+  colortheme = "dark" # dark, light, white, or classic
+  rss = true # generate rss feed. default value is false
+  googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+  showAllPostsArchive = false # default
+
+  # Home page settings
+  description = "냉무" #"Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors."
+  mainSection = "posts" # your main section
+  showAllPostsOnHomePage = false # default
+  postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
+  tagsOverview = true # show tags overview by default.
+  showProjectsList = false # show projects list by default (if projects data file exists).
+  projectsUrl = "https://github.com/gohugoio" # title link for projects list
+
+  # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+  dateFormat = "2006-01-02" # default
+
+  # Post page settings
+  show_updated = true # default
+  showReadTime = true # default
+
+  [params.comments]
+    enabled = true # default
+    engine = "cactus_comments" # only disqus, utterances, and cactus_comments is supported
+    [params.comments.utterances]
+      repo = "<github_username>/<github_reponame>"
+      label = "hugo-site-name" # you can use however you want to label your name in your repo's issues
+      theme = "github-light"
+    [params.comments.cactuscomments]
+      siteName = "your_cactus_comments_sitename" # see https://cactus.chat/ on how to register your site name
+      #serverUrl = "" # Defaults to https://matrix.cactus.chat:8448 (Cactus Chat public server)
+      #serverName = "" # Defaults to cactus.chat
+
+  # the value of name should be an valid font awesome icon name (brands type)
+  # https://fontawesome.com/icons?d=gallery&s=brands
+  [[params.social]]
+    name = "github"
+    link = "https://github.com/rokag3-gb"
+  [[params.social]]
+    name = "linkedin"
+    link = "https://www.linkedin.com/in/jungwoo-kim-4975b3198/"
+  [[params.social]]
+    name = "email"
+    link = "rokag3@gmail.com"  # no need for "mailto:" in the head
