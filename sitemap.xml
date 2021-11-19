@@ -2,21 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rokag3-gb.github.io/</loc>
+    <loc>https://example.com/categories/</loc>
+    <lastmod>2021-06-27T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/code-block-test/</loc>
+    <lastmod>2021-06-27T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/</loc>
+    <lastmod>2021-06-27T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/</loc>
+    <lastmod>2021-06-27T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/</loc>
+    <lastmod>2021-06-27T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/tech/</loc>
+    <lastmod>2021-06-27T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/test/</loc>
+    <lastmod>2021-06-27T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/bind-trick/</loc>
+    <lastmod>2019-03-08T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/javascript/</loc>
+    <lastmod>2019-03-08T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/tags/vue.js/</loc>
+    <lastmod>2019-01-25T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/second_post/</loc>
+    <lastmod>2019-01-25T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/about/</loc>
+    <lastmod>2016-08-24T17:51:42+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/blog/</loc>
     <lastmod>2015-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rokag3-gb.github.io/tags/grand-open/</loc>
+    <loc>https://example.com/tags/grand-open/</loc>
     <lastmod>2015-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://rokag3-gb.github.io/post/grand-open/</loc>
+    <loc>https://example.com/post/grand-open/</loc>
     <lastmod>2015-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rokag3-gb.github.io/post/</loc>
-    <lastmod>2015-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rokag3-gb.github.io/tags/</loc>
-    <lastmod>2015-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://rokag3-gb.github.io/categories/</loc>
   </url>
 </urlset>

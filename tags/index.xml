@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on GarlicBread Tech Blog</title>
-    <link>https://rokag3-gb.github.io/tags/</link>
-    <description>Recent content in Tags on GarlicBread Tech Blog</description>
+    <title>Tags on GarlicBread Blog</title>
+    <link>https://example.com/tags/</link>
+    <description>Recent content in Tags on GarlicBread Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://rokag3-gb.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>Jungwoo Kim</copyright>
+    <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test</title>
+      <link>https://example.com/tags/test/</link>
+      <pubDate>Sun, 27 Jun 2021 09:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://example.com/tags/javascript/</link>
+      <pubDate>Fri, 08 Mar 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue.js</title>
+      <link>https://example.com/tags/vue.js/</link>
+      <pubDate>Fri, 25 Jan 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/vue.js/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Grand open</title>
-      <link>https://rokag3-gb.github.io/tags/grand-open/</link>
+      <link>https://example.com/tags/grand-open/</link>
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://rokag3-gb.github.io/tags/grand-open/</guid>
+      <guid>https://example.com/tags/grand-open/</guid>
       <description></description>
     </item>
     

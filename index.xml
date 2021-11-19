@@ -1,20 +1,69 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>GarlicBread Tech Blog</title>
-    <link>https://rokag3-gb.github.io/</link>
-    <description>Recent content on GarlicBread Tech Blog</description>
+    <title>GarlicBread Blog</title>
+    <link>https://example.com/</link>
+    <description>Recent content on GarlicBread Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://rokag3-gb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>Jungwoo Kim</copyright>
+    <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code Block Test</title>
+      <link>https://example.com/post/code-block-test/</link>
+      <pubDate>Sun, 27 Jun 2021 09:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/post/code-block-test/</guid>
+      <description>String
+Using indents:
+text text text  Fenced code block:
+text text &amp;lt;tag&amp;gt; Fenced code block with language (lineNumbersInTable = false):
+1// JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava 2public final class String 3 implements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence 4{ 5 /** The value is used for character storage. */ 6 private final char value[]; 7 8 /** The offset is the first index of the storage that is used. */ 9 private final int offset; 10 11 /** The count is the number of characters in the String.</description>
+    </item>
+    
+    <item>
+      <title>Bind specific arguments of a function</title>
+      <link>https://example.com/post/bind-trick/</link>
+      <pubDate>Fri, 08 Mar 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/post/bind-trick/</guid>
+      <description>To bind specific (nth) arguments of a function, we can write a decorator instead of using Function.bind():
+1function func(p1, p2, p3) { 2 console.log(p1, p2, p3); 3} 4// the binding starts after however many are passed in. 5function decorator(...bound_args) { 6 return function(...args) { 7 return func(...args, ...bound_args); 8 }; 9} 10 11// bind the last parameter 12let f = decorator(&amp;#34;3&amp;#34;); 13f(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;); // a b 3 14 15// bind the last two parameter 16let f2 = decorator(&amp;#34;2&amp;#34;, &amp;#34;3&amp;#34;) 17f2(&amp;#34;a&amp;#34;); // a 2 3 Even if we want to bind just the nth argument, we can do as follows:</description>
+    </item>
+    
+    <item>
+      <title>VueのNavigation Guards</title>
+      <link>https://example.com/post/second_post/</link>
+      <pubDate>Fri, 25 Jan 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/post/second_post/</guid>
+      <description>Navigation guards are provided by vue-router. Three ways to hook:
+ globally per-route in-component  NOTE:
+ Params or query changes won&amp;rsquo;t trigger enter/leave navigation guards. You can either watch the $route object to react to those changes, or use the beforeRouteUpdate in-component guard. Make sure to always call the next function, otherwise the hook will never be resolved.  Global 1const router = new VueRouter({ ... }) 2 3// Before Guards 4router.</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Wed, 24 Aug 2016 17:51:42 +0000</pubDate>
+      
+      <guid>https://example.com/about/</guid>
+      <description>Github: monkeyWzr</description>
+    </item>
+    
     <item>
       <title>Grand open</title>
-      <link>https://rokag3-gb.github.io/post/grand-open/</link>
+      <link>https://example.com/post/grand-open/</link>
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://rokag3-gb.github.io/post/grand-open/</guid>
-      <description>Hello World! rokag3-gb.github.io 블로그를 개설하였습니다. GarlicBread IT
-블라블라1 블라블라2 블라블라3 </description>
+      <guid>https://example.com/post/grand-open/</guid>
+      <description>대제목 Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
+GarlicBread IT 입니다.
+널리 많은 분들이 보셨으면 좋겠습니다.
+중간 제목 [Params.style.vars] highlightColor = &amp;ldquo;#125ea6&amp;rdquo; # &amp;ldquo;#e22d30&amp;rdquo; # Override highlight color
+[Params.thumbnail] visibility = [&amp;ldquo;list&amp;rdquo;, &amp;ldquo;post&amp;rdquo;] # Control thumbnail visibility
+&amp;lsquo;&amp;lsquo;sql select getdate(); &#39;&amp;rsquo;
+상세 제목 [Params.sidebar] home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page list = &amp;ldquo;left&amp;rdquo; # Configure layout for list pages single = true # Configure layout for single pages #widgets = [&amp;ldquo;search&amp;rdquo;, &amp;ldquo;recent&amp;rdquo;, &amp;ldquo;categories&amp;rdquo;, &amp;ldquo;taglist&amp;rdquo;, &amp;ldquo;social&amp;rdquo;, &amp;ldquo;languages&amp;rdquo;] widgets = [&amp;ldquo;recent&amp;rdquo;, &amp;ldquo;categories&amp;rdquo;, &amp;ldquo;taglist&amp;rdquo;, &amp;ldquo;social&amp;rdquo;, &amp;ldquo;languages&amp;rdquo;]</description>
     </item>
     
   </channel>

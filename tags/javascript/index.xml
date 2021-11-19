@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on GarlicBread Blog</title>
+    <link>https://example.com/tags/javascript/</link>
+    <description>Recent content in JavaScript on GarlicBread Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jungwoo Kim</copyright>
+    <lastBuildDate>Fri, 08 Mar 2019 09:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bind specific arguments of a function</title>
+      <link>https://example.com/post/bind-trick/</link>
+      <pubDate>Fri, 08 Mar 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/post/bind-trick/</guid>
+      <description>To bind specific (nth) arguments of a function, we can write a decorator instead of using Function.bind():
+1function func(p1, p2, p3) { 2 console.log(p1, p2, p3); 3} 4// the binding starts after however many are passed in. 5function decorator(...bound_args) { 6 return function(...args) { 7 return func(...args, ...bound_args); 8 }; 9} 10 11// bind the last parameter 12let f = decorator(&amp;#34;3&amp;#34;); 13f(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;); // a b 3 14 15// bind the last two parameter 16let f2 = decorator(&amp;#34;2&amp;#34;, &amp;#34;3&amp;#34;) 17f2(&amp;#34;a&amp;#34;); // a 2 3 Even if we want to bind just the nth argument, we can do as follows:</description>
+    </item>
+    
+    <item>
+      <title>VueのNavigation Guards</title>
+      <link>https://example.com/post/second_post/</link>
+      <pubDate>Fri, 25 Jan 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/post/second_post/</guid>
+      <description>Navigation guards are provided by vue-router. Three ways to hook:
+ globally per-route in-component  NOTE:
+ Params or query changes won&amp;rsquo;t trigger enter/leave navigation guards. You can either watch the $route object to react to those changes, or use the beforeRouteUpdate in-component guard. Make sure to always call the next function, otherwise the hook will never be resolved.  Global 1const router = new VueRouter({ ... }) 2 3// Before Guards 4router.</description>
+    </item>
+    
+  </channel>
+</rss>
