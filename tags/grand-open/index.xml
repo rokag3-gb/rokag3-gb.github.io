@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Grand open on GarlicBread Blog</title>
-    <link>https://example.com/tags/grand-open/</link>
+    <link>/tags/grand-open/</link>
     <description>Recent content in Grand open on GarlicBread Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jungwoo Kim</copyright>
-    <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/grand-open/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="/tags/grand-open/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Grand open</title>
-      <link>https://example.com/post/grand-open/</link>
+      <link>/post/grand-open/</link>
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/grand-open/</guid>
+      <guid>/post/grand-open/</guid>
       <description>대제목 Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
 GarlicBread IT 입니다.
 널리 많은 분들이 보셨으면 좋겠습니다.

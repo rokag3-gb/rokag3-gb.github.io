@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on GarlicBread Blog</title>
-    <link>https://example.com/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on GarlicBread Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Jungwoo Kim</copyright>
-    <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tech</title>
-      <link>https://example.com/categories/tech/</link>
+      <link>/categories/tech/</link>
       <pubDate>Sun, 27 Jun 2021 09:00:00 +0000</pubDate>
       
-      <guid>https://example.com/categories/tech/</guid>
+      <guid>/categories/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog</title>
-      <link>https://example.com/categories/blog/</link>
+      <link>/categories/blog/</link>
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/categories/blog/</guid>
+      <guid>/categories/blog/</guid>
       <description></description>
     </item>
     
