@@ -1,9 +1,9 @@
 baseURL = "https://example.com"
-languageCode = "en-us"
+languageCode = "ko-kr"
 title = "GarlicBread Blog"
 theme = "github.com/monkeyWzr/hugo-theme-cactus"
 #copyright = "You" # cactus will use title if copyright is not set
-copyright = "Jungwoo Kim"
+copyright = "Jungwoo(Jayden) Kim"
 disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
 # googleAnalytics = "UA-1234-5"
 
@@ -27,7 +27,7 @@ url = "/tags"
 weight = 3
 
 [[menu.main]]
-name = "About"
+name = "About GarlicBread"
 url = "/about"
 weight = 4
 
@@ -44,7 +44,10 @@ weight = 4
     lineNos = true
     lineNumbersInTable = false
     noClasses = true
-    style = "consolas" #"dracula"
+    # style
+    # (short snippets) https://xyproto.github.io/splash/docs/all.html
+    # (long snippets) https://xyproto.github.io/splash/docs/longer/all.html
+    style = "dracula" # fruity, vs, solarized-dark, monokai, dracula, paraiso-dark, abap
     tabWidth = 4
 
 [params]
@@ -55,8 +58,10 @@ weight = 4
   showAllPostsArchive = false # default
 
   # Home page settings
-  description = "냉무" #"Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors."
-  mainSection = "posts" # your main section
+  #"Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors."
+  description = "👨‍💻Software & SQL Developer. interested in Cloud, ERP, CRM, ETL & BI, data analysis (not ML). GarlicBread의 좌충우돌 맨땅에 헤딩하며 IT 개발하는 이야기. 좌우명: 포기하면 그때가 `개발 완료` 입니다.😄"
+  mainSection = "post" # your main section
+  mainSectionTitle = "See all posts"
   showAllPostsOnHomePage = false # default
   postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
   tagsOverview = true # show tags overview by default.
