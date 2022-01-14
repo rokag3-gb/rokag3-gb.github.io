@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Bind specific arguments of a function | GarlicBread Blog</title>
   <link rel = 'canonical' href = '/post/bind-trick/'>
-  <meta name="description" content="👨‍💻Software &amp; SQL Developer. interested in Cloud, ERP, CRM, ETL &amp; BI, data analysis (not ML). GarlicBread의 좌충우돌 맨땅에 헤딩하며 IT 개발하는 이야기. 좌우명: 포기하면 그때가 `개발 완료` 입니다.😄">
+  <meta name="description" content=".NET &amp; SQL 개발자. 맨땅에 헤딩하며 IT 개발하는 이야기. Cloud Native에 관심이 많습니다.😄">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -76,7 +76,7 @@
       
         <li><a href="/tags">Tags</a></li>
       
-        <li><a href="/about">About GarlicBread</a></li>
+        <li><a href="/about">About me</a></li>
       
         <li><a href="/post/grand-open/">Grand open</a></li>
       
@@ -121,6 +121,94 @@
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#8be9fd;font-style:italic">let</span> fN <span style="color:#ff79c6">=</span> decoratorN(<span style="color:#bd93f9">2</span>, <span style="color:#f1fa8c">&#34;2&#34;</span>);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>fN(<span style="color:#f1fa8c">&#34;a&#34;</span>,<span style="color:#f1fa8c">&#34;b&#34;</span>,<span style="color:#f1fa8c">&#34;c&#34;</span>); <span style="color:#6272a4">// a 2 c
 </span></code></pre></div><p><a href="https://stackoverflow.com/questions/27699493/javascript-partially-applied-function-how-to-bind-only-the-2nd-parameter">https://stackoverflow.com/questions/27699493/javascript-partially-applied-function-how-to-bind-only-the-2nd-parameter</a></p>
+<p>Navigation guards are provided by <code>vue-router</code>.
+Three ways to hook:</p>
+<ul>
+<li>globally</li>
+<li>per-route</li>
+<li>in-component</li>
+</ul>
+<p><strong>NOTE:</strong></p>
+<ol>
+<li>Params or query changes won&rsquo;t trigger enter/leave navigation guards. You can either watch the <code>$route</code> object to react to those changes, or use the <code>beforeRouteUpdate</code> in-component guard.</li>
+<li>Make sure to always call the next function, otherwise the hook will never be resolved.</li>
+</ol>
+<h2 id="global">Global</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">const</span> router <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> VueRouter({ ... })
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#6272a4">// Before Guards
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#6272a4"></span>router.beforeEach((to, from, next) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#6272a4">// ...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"></span>})
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4">// Resolve Guards
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4">// beforeResolve guards will be called right before the navigation is confirmed
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4">// after all in-component guards and async route components are resolved
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#6272a4"></span>router.beforeResolve((to, from, next) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#6272a4">// ...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#6272a4"></span>})
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#6272a4">// After Hooks
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4"></span>router.afterEach((to, from) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  <span style="color:#6272a4">// ...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#6272a4"></span>})
+</code></pre></div><h2 id="pre-reoute">Pre-reoute</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">const</span> router <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">new</span> VueRouter({
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  routes<span style="color:#ff79c6">:</span> [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      path<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;/foo&#39;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>      component<span style="color:#ff79c6">:</span> Foo,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>      beforeEnter<span style="color:#ff79c6">:</span> (to, from, next) =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        <span style="color:#6272a4">// ...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"></span>      }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  ]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>})
+</code></pre></div><h2 id="in-component">In-component</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#ff79c6">const</span> Foo <span style="color:#ff79c6">=</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  template<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">`...`</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  beforeRouteEnter (to, from, next) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#6272a4">// called before the route that renders this component is confirmed.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// does NOT have access to `this` component instance,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// because it has not been created yet when this guard is called!
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// However, you can access the instance by passing a callback to next. 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// The callback will be called when the navigation is confirmed
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// and the component instance will be passed to the callback as the argument
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#6272a4"></span>    beforeRouteEnter (to, from, next) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>      next(vm =&gt; {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        <span style="color:#6272a4">// access to component instance via `vm`
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#6272a4"></span>      })
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  beforeRouteUpdate (to, from, next) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#6272a4">// called when the route that renders this component has changed,
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// but this component is reused in the new route.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// For example, for a route with dynamic params `/foo/:id`, when we
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// navigate between `/foo/1` and `/foo/2`, the same `Foo` component instance
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// will be reused, and this hook will be called when that happens.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// has access to `this` component instance.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#6272a4"></span>  },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>  beforeRouteLeave (to, from, next) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#6272a4">// called when the route that renders this component is about to
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// be navigated away from.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4"></span>    <span style="color:#6272a4">// has access to `this` component instance.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#6272a4"></span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>}
+</code></pre></div><h2 id="resolve-flow">Resolve flow</h2>
+<ul>
+<li>Navigation triggered.</li>
+<li>Call leave guards in deactivated components.</li>
+<li>Call global beforeEach guards.</li>
+<li>Call beforeRouteUpdate guards in reused components.</li>
+<li>Call beforeEnter in route configs.</li>
+<li>Resolve async route components.</li>
+<li>Call beforeRouteEnter in activated components.</li>
+<li>Call global beforeResolve guards.</li>
+<li>Navigation confirmed.</li>
+<li>Call global afterEach hooks.</li>
+<li>DOM updates triggered.</li>
+<li>Call callbacks passed to next in beforeRouteEnter guards with instantiated instances.</li>
+</ul>
 
   
   </div>
@@ -129,7 +217,7 @@
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2022  Jungwoo(Jayden) Kim 
+    Copyright  &copy; 2022  Jungwoo (Jayden) Kim 
   </div>
   <div class="footer-right">
     <nav>
@@ -139,7 +227,7 @@
          
         <li><a href="/tags">Tags</a></li>
          
-        <li><a href="/about">About GarlicBread</a></li>
+        <li><a href="/about">About me</a></li>
          
         <li><a href="/post/grand-open/">Grand open</a></li>
         
