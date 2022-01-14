@@ -6,7 +6,7 @@
     <description>Recent content on GarlicBread Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Jungwoo Kim</copyright>
+    <copyright>Jungwoo(Jayden) Kim</copyright>
     <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code Block Test</title>
@@ -19,6 +19,21 @@ Using indents:
 text text text  Fenced code block:
 text text &amp;lt;tag&amp;gt; Fenced code block with language (lineNumbersInTable = false):
 1// JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava 2public final class String 3 implements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence 4{ 5 /** The value is used for character storage. */ 6 private final char value[]; 7 8 /** The offset is the first index of the storage that is used. */ 9 private final int offset; 10 11 /** The count is the number of characters in the String.</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>/about/</link>
+      <pubDate>Sat, 24 Aug 2019 17:51:42 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Jungwoo (Jayden) Kim a.k.a GarlicBread
+👨‍💻 주로 .NET 을 사용하여 application를 개발하고 그 application이 서비스 목적을 달성시키는데 집중하고 있으며, 내부적으로는 Cloud Native 기반의 application을 개발하고자 매진하고 있습니다.
+물류,재고 SI 프로젝트 개발 4년, ERP 개발을 11년 동안 했었고, BI &amp;amp; 데이터 시각화 프로젝트를 2년 동안 했었습니다. 복잡한 SQL을 개발하고 성능 개선시키는 것을 잼있어 합니다.
+Email: rokag3@gmail.com
+Github: https://github.com/rokag3-gb
+Facebook: https://www.facebook.com/jungwoo.kim1230/
+Linkedin: https://www.linkedin.com/in/jungwoo-kim-4975b3198/</description>
     </item>
     
     <item>
@@ -40,15 +55,6 @@ text text &amp;lt;tag&amp;gt; Fenced code block with language (lineNumbersInTabl
       <description>Navigation guards are provided by vue-router. Three ways to hook:
  globally per-route in-component  NOTE:
  Params or query changes won&amp;rsquo;t trigger enter/leave navigation guards. You can either watch the $route object to react to those changes, or use the beforeRouteUpdate in-component guard. Make sure to always call the next function, otherwise the hook will never be resolved.  Global 1const router = new VueRouter({ ... }) 2 3// Before Guards 4router.</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>/about/</link>
-      <pubDate>Wed, 24 Aug 2016 17:51:42 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Github: monkeyWzr</description>
     </item>
     
     <item>

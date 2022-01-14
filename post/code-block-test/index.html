@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Code Block Test | GarlicBread Blog</title>
   <link rel = 'canonical' href = '/post/code-block-test/'>
-  <meta name="description" content="냉무">
+  <meta name="description" content="👨‍💻Software &amp; SQL Developer. interested in Cloud, ERP, CRM, ETL &amp; BI, data analysis (not ML). GarlicBread의 좌충우돌 맨땅에 헤딩하며 IT 개발하는 이야기. 좌우명: 포기하면 그때가 `개발 완료` 입니다.😄">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -82,7 +82,7 @@ text text &lt;tag&gt; Fenced code block with language (lineNumbersInTable = fals
       
         <li><a href="/tags">Tags</a></li>
       
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">About GarlicBread</a></li>
       
         <li><a href="/post/grand-open/">Grand open</a></li>
       
@@ -108,165 +108,165 @@ text
 text
 &lt;tag&gt;
 </code></pre><p>Fenced code block with language (lineNumbersInTable = false):</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1</span><span style="color:#007f7f">// JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">public</span> <span style="color:#fff;font-weight:bold">final</span> <span style="color:#fff;font-weight:bold">class</span> String
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3</span>    <span style="color:#fff;font-weight:bold">implements</span> java.<span style="color:#007f7f">io</span>.<span style="color:#007f7f">Serializable</span>, Comparable&lt;String&gt;, CharSequence
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5</span>    <span style="color:#007f7f">/** The value is used for character storage. */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6</span>    <span style="color:#fff;font-weight:bold">private</span> <span style="color:#fff;font-weight:bold">final</span> <span style="color:#fff;font-weight:bold">char</span> value[];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8</span>    <span style="color:#007f7f">/** The offset is the first index of the storage that is used. */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9</span>    <span style="color:#fff;font-weight:bold">private</span> <span style="color:#fff;font-weight:bold">final</span> <span style="color:#fff;font-weight:bold">int</span> offset;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11</span>    <span style="color:#007f7f">/** The count is the number of characters in the String. */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12</span>    <span style="color:#fff;font-weight:bold">private</span> <span style="color:#fff;font-weight:bold">final</span> <span style="color:#fff;font-weight:bold">int</span> count;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14</span>    <span style="color:#007f7f">/** Cache the hash code for the string */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15</span>    <span style="color:#fff;font-weight:bold">private</span> <span style="color:#fff;font-weight:bold">int</span> hash; <span style="color:#007f7f">// Default to 0
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16</span><span style="color:#007f7f"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17</span>    <span style="color:#007f7f">// ...
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18</span><span style="color:#007f7f"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19</span>    <span style="color:#007f7f">// Package private constructor which shares value array for speed.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20</span><span style="color:#007f7f"></span>    String(<span style="color:#fff;font-weight:bold">int</span> offset, <span style="color:#fff;font-weight:bold">int</span> count, <span style="color:#fff;font-weight:bold">char</span> value[]) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21</span>        <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">value</span> = value;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">22</span>        <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">offset</span> = offset;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">23</span>        <span style="color:#fff;font-weight:bold">this</span>.<span style="color:#007f7f">count</span> = count;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">24</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">25</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">26</span>    <span style="color:#007f7f">// ...
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">27</span><span style="color:#007f7f"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">28</span>    <span style="color:#007f7f">/**
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">29</span><span style="color:#007f7f">     * Returns a new string that is a substring of this string. The
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">30</span><span style="color:#007f7f">     * substring begins at the specified &lt;code&gt;beginIndex&lt;/code&gt; and
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">31</span><span style="color:#007f7f">     * extends to the character at index &lt;code&gt;endIndex - 1&lt;/code&gt;.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">32</span><span style="color:#007f7f">     * Thus the length of the substring is &lt;code&gt;endIndex-beginIndex&lt;/code&gt;.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">33</span><span style="color:#007f7f">     * &lt;p&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">34</span><span style="color:#007f7f">     * Examples:
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">35</span><span style="color:#007f7f">     * &lt;blockquote&gt;&lt;pre&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">36</span><span style="color:#007f7f">     * &#34;hamburger&#34;.substring(4, 8) returns &#34;urge&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">37</span><span style="color:#007f7f">     * &#34;smiles&#34;.substring(1, 5) returns &#34;mile&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">38</span><span style="color:#007f7f">     * &lt;/pre&gt;&lt;/blockquote&gt;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">39</span><span style="color:#007f7f">     *
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">40</span><span style="color:#007f7f">     * @param      beginIndex   the beginning index, inclusive.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">41</span><span style="color:#007f7f">     * @param      endIndex     the ending index, exclusive.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">42</span><span style="color:#007f7f">     * @return     the specified substring.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">43</span><span style="color:#007f7f">     * @exception  IndexOutOfBoundsException  if the
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">44</span><span style="color:#007f7f">     *             &lt;code&gt;beginIndex&lt;/code&gt; is negative, or
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">45</span><span style="color:#007f7f">     *             &lt;code&gt;endIndex&lt;/code&gt; is larger than the length of
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">46</span><span style="color:#007f7f">     *             this &lt;code&gt;String&lt;/code&gt; object, or
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">47</span><span style="color:#007f7f">     *             &lt;code&gt;beginIndex&lt;/code&gt; is larger than
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">48</span><span style="color:#007f7f">     *             &lt;code&gt;endIndex&lt;/code&gt;.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">49</span><span style="color:#007f7f">     */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">50</span>    <span style="color:#fff;font-weight:bold">public</span> String substring(<span style="color:#fff;font-weight:bold">int</span> beginIndex, <span style="color:#fff;font-weight:bold">int</span> endIndex) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">51</span>        <span style="color:#fff;font-weight:bold">if</span> (beginIndex &lt; 0) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">52</span>            <span style="color:#fff;font-weight:bold">throw</span> <span style="color:#fff;font-weight:bold">new</span> StringIndexOutOfBoundsException(beginIndex);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">53</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">54</span>        <span style="color:#fff;font-weight:bold">if</span> (endIndex &gt; count) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">55</span>            <span style="color:#fff;font-weight:bold">throw</span> <span style="color:#fff;font-weight:bold">new</span> StringIndexOutOfBoundsException(endIndex);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">56</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">57</span>        <span style="color:#fff;font-weight:bold">if</span> (beginIndex &gt; endIndex) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">58</span>            <span style="color:#fff;font-weight:bold">throw</span> <span style="color:#fff;font-weight:bold">new</span> StringIndexOutOfBoundsException(endIndex - beginIndex);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">59</span>        }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">60</span>        <span style="color:#fff;font-weight:bold">return</span> ((beginIndex == 0) &amp;&amp; (endIndex == count)) ? <span style="color:#fff;font-weight:bold">this</span> :
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">61</span>            <span style="color:#fff;font-weight:bold">new</span> String(offset + beginIndex, endIndex - beginIndex, value);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">62</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">63</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">64</span>    <span style="color:#007f7f">// ...
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">65</span><span style="color:#007f7f"></span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#6272a4">// JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">final</span> <span style="color:#8be9fd;font-style:italic">class</span> <span style="color:#50fa7b">String</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#8be9fd;font-style:italic">implements</span> java<span style="color:#ff79c6">.</span><span style="color:#50fa7b">io</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">Serializable</span><span style="color:#ff79c6">,</span> Comparable<span style="color:#ff79c6">&lt;</span>String<span style="color:#ff79c6">&gt;,</span> CharSequence
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ff79c6">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#6272a4">/** The value is used for character storage. */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">final</span> <span style="color:#8be9fd">char</span> value<span style="color:#ff79c6">[];</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#6272a4">/** The offset is the first index of the storage that is used. */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">final</span> <span style="color:#8be9fd">int</span> offset<span style="color:#ff79c6">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#6272a4">/** The count is the number of characters in the String. */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd;font-style:italic">final</span> <span style="color:#8be9fd">int</span> count<span style="color:#ff79c6">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#6272a4">/** Cache the hash code for the string */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#8be9fd">int</span> hash<span style="color:#ff79c6">;</span> <span style="color:#6272a4">// Default to 0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#6272a4">// ...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#6272a4">// Package private constructor which shares value array for speed.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#6272a4"></span>    String<span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> offset<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> count<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">char</span> value<span style="color:#ff79c6">[])</span> <span style="color:#ff79c6">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">value</span> <span style="color:#ff79c6">=</span> value<span style="color:#ff79c6">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">offset</span> <span style="color:#ff79c6">=</span> offset<span style="color:#ff79c6">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        <span style="color:#ff79c6">this</span><span style="color:#ff79c6">.</span><span style="color:#50fa7b">count</span> <span style="color:#ff79c6">=</span> count<span style="color:#ff79c6">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#ff79c6">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="color:#6272a4">// ...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#6272a4"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>    <span style="color:#6272a4">/**
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span style="color:#6272a4">     * Returns a new string that is a substring of this string. The
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#6272a4">     * substring begins at the specified &lt;code&gt;beginIndex&lt;/code&gt; and
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#6272a4">     * extends to the character at index &lt;code&gt;endIndex - 1&lt;/code&gt;.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span style="color:#6272a4">     * Thus the length of the substring is &lt;code&gt;endIndex-beginIndex&lt;/code&gt;.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#6272a4">     * &lt;p&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#6272a4">     * Examples:
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span style="color:#6272a4">     * &lt;blockquote&gt;&lt;pre&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span style="color:#6272a4">     * &#34;hamburger&#34;.substring(4, 8) returns &#34;urge&#34;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span style="color:#6272a4">     * &#34;smiles&#34;.substring(1, 5) returns &#34;mile&#34;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span style="color:#6272a4">     * &lt;/pre&gt;&lt;/blockquote&gt;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span style="color:#6272a4">     *
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span style="color:#6272a4">     * @param      beginIndex   the beginning index, inclusive.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span style="color:#6272a4">     * @param      endIndex     the ending index, exclusive.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span style="color:#6272a4">     * @return     the specified substring.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span style="color:#6272a4">     * @exception  IndexOutOfBoundsException  if the
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span style="color:#6272a4">     *             &lt;code&gt;beginIndex&lt;/code&gt; is negative, or
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span style="color:#6272a4">     *             &lt;code&gt;endIndex&lt;/code&gt; is larger than the length of
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span style="color:#6272a4">     *             this &lt;code&gt;String&lt;/code&gt; object, or
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span style="color:#6272a4">     *             &lt;code&gt;beginIndex&lt;/code&gt; is larger than
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span style="color:#6272a4">     *             &lt;code&gt;endIndex&lt;/code&gt;.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span style="color:#6272a4">     */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>    <span style="color:#8be9fd;font-style:italic">public</span> String <span style="color:#50fa7b">substring</span><span style="color:#ff79c6">(</span><span style="color:#8be9fd">int</span> beginIndex<span style="color:#ff79c6">,</span> <span style="color:#8be9fd">int</span> endIndex<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>beginIndex <span style="color:#ff79c6">&lt;</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>            <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> StringIndexOutOfBoundsException<span style="color:#ff79c6">(</span>beginIndex<span style="color:#ff79c6">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span>        <span style="color:#ff79c6">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>endIndex <span style="color:#ff79c6">&gt;</span> count<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>            <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> StringIndexOutOfBoundsException<span style="color:#ff79c6">(</span>endIndex<span style="color:#ff79c6">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>        <span style="color:#ff79c6">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">(</span>beginIndex <span style="color:#ff79c6">&gt;</span> endIndex<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>            <span style="color:#ff79c6">throw</span> <span style="color:#ff79c6">new</span> StringIndexOutOfBoundsException<span style="color:#ff79c6">(</span>endIndex <span style="color:#ff79c6">-</span> beginIndex<span style="color:#ff79c6">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>        <span style="color:#ff79c6">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">((</span>beginIndex <span style="color:#ff79c6">==</span> 0<span style="color:#ff79c6">)</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#ff79c6">(</span>endIndex <span style="color:#ff79c6">==</span> count<span style="color:#ff79c6">))</span> <span style="color:#ff79c6">?</span> <span style="color:#ff79c6">this</span> <span style="color:#ff79c6">:</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>            <span style="color:#ff79c6">new</span> String<span style="color:#ff79c6">(</span>offset <span style="color:#ff79c6">+</span> beginIndex<span style="color:#ff79c6">,</span> endIndex <span style="color:#ff79c6">-</span> beginIndex<span style="color:#ff79c6">,</span> value<span style="color:#ff79c6">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>    <span style="color:#ff79c6">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span>    <span style="color:#6272a4">// ...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span><span style="color:#6272a4"></span><span style="color:#ff79c6">}</span>
 </code></pre></div><p>Using hugo&rsquo;s <code>highlight</code> <a href="%5Bhighlight%5D(https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode)">shortcode</a> (lineNumbersInTable = true):</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 7
-</span><span style="display:block;width:100%;background-color:#191919"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 8
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">17
-</span><span style="display:block;width:100%;background-color:#191919"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">18
-</span></span><span style="display:block;width:100%;background-color:#191919"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">19
-</span></span><span style="display:block;width:100%;background-color:#191919"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">20
-</span></span><span style="display:block;width:100%;background-color:#191919"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">21
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="display:block;width:100%;background-color:#3d3f4a"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="display:block;width:100%;background-color:#3d3f4a"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="display:block;width:100%;background-color:#3d3f4a"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></span><span style="display:block;width:100%;background-color:#3d3f4a"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></span><span style="display:block;width:100%;background-color:#3d3f4a"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#007f7f">// TypeScript
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">type</span> OptionalUser = {
-    [K <span style="color:#fff;font-weight:bold">in</span> <span style="color:#fff;font-weight:bold">keyof</span> User]?: User[K]
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#6272a4">// TypeScript
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">type</span> OptionalUser <span style="color:#ff79c6">=</span> {
+    [K <span style="color:#ff79c6">in</span> <span style="color:#ff79c6">keyof</span> User]<span style="color:#ff79c6">?:</span> User[K]
 }
 
-<span style="color:#007f7f">// ! we can remove optional constraint
-</span><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">type</span> RequiredUser = {
-<span style="display:block;width:100%;background-color:#191919">    [K <span style="color:#fff;font-weight:bold">in</span> <span style="color:#fff;font-weight:bold">keyof</span> OptionalUser]-?: User[K]
+<span style="color:#6272a4">// ! we can remove optional constraint
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">type</span> RequiredUser <span style="color:#ff79c6">=</span> {
+<span style="display:block;width:100%;background-color:#3d3f4a">    [K <span style="color:#ff79c6">in</span> <span style="color:#ff79c6">keyof</span> OptionalUser]<span style="color:#ff79c6">-?:</span> User[K]
 </span>}
 
-<span style="color:#fff;font-weight:bold">type</span> NullableUser = {
-    [K <span style="color:#fff;font-weight:bold">in</span> <span style="color:#fff;font-weight:bold">keyof</span> User]: User[K] | <span style="color:#fff;font-weight:bold">null</span>
+<span style="color:#ff79c6">type</span> NullableUser <span style="color:#ff79c6">=</span> {
+    [K <span style="color:#ff79c6">in</span> <span style="color:#ff79c6">keyof</span> User]<span style="color:#ff79c6">:</span> User[K] <span style="color:#ff79c6">|</span> <span style="color:#ff79c6">null</span>
 }
-<span style="color:#fff;font-weight:bold">type</span> ReadonlyUser = {
-    <span style="color:#fff;font-weight:bold">readonly</span> [K <span style="color:#fff;font-weight:bold">in</span> <span style="color:#fff;font-weight:bold">keyof</span> User]: User[K]
+<span style="color:#ff79c6">type</span> ReadonlyUser <span style="color:#ff79c6">=</span> {
+    <span style="color:#ff79c6">readonly</span> [K <span style="color:#ff79c6">in</span> <span style="color:#ff79c6">keyof</span> User]<span style="color:#ff79c6">:</span> User[K]
 }
 
-<span style="display:block;width:100%;background-color:#191919"><span style="color:#007f7f">// ! we can remove readonly constraint
-</span></span><span style="display:block;width:100%;background-color:#191919"><span style="color:#007f7f"></span><span style="color:#fff;font-weight:bold">type</span> ModifiableUser = {
-</span><span style="display:block;width:100%;background-color:#191919">    -<span style="color:#fff;font-weight:bold">readonly</span> [K <span style="color:#fff;font-weight:bold">in</span> <span style="color:#fff;font-weight:bold">keyof</span> User]: User[K]
-</span><span style="display:block;width:100%;background-color:#191919">}</span></code></pre></td></tr></table>
+<span style="display:block;width:100%;background-color:#3d3f4a"><span style="color:#6272a4">// ! we can remove readonly constraint
+</span></span><span style="display:block;width:100%;background-color:#3d3f4a"><span style="color:#6272a4"></span><span style="color:#ff79c6">type</span> ModifiableUser <span style="color:#ff79c6">=</span> {
+</span><span style="display:block;width:100%;background-color:#3d3f4a">    <span style="color:#ff79c6">-</span><span style="color:#ff79c6">readonly</span> [K <span style="color:#ff79c6">in</span> <span style="color:#ff79c6">keyof</span> User]<span style="color:#ff79c6">:</span> User[K]
+</span><span style="display:block;width:100%;background-color:#3d3f4a">}</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Without line number</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(() =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(() =&gt; {
 
-  <span style="color:#fff;font-weight:bold">function</span> createCopyButton(codeNode) {
-    <span style="color:#fff;font-weight:bold">const</span> copyBtn = <span style="color:#fff;font-weight:bold">document</span>.createElement(<span style="color:#0ff;font-weight:bold">&#39;button&#39;</span>)
-    copyBtn.className = <span style="color:#0ff;font-weight:bold">&#39;code-copy-btn&#39;</span>
-    copyBtn.type = <span style="color:#0ff;font-weight:bold">&#39;button&#39;</span>
-    copyBtn.innerText = <span style="color:#0ff;font-weight:bold">&#39;copy&#39;</span>
-    copyBtn.parentElement = codeNode.parentElement
+  <span style="color:#8be9fd;font-style:italic">function</span> createCopyButton(codeNode) {
+    <span style="color:#ff79c6">const</span> copyBtn <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">document</span>.createElement(<span style="color:#f1fa8c">&#39;button&#39;</span>)
+    copyBtn.className <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;code-copy-btn&#39;</span>
+    copyBtn.type <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;button&#39;</span>
+    copyBtn.innerText <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;copy&#39;</span>
+    copyBtn.parentElement <span style="color:#ff79c6">=</span> codeNode.parentElement
 
-    <span style="color:#fff;font-weight:bold">let</span> resetTimer
-    copyBtn.addEventListener(<span style="color:#0ff;font-weight:bold">&#39;click&#39;</span>, () =&gt; {
+    <span style="color:#8be9fd;font-style:italic">let</span> resetTimer
+    copyBtn.addEventListener(<span style="color:#f1fa8c">&#39;click&#39;</span>, () =&gt; {
       navigator.clipboard.writeText(codeNode.innerText).then(() =&gt; {
-        copyBtn.innerText = <span style="color:#0ff;font-weight:bold">&#39;copied!&#39;</span>
+        copyBtn.innerText <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;copied!&#39;</span>
       }).then(() =&gt; {
         clearTimeout(resetTimer)
-        resetTimer = setTimeout(() =&gt; {
-          copyBtn.innerText = <span style="color:#0ff;font-weight:bold">&#39;copy&#39;</span>
-        }, <span style="color:#ff0;font-weight:bold">1000</span>)
+        resetTimer <span style="color:#ff79c6">=</span> setTimeout(() =&gt; {
+          copyBtn.innerText <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;copy&#39;</span>
+        }, <span style="color:#bd93f9">1000</span>)
       })
     })
 
-    <span style="color:#fff;font-weight:bold">return</span> copyBtn
+    <span style="color:#ff79c6">return</span> copyBtn
   }
 
-  <span style="color:#fff;font-weight:bold">document</span>.querySelectorAll(<span style="color:#0ff;font-weight:bold">&#39;pre &gt; code&#39;</span>).forEach((codeNode) =&gt; {
-    <span style="color:#fff;font-weight:bold">const</span> copyBtn = createCopyButton(codeNode);
+  <span style="color:#8be9fd;font-style:italic">document</span>.querySelectorAll(<span style="color:#f1fa8c">&#39;pre &gt; code&#39;</span>).forEach((codeNode) =&gt; {
+    <span style="color:#ff79c6">const</span> copyBtn <span style="color:#ff79c6">=</span> createCopyButton(codeNode);
     codeNode.parentNode.insertBefore(copyBtn, codeNode)
   })
 
 })()</code></pre></div>
 <p>C# 소스코드 샘플 입니다.</p>
-<div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272">5
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#fff;font-weight:bold">using</span> System.Text;
-<span style="color:#fff;font-weight:bold">using</span> System.IO;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#ff79c6">using</span> System.Text;
+<span style="color:#ff79c6">using</span> System.IO;
 
-<span style="color:#fff;font-weight:bold">private</span> <span style="color:#fff;font-weight:bold">static</span> <span style="color:#fff;font-weight:bold">void</span> main (String[] args) {
+<span style="color:#ff79c6">private</span> <span style="color:#ff79c6">static</span> <span style="color:#ff79c6">void</span> main (String[] args) {
 }</code></pre></td></tr></table>
 </div>
 </div>
@@ -278,7 +278,7 @@ text
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2022  Jungwoo Kim 
+    Copyright  &copy; 2022  Jungwoo(Jayden) Kim 
   </div>
   <div class="footer-right">
     <nav>
@@ -288,7 +288,7 @@ text
          
         <li><a href="/tags">Tags</a></li>
          
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">About GarlicBread</a></li>
          
         <li><a href="/post/grand-open/">Grand open</a></li>
         
