@@ -36,6 +36,9 @@ weight = 4
     endLevel = 4
     ordered = false
     startLevel = 2
+#  [markup.goldmark]
+#    [markup.goldmark.renderer]
+#      unsafe = true
   [markup.highlight]
     codeFences = true
     guessSyntax = false
