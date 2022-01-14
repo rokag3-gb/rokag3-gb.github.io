@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-baseURL = "https://example.com"
-languageCode = "ko-kr"
-=======
 baseURL = "/"
 languageCode = "en-us"
->>>>>>> 35bde97d7a1eafe5d2f3a9277eee7557bf510115
 title = "GarlicBread Blog"
 theme = "github.com/monkeyWzr/hugo-theme-cactus"
 #copyright = "You" # cactus will use title if copyright is not set
