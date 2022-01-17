@@ -32,13 +32,13 @@
     <loc>/tags/javascript/</loc>
     <lastmod>2019-03-08T09:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/blog/</loc>
-    <lastmod>2015-11-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/grand-open/</loc>
     <lastmod>2015-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/post/grand-open/</loc>
+    <lastmod>2015-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/story/</loc>
     <lastmod>2015-11-02T00:00:00+00:00</lastmod>
   </url>
 </urlset>

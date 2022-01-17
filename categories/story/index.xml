@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Grand open on GarlicBread blog</title>
-    <link>/tags/grand-open/</link>
-    <description>Recent content in Grand open on GarlicBread blog</description>
+    <title>story on GarlicBread blog</title>
+    <link>/categories/story/</link>
+    <description>Recent content in story on GarlicBread blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="/tags/grand-open/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="/categories/story/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Grand open</title>
       <link>/post/grand-open/</link>
