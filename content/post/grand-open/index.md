@@ -3,9 +3,9 @@
 title: "Grand open"
 date: "2015-11-02"
 description: "Example article description"
-images: ['logos/LT20210714.jpg']
+# images: ['logos/LT20210714.jpg']
 categories:
-  - "blog"
+  - "story"
 tags:
   - "Grand open"
 menu: main # Optional, add page to a menu. Options: main, side, footer
@@ -36,15 +36,12 @@ GarlicBread IT 입니다.
 
 ## 중간 제목
 
-[Params.style.vars]
-  highlightColor = "#125ea6" # "#e22d30" # Override highlight color
-
-[Params.thumbnail]
-  visibility = ["list", "post"] # Control thumbnail visibility
-
-''sql
+{{< highlight sql "linenos=table, hl_lines=8 18-21" >}}
 select  getdate();
-''
+
+select  getdate();
+select  getdate();
+{{< /highlight >}}
 
 ### 상세 제목
 
