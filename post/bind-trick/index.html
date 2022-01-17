@@ -19,12 +19,14 @@
 <meta property="og:description" content="To bind specific (nth) arguments of a function, we can write a decorator instead of using Function.bind():
 1function func(p1, p2, p3) { 2 console.log(p1, p2, p3); 3} 4// the binding starts after however many are passed in. 5function decorator(...bound_args) { 6 return function(...args) { 7 return func(...args, ...bound_args); 8 }; 9} 10 11// bind the last parameter 12let f = decorator(&#34;3&#34;); 13f(&#34;a&#34;, &#34;b&#34;); // a b 3 14 15// bind the last two parameter 16let f2 = decorator(&#34;2&#34;, &#34;3&#34;) 17f2(&#34;a&#34;); // a 2 3 Even if we want to bind just the nth argument, we can do as follows:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/bind-trick/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="/post/bind-trick/" /><meta property="og:image" content="/%5Dlogos/avatar.jpg"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-03-08T09:00:00+00:00" />
 <meta property="article:modified_time" content="2019-03-08T09:00:00+00:00" />
 
 
-  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/%5Dlogos/avatar.jpg"/>
+
 <meta name="twitter:title" content="Bind specific arguments of a function"/>
 <meta name="twitter:description" content="To bind specific (nth) arguments of a function, we can write a decorator instead of using Function.bind():
 1function func(p1, p2, p3) { 2 console.log(p1, p2, p3); 3} 4// the binding starts after however many are passed in. 5function decorator(...bound_args) { 6 return function(...args) { 7 return func(...args, ...bound_args); 8 }; 9} 10 11// bind the last parameter 12let f = decorator(&#34;3&#34;); 13f(&#34;a&#34;, &#34;b&#34;); // a b 3 14 15// bind the last two parameter 16let f2 = decorator(&#34;2&#34;, &#34;3&#34;) 17f2(&#34;a&#34;); // a 2 3 Even if we want to bind just the nth argument, we can do as follows:"/>
