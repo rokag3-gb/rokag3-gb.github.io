@@ -3,6 +3,7 @@
 title: "Grand open"
 date: "2015-11-02"
 description: "Example article description"
+images: ['logos/LT20210714.jpg']
 categories:
   - "blog"
 tags:
@@ -26,6 +27,8 @@ widgets: # Enable sidebar widgets in given order per page
 # 대제목
 
 Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
+
+{{< openinnewtab href="https://aka.ms/azureplaylist" title="Azure Playlist on Microsoft Developer KR YouTube" >}}
 
 GarlicBread IT 입니다.
 

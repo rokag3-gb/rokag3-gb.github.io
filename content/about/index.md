@@ -17,6 +17,8 @@ date: 2019-08-24 17:51:42
 ![](img/JW_and_family.png)
 
 <!--
+{{< openinnewtab href="https://aka.ms/azureplaylist" title="Azure Playlist on Microsoft Developer KR YouTube" >}}
+
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rokag3@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?&style=for-the-badge&logo=GitHub&logoColor=white.svg)](https://github.com/rokag3-gb)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://www.facebook.com/jungwoo.kim1230/)
