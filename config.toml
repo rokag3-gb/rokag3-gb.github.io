@@ -54,7 +54,7 @@ weight = 4
     tabWidth = 4
 
 [params]
-  images = ["]logos/avatar.jpg"]
+  images = ["logos/avatar.jpg"]
   colortheme = "dark" # dark, light, white, or classic
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
