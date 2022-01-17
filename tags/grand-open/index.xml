@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Grand open on GarlicBread Blog</title>
+    <title>Grand open on GarlicBread blog</title>
     <link>/tags/grand-open/</link>
-    <description>Recent content in Grand open on GarlicBread Blog</description>
+    <description>Recent content in Grand open on GarlicBread blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
     <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="/tags/grand-open/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,7 +15,7 @@
       
       <guid>/post/grand-open/</guid>
       <description>대제목 Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
-GarlicBread IT 입니다.
+Azure Playlist on Microsoft Developer KR YouTube GarlicBread IT 입니다.
 널리 많은 분들이 보셨으면 좋겠습니다.
 중간 제목 [Params.style.vars] highlightColor = &amp;ldquo;#125ea6&amp;rdquo; # &amp;ldquo;#e22d30&amp;rdquo; # Override highlight color
 [Params.thumbnail] visibility = [&amp;ldquo;list&amp;rdquo;, &amp;ldquo;post&amp;rdquo;] # Control thumbnail visibility
