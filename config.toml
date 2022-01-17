@@ -2,7 +2,6 @@ baseURL = "/"
 languageCode = "en-us"
 title = "GarlicBread Blog"
 theme = "github.com/monkeyWzr/hugo-theme-cactus"
-images = "logos/avatar.jpg"
 #copyright = "You" # cactus will use title if copyright is not set
 copyright = "Jungwoo (Jayden) Kim"
 disqusShortname = "example" # Used when comments is enabled. Cactus will use site title if not set
@@ -55,7 +54,7 @@ weight = 4
     tabWidth = 4
 
 [params]
-
+  images = ["]logos/avatar.jpg"]
   colortheme = "dark" # dark, light, white, or classic
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
