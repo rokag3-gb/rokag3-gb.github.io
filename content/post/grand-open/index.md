@@ -13,7 +13,7 @@ menu: main # Optional, add page to a menu. Options: main, side, footer
 # Theme-Defined params
 thumbnail: "img/text_logo.png" # Thumbnail image
 lead: "rokag3-gb.github.io 블로그를 개설하였습니다." # Lead text
-comments: false # Enable Disqus comments for specific page
+comments: true # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page
 toc: true # Enable Table of Contents for specific page
@@ -42,6 +42,12 @@ select  getdate();
 select  getdate();
 select  getdate();
 {{< /highlight >}}
+
+## 중제목
+
+home = "right" # Configure layout for home page
+home = "right" # Configure layout for home page
+home = "right" # Configure layout for home page
 
 ### 상세 제목
 
