@@ -17,7 +17,8 @@
       <description>대제목 Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
 Azure Playlist on Microsoft Developer KR YouTube GarlicBread IT 입니다.
 널리 많은 분들이 보셨으면 좋겠습니다.
-중간 제목 1 2 3 4  select getdate(); select getdate(); select getdate();   상세 제목 [Params.sidebar] home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page list = &amp;ldquo;left&amp;rdquo; # Configure layout for list pages single = true # Configure layout for single pages #widgets = [&amp;ldquo;search&amp;rdquo;, &amp;ldquo;recent&amp;rdquo;, &amp;ldquo;categories&amp;rdquo;, &amp;ldquo;taglist&amp;rdquo;, &amp;ldquo;social&amp;rdquo;, &amp;ldquo;languages&amp;rdquo;] widgets = [&amp;ldquo;recent&amp;rdquo;, &amp;ldquo;categories&amp;rdquo;, &amp;ldquo;taglist&amp;rdquo;, &amp;ldquo;social&amp;rdquo;, &amp;ldquo;languages&amp;rdquo;]</description>
+중간 제목 1 2 3 4  select getdate(); select getdate(); select getdate();   중제목 home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page
+상세 제목 [Params.sidebar] home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page list = &amp;ldquo;left&amp;rdquo; # Configure layout for list pages single = true # Configure layout for single pages #widgets = [&amp;ldquo;search&amp;rdquo;, &amp;ldquo;recent&amp;rdquo;, &amp;ldquo;categories&amp;rdquo;, &amp;ldquo;taglist&amp;rdquo;, &amp;ldquo;social&amp;rdquo;, &amp;ldquo;languages&amp;rdquo;] widgets = [&amp;ldquo;recent&amp;rdquo;, &amp;ldquo;categories&amp;rdquo;, &amp;ldquo;taglist&amp;rdquo;, &amp;ldquo;social&amp;rdquo;, &amp;ldquo;languages&amp;rdquo;]</description>
     </item>
     
   </channel>
