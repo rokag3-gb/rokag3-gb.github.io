@@ -10,10 +10,10 @@
     <lastBuildDate>Fri, 08 Mar 2019 09:00:00 +0000</lastBuildDate><atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bind specific arguments of a function</title>
-      <link>/post/bind-trick/</link>
+      <link>/posts/bind-trick/</link>
       <pubDate>Fri, 08 Mar 2019 09:00:00 +0000</pubDate>
       
-      <guid>/post/bind-trick/</guid>
+      <guid>/posts/bind-trick/</guid>
       <description>To bind specific (nth) arguments of a function, we can write a decorator instead of using Function.bind():
 1function func(p1, p2, p3) { 2 console.log(p1, p2, p3); 3} 4// the binding starts after however many are passed in. 5function decorator(...bound_args) { 6 return function(...args) { 7 return func(...args, ...bound_args); 8 }; 9} 10 11// bind the last parameter 12let f = decorator(&amp;#34;3&amp;#34;); 13f(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;); // a b 3 14 15// bind the last two parameter 16let f2 = decorator(&amp;#34;2&amp;#34;, &amp;#34;3&amp;#34;) 17f2(&amp;#34;a&amp;#34;); // a 2 3 Even if we want to bind just the nth argument, we can do as follows:</description>
     </item>

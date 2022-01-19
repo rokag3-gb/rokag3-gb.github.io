@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code Block Test</title>
-      <link>/post/code-block-test/</link>
+      <link>/posts/code-block-test/</link>
       <pubDate>Sun, 27 Jun 2021 09:00:00 +0000</pubDate>
       
-      <guid>/post/code-block-test/</guid>
+      <guid>/posts/code-block-test/</guid>
       <description>String
 Using indents:
 text text text  Fenced code block:
@@ -32,20 +32,20 @@ text text &amp;lt;tag&amp;gt; Fenced code block with language (lineNumbersInTabl
     
     <item>
       <title>Bind specific arguments of a function</title>
-      <link>/post/bind-trick/</link>
+      <link>/posts/bind-trick/</link>
       <pubDate>Fri, 08 Mar 2019 09:00:00 +0000</pubDate>
       
-      <guid>/post/bind-trick/</guid>
+      <guid>/posts/bind-trick/</guid>
       <description>To bind specific (nth) arguments of a function, we can write a decorator instead of using Function.bind():
 1function func(p1, p2, p3) { 2 console.log(p1, p2, p3); 3} 4// the binding starts after however many are passed in. 5function decorator(...bound_args) { 6 return function(...args) { 7 return func(...args, ...bound_args); 8 }; 9} 10 11// bind the last parameter 12let f = decorator(&amp;#34;3&amp;#34;); 13f(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;); // a b 3 14 15// bind the last two parameter 16let f2 = decorator(&amp;#34;2&amp;#34;, &amp;#34;3&amp;#34;) 17f2(&amp;#34;a&amp;#34;); // a 2 3 Even if we want to bind just the nth argument, we can do as follows:</description>
     </item>
     
     <item>
       <title>Grand open</title>
-      <link>/post/grand-open/</link>
+      <link>/posts/grand-open/</link>
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/grand-open/</guid>
+      <guid>/posts/grand-open/</guid>
       <description>대제목 Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
 Azure Playlist on Microsoft Developer KR YouTube GarlicBread IT 입니다.
 널리 많은 분들이 보셨으면 좋겠습니다.
