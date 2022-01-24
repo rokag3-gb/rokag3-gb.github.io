@@ -18,7 +18,7 @@
 Using indents:
 text text text  Fenced code block:
 text text &amp;lt;tag&amp;gt; Fenced code block with language (lineNumbersInTable = false):
-1// JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava 2public final class String 3 implements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence 4{ 5 /** The value is used for character storage. */ 6 private final char value[]; 7 8 /** The offset is the first index of the storage that is used. */ 9 private final int offset; 10 11 /** The count is the number of characters in the String.</description>
+1// Java 2public final class String 3 implements java.io.Serializable, Comparable&amp;lt;String&amp;gt;, CharSequence 4{ 5 /** The value is used for character storage. */ 6 private final char value[]; 7 8 /** The offset is the first index of the storage that is used. */ 9 private final int offset; 10 11 /** The count is the number of characters in the String.</description>
     </item>
     
     <item>
@@ -46,11 +46,10 @@ text text &amp;lt;tag&amp;gt; Fenced code block with language (lineNumbersInTabl
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>/posts/grand-open/</guid>
-      <description>대제목 Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
-Azure Playlist on Microsoft Developer KR YouTube GarlicBread IT 입니다.
-널리 많은 분들이 보셨으면 좋겠습니다.
-중간 제목 1 2 3 4  select getdate(); select getdate(); select getdate();   중제목 home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page
-상세 제목 [Params.sidebar] home = &amp;ldquo;right&amp;rdquo; # Configure layout for home page list = &amp;ldquo;left&amp;rdquo; # Configure layout for list pages single = true # Configure layout for single pages #widgets = [&amp;ldquo;search&amp;rdquo;, &amp;ldquo;recent&amp;rdquo;, &amp;ldquo;categories&amp;rdquo;, &amp;ldquo;taglist&amp;rdquo;, &amp;ldquo;social&amp;rdquo;, &amp;ldquo;languages&amp;rdquo;] widgets = [&amp;ldquo;recent&amp;rdquo;, &amp;ldquo;categories&amp;rdquo;, &amp;ldquo;taglist&amp;rdquo;, &amp;ldquo;social&amp;rdquo;, &amp;ldquo;languages&amp;rdquo;]</description>
+      <description>대제목 Hello World! 나는 GarlicBread 입니다.
+rokag3-gb.github.io 블로그를 개설하였습니다.
+markdown 안에서 openinnewtab을 활용해서 하이퍼링크를 새 창으로 여는 테스트 입니다. 중제목 - SQL syntax highlight 1 2 3 4 5 6  // SQL syntax highlight sample select getdate(); select * from dbo.Deal where 거래일 between &amp;#39;2013-01-01&amp;#39; and &amp;#39;2013-12-31&amp;#39;;   중제목 - C#.NET syntax highlight C# 소스코드 샘플 입니다.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // C#.</description>
     </item>
     
   </channel>
