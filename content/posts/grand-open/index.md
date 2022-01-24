@@ -3,7 +3,7 @@
 title: "Grand open"
 date: "2015-11-02"
 description: "Example article description"
-# images: ['logos/LT20210714.jpg']
+images: ['img/giftcard.png']
 categories:
   - "story"
 tags:
@@ -18,7 +18,7 @@ authorbox: true # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page
 toc: true # Enable Table of Contents for specific page
 mathjax: true # Enable MathJax for specific page
-sidebar: "right" # Enable sidebar (on the right side) per page
+sidebar: "left" # Enable sidebar (on the right side) per page
 widgets: # Enable sidebar widgets in given order per page
   - "recent"
   - "taglist"
@@ -26,41 +26,51 @@ widgets: # Enable sidebar widgets in given order per page
 
 # 대제목
 
-Hello World! rokag3-gb.github.io 블로그를 개설하였습니다.
+Hello World! 나는 GarlicBread 입니다.
 
-{{< openinnewtab href="https://aka.ms/azureplaylist" title="Azure Playlist on Microsoft Developer KR YouTube" >}}
+rokag3-gb.github.io 블로그를 개설하였습니다.
 
-GarlicBread IT 입니다.
+{{< openinnewtab href="https://rokag3-gb.github.io/" title="markdown 안에서 openinnewtab을 활용해서 하이퍼링크를 새 창으로 여는 테스트 입니다." >}}
 
-널리 많은 분들이 보셨으면 좋겠습니다.
+![](img/GitHub-Logo-history-500x428.jpg)
 
-## 중간 제목
+## 중제목 - SQL syntax highlight
 
 {{< highlight sql "linenos=table, hl_lines=8 18-21" >}}
+// SQL syntax highlight sample
 select  getdate();
 
-select  getdate();
-select  getdate();
+select  *
+from  dbo.Deal
+where 거래일 between '2013-01-01' and '2013-12-31';
 {{< /highlight >}}
 
-## 중제목
+## 중제목 - C#.NET syntax highlight
 
-home = "right" # Configure layout for home page
-home = "right" # Configure layout for home page
-home = "right" # Configure layout for home page
+C# 소스코드 샘플 입니다.
 
-### 상세 제목
+{{< highlight "C#" "linenos=table" >}}
+// C#.NET syntax highlight sample
+namespace myapp
+{
+    internal static class Program
+    {
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
+            ApplicationConfiguration.Initialize();
 
-![](img/giftcard.png)
+            Application.Run(new Form1());
+        }
+    }
+}
+{{< / highlight >}}
 
-[Params.sidebar]
-  home = "right" # Configure layout for home page
-  list = "left"  # Configure layout for list pages
-  single = true # Configure layout for single pages
-  #widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
-  widgets = ["recent", "categories", "taglist", "social", "languages"]
+### 소제목
 
-[Params.widgets]
-  recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  categories_counter = true # Enable counter for each category in "Categories" widget
-  tags_counter = true # Enable counter for each tag in "Tags" widget
+![](img/GitHub-Logo-history-500x428.jpg)
