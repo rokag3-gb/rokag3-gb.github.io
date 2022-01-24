@@ -31,7 +31,7 @@ text
 Fenced code block with language (lineNumbersInTable = false):
 
 ```Java
-// JavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJavaJava
+// Java
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence
 {
