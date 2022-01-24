@@ -11,7 +11,7 @@ tags:
 menu: main # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
-thumbnail: "img/text_logo.png" # Thumbnail image
+thumbnail: "img/giftcard.png" # Thumbnail image
 lead: "rokag3-gb.github.io 블로그를 개설하였습니다." # Lead text
 comments: true # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
