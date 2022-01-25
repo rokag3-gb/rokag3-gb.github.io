@@ -37,11 +37,17 @@ text text &amp;lt;tag&amp;gt; Fenced code block with language (lineNumbersInTabl
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>/posts/grand-open/</guid>
-      <description>대제목 Hello World! 나는 GarlicBread 입니다.
+      <description>대제목 - 첫번째 대제목 중제목 - 블로그 개설 Hello World! 나는 GarlicBread 입니다.
 rokag3-gb.github.io 블로그를 개설하였습니다.
 Go로 작성된 정적 사이트 생성기 Hugo를 기반으로 작업하였습니다.
-cactus theme가 적용되어 있습니다.
-monkeyWzr의 hugo-theme-cactus repository markdown 안에서 openinnewtab을 활용해서 하이퍼링크를 새 창으로 여는 테스트 입니다. 중제목 - SQL syntax highlight 1 2 3 4 5 6  // SQL syntax highlight sample select getdate(); select * from dbo.Deal where 거래일 between &amp;#39;2013-01-01&amp;#39; and &amp;#39;2013-12-31&amp;#39;;   중제목 - C#.NET syntax highlight C# 소스코드 샘플 입니다.</description>
+monkeyWzr↗가 개발한 cactus theme가 적용되어 있습니다.
+monkeyWzr의 hugo-theme-cactus repository↗
+markdown 안에서 openinnewtab을 활용해서 하이퍼링크를 새탭으로 여는 테스트 입니다.
+새탭으로 열기↗
+이 하이퍼링크를 누르면 현재 페이지에서 바로 이동합니다.
+markdown 연습 이미지 인용구, 리스트, 체크박스, 폰트, code block  인용구 테스트
+인용구 테스트 두번째 줄
+ 리스트 &amp;amp; 체크박스 테스트</description>
     </item>
     
   </channel>
