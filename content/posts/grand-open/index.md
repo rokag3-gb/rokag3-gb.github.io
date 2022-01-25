@@ -2,8 +2,8 @@
 # Common-Defined params
 title: "Grand open"
 date: "2015-11-02"
-description: "Example article description"
-images: ['img/giftcard.png']
+description: "나는 GarlicBread 입니다. Go로 작성된 정적 사이트 생성기 Hugo를 기반으로 커스텀한 rokag3-gb.github.io 블로그를 개설하였습니다."
+images: ['img/GitHub-Logo-history-500x428.jpg']
 categories:
   - "story"
 tags:
@@ -115,3 +115,5 @@ where 거래일 between '2013-01-01' and '2013-12-31';
 |col1|col2|col3|
 |--|--|--|
 |value1|value2|value3|
+
+흠 table은 조금 별로군요.
