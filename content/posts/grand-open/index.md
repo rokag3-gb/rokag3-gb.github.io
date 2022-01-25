@@ -30,6 +30,12 @@ Hello World! 나는 GarlicBread 입니다.
 
 rokag3-gb.github.io 블로그를 개설하였습니다.
 
+Go로 작성된 정적 사이트 생성기 Hugo를 기반으로 작업하였습니다.
+
+cactus theme가 적용되어 있습니다.
+
+{{< openinnewtab href="https://github.com/monkeyWzr/hugo-theme-cactus" title="monkeyWzr의 hugo-theme-cactus repository" >}}
+
 {{< openinnewtab href="https://rokag3-gb.github.io/" title="markdown 안에서 openinnewtab을 활용해서 하이퍼링크를 새 창으로 여는 테스트 입니다." >}}
 
 ![](img/GitHub-Logo-history-500x428.jpg)
