@@ -15,12 +15,3 @@ date: 2019-08-24 17:51:42
 물류,재고 SI 프로젝트 개발 4년, ERP 개발을 11년 동안 했었고, BI & 데이터 시각화 프로젝트를 2년 동안 했었습니다. 복잡한 비즈니스를 SQL로 개발하고 성능 개선시키는 것을 잼있어 합니다.
 
 ![](img/JW_and_family.png)
-
-<!--
-{{< openinnewtab href="https://aka.ms/azureplaylist" title="Azure Playlist on Microsoft Developer KR YouTube" >}}
-
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rokag3@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?&style=for-the-badge&logo=GitHub&logoColor=white.svg)](https://github.com/rokag3-gb)
-[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://www.facebook.com/jungwoo.kim1230/)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jungwoo-kim-4975b3198/)
--->
