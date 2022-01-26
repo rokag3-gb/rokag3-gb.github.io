@@ -46,7 +46,7 @@ markdown 안에서 openinnewtab을 활용해서 하이퍼링크를 새탭으로 
 
 ### 이미지
 
-![](img/GitHub-Logo-history-500x428.jpg)
+![](../resource/img1/GitHub-Logo-history-500x428.jpg)
 
 ### 인용구, 리스트, 체크박스, 폰트, code block
 
