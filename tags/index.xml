@@ -27,6 +27,33 @@
     </item>
     
     <item>
+      <title>Isolation lavel</title>
+      <link>/tags/isolation-lavel/</link>
+      <pubDate>Fri, 20 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/isolation-lavel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Repeatable read</title>
+      <link>/tags/repeatable-read/</link>
+      <pubDate>Fri, 20 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/repeatable-read/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL Server</title>
+      <link>/tags/sql-server/</link>
+      <pubDate>Fri, 20 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sql-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Grand open</title>
       <link>/tags/grand-open/</link>
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
