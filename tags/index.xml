@@ -7,31 +7,85 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>test</title>
-      <link>/tags/test/</link>
-      <pubDate>Sun, 27 Jun 2021 09:00:00 +0000</pubDate>
+      <title>AWS DMS</title>
+      <link>/tags/aws-dms/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/test/</guid>
+      <guid>/tags/aws-dms/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>JavaScript</title>
-      <link>/tags/javascript/</link>
-      <pubDate>Fri, 08 Mar 2019 09:00:00 +0000</pubDate>
+      <title>Database Migration Service</title>
+      <link>/tags/database-migration-service/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/javascript/</guid>
+      <guid>/tags/database-migration-service/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Isolation lavel</title>
-      <link>/tags/isolation-lavel/</link>
-      <pubDate>Fri, 20 Nov 2015 00:00:00 +0000</pubDate>
+      <title>DB migration</title>
+      <link>/tags/db-migration/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/isolation-lavel/</guid>
+      <guid>/tags/db-migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>부동 소수점</title>
+      <link>/tags/%EB%B6%80%EB%8F%99-%EC%86%8C%EC%88%98%EC%A0%90/</link>
+      <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%EB%B6%80%EB%8F%99-%EC%86%8C%EC%88%98%EC%A0%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sp_purge_jobhistory</title>
+      <link>/tags/sp_purge_jobhistory/</link>
+      <pubDate>Wed, 16 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sp_purge_jobhistory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL Agent 기록 제거</title>
+      <link>/tags/sql-agent-%EA%B8%B0%EB%A1%9D-%EC%A0%9C%EA%B1%B0/</link>
+      <pubDate>Wed, 16 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sql-agent-%EA%B8%B0%EB%A1%9D-%EC%A0%9C%EA%B1%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distibution transaction</title>
+      <link>/tags/distibution-transaction/</link>
+      <pubDate>Sun, 22 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/distibution-transaction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DTC</title>
+      <link>/tags/dtc/</link>
+      <pubDate>Sun, 22 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dtc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>분산 트랜잭션</title>
+      <link>/tags/%EB%B6%84%EC%82%B0-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/</link>
+      <pubDate>Sun, 22 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%EB%B6%84%EC%82%B0-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/</guid>
       <description></description>
     </item>
     
@@ -45,11 +99,11 @@
     </item>
     
     <item>
-      <title>SQL Server</title>
-      <link>/tags/sql-server/</link>
+      <title>SQL Server isolation lavel</title>
+      <link>/tags/sql-server-isolation-lavel/</link>
       <pubDate>Fri, 20 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>/tags/sql-server/</guid>
+      <guid>/tags/sql-server-isolation-lavel/</guid>
       <description></description>
     </item>
     
