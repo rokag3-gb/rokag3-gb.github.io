@@ -44,11 +44,10 @@ weight = 4
     lineNoStart = 1
     lineNos = true
     lineNumbersInTable = false
-    noClasses = false
-    # style
+    noClasses = true
     # (short snippets) https://xyproto.github.io/splash/docs/all.html
     # (long snippets) https://xyproto.github.io/splash/docs/longer/all.html
-    style = "dracula" # fruity, vs, solarized-dark, monokai, dracula, paraiso-dark, abap
+    style = "dracula" # dracula, fruity, monokai, native, paraiso-dark, solarized-dark
     tabWidth = 4
 
 [params]
