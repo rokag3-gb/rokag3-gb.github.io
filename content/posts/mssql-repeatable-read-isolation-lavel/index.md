@@ -9,7 +9,7 @@ categories:
 tags:
   - "SQL Server isolation lavel"
   - "Repeatable read"
-menu: main # Optional, add page to a menu. Options: main, side, footer
+#menu: main # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
 #thumbnail: "img/avatar.jpg" # Thumbnail image

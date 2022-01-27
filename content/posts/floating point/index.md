@@ -8,7 +8,7 @@ categories:
   - "DB"
 tags:
   - "부동 소수점"
-menu: main # Optional, add page to a menu. Options: main, side, footer
+#menu: side # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
 #thumbnail: "img/avatar.jpg" # Thumbnail image

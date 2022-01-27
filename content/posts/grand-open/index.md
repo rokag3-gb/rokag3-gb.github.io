@@ -8,7 +8,7 @@ categories:
   - "story"
 tags:
   - "Grand open"
-menu: main # Optional, add page to a menu. Options: main, side, footer
+#menu: main # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
 #thumbnail: "img/avatar.jpg" # Thumbnail image

@@ -10,7 +10,7 @@ tags:
   - "AWS DMS"
   - "Database Migration Service"
   - "DB migration"
-menu: main # Optional, add page to a menu. Options: main, side, footer
+#menu: side # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
 #thumbnail: "img/avatar.jpg" # Thumbnail image

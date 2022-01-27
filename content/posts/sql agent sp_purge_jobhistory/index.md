@@ -9,7 +9,7 @@ categories:
 tags:
   - "SQL Agent 기록 제거"
   - "sp_purge_jobhistory"
-menu: main # Optional, add page to a menu. Options: main, side, footer
+#menu: main # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
 #thumbnail: "img/avatar.jpg" # Thumbnail image

@@ -6,9 +6,7 @@ theme = "github.com/monkeyWzr/hugo-theme-cactus"
 copyright = "Jungwoo (Jayden) Kim"
 disqusShortname = "https-rokag3-gb-github-io" # Used when comments is enabled. Cactus will use site title if not set
 # googleAnalytics = "UA-1234-5"
-
-
-#summaryLength = 2
+summaryLength = 4
 
 # Main menu which appears below site header.
 [[menu.main]]
@@ -46,7 +44,7 @@ weight = 4
     lineNoStart = 1
     lineNos = true
     lineNumbersInTable = false
-    noClasses = true
+    noClasses = false
     # style
     # (short snippets) https://xyproto.github.io/splash/docs/all.html
     # (long snippets) https://xyproto.github.io/splash/docs/longer/all.html
@@ -79,6 +77,7 @@ weight = 4
   show_updated = true # default
   showReadTime = true # default
   logo = "logos/LT20210714.jpg"
+  tocInline = false # table of content 가 post 최상단에 표시되면 true, 우측 sidemenu 안에 floating 되어 있으면 false
 
   [params.comments]
     enabled = true # default
