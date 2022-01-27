@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 스프린트, 직접 해본 이야기 | GarlicBread blog</title>
+  <link rel = 'canonical' href = '/posts/sprint-experience/'>
+  <meta name="description" content="주로 .NET을 사용하여 웹앱, 서버, 응용앱을 개발하고 그 어플리케이션으로 서비스 목적을 달성시키는 일을 하면서 발생하는 다양한 IT 이야기">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="스프린트, 직접 해본 이야기" />
+<meta property="og:description" content="2달 만에 자사 솔루션 MVP 만들기 (5명이서…)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/sprint-experience/" /><meta property="og:image" content="/logos/LT20210714.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-19T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logos/LT20210714.jpg"/>
+
+<meta name="twitter:title" content="스프린트, 직접 해본 이야기"/>
+<meta name="twitter:description" content="2달 만에 자사 솔루션 MVP 만들기 (5명이서…)"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+   <link rel="stylesheet" href="/css/custom.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /posts/aws-dms-from-oracle-to-mysql/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="/posts/azure-dms-episode-2021-04/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2fsprint-experience%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2fsprint-experience%2f&text=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2fsprint-experience%2f&title=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2fsprint-experience%2f&is_video=false&description=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0&body=Check out this article: %2fposts%2fsprint-experience%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2fsprint-experience%2f&title=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2fsprint-experience%2f&title=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2fsprint-experience%2f&name=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0&description=2%eb%8b%ac%20%eb%a7%8c%ec%97%90%20%ec%9e%90%ec%82%ac%20%ec%86%94%eb%a3%a8%ec%85%98%20MVP%20%eb%a7%8c%eb%93%a4%ea%b8%b0%20%285%eb%aa%85%ec%9d%b4%ec%84%9c%e2%80%a6%29" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2fsprint-experience%2f&t=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2달-만에-자사-솔루션-mvp-만들기-5명이서">2달 만에 자사 솔루션 MVP 만들기 (5명이서…)</a></li>
+    <li><a href="#스프린트-설정하기">스프린트 설정하기</a></li>
+    <li><a href="#pm으로서-크루들에게-제시한-몇-가지-거버넌스-중-강조한-항목들이-있었습니다">PM으로서 크루들에게 제시한 몇 가지 거버넌스 중 강조한 항목들이 있었습니다.</a></li>
+    <li><a href="#진행-과정">진행 과정</a></li>
+    <li><a href="#1단계-아이디어-쏟아내기">1단계. 아이디어 쏟아내기</a></li>
+    <li><a href="#2단계-기술-탐색">2단계. 기술 탐색</a></li>
+    <li><a href="#3단계-방향-결정-및-구현">3단계. 방향 결정 및 구현</a></li>
+    <li><a href="#4단계-더-열심히-구현">4단계. 더 열심히 구현</a></li>
+    <li><a href="#5단계-테스트-및-보완">5단계. 테스트 및 보완</a></li>
+    <li><a href="#스프린트-작업-진척도-관리---azure-devops-boards">스프린트 작업 진척도 관리 - Azure DevOps Boards</a></li>
+    <li><a href="#결과-및-후기">결과 및 후기</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        스프린트, 직접 해본 이야기
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021.04.19</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          11 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/dev">Dev</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/google-sprint" rel="tag">Google Sprint</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/minimum-viable-product" rel="tag">Minimum Viable Product</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/agile-%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0" rel="tag">Agile 개발방법론</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="2달-만에-자사-솔루션-mvp-만들기-5명이서">2달 만에 자사 솔루션 MVP 만들기 (5명이서…)</h2>
+<p>자사 솔루션 개발이라는 프로젝트가 주어졌습니다. MVP(Minimum viable product)를 2개월 동안 개발해야 하는 상황이었습니다. 이번 프로젝트를 스프린트 방식으로 개발해보고자 하는데, 스프린트 기간은 개발해야 하는 상품과 서비스, 상황에 따라 달라질 수 있습니다. 자사 솔루션을 MVP로 개발하는데 필요한 핵심 기능 구현을 목표로 세우고 각 스프린트를 2주씩 진행하기로 했습니다.</p>
+<blockquote>
+<p><strong>MVP(Minimum Viable Product) 개발이란?</strong> ‘최소한의 노력으로 최대한의 고객 검증이 가능한 버전의 제품’을 개발하는 것! 검증하고자 하는 핵심 기능을 짧은 시간 안에 만든 뒤 고객 피드백에 따라 다음 회차 개발에 추가할 기능들을 결정합니다.</p>
+</blockquote>
+<p><img src="../resource/img-spr/mvp.jpeg" alt=""></p>
+<h2 id="스프린트-설정하기">스프린트 설정하기</h2>
+<p>자사 솔루션의 핵심 기능 별로 스프린트 목표를 4개로 쪼개고 각 기간은 최대 2주(근무일 10일)로 설정하였습니다. 그리고 각 스프린트마다 구현해야 할 결과물에 대하여 팀원들과 협의를 통하여 결정하였습니다.</p>
+<p><img src="../resource/img-spr/sprint.png" alt=""></p>
+<ul>
+<li><strong>과제</strong>: 자사 솔루션 만들기</li>
+<li><strong>팀</strong>: 데이터 전문가, 웹앱 백/프론트엔드 전문가, BI 전문가, 영업 담당자</li>
+<li><strong>시간</strong>: 프로젝트 업무만 할 수 있도록 Full time을 확보하며, 하루 업무 집중 시간은 4시간으로 정했습니다.</li>
+<li><strong>장소</strong>: 회사 회의실을 사용하고, 중간 커뮤니케이션은 Teams 메신저를 통해 온라인으로 진행하였습니다.</li>
+<li><strong>진행자</strong>: PM을 선정하여 전체 프로젝트 일정과 커뮤니케이션, 작업 진척도를 확인하였습니다.</li>
+</ul>
+<h2 id="pm으로서-크루들에게-제시한-몇-가지-거버넌스-중-강조한-항목들이-있었습니다">PM으로서 크루들에게 제시한 몇 가지 거버넌스 중 강조한 항목들이 있었습니다.</h2>
+<ul>
+<li><strong>주체적 사고</strong>: 본인이 제품을 사용할 고객이라고 생각하고 주체적인 사고를 하자.</li>
+<li><strong>다양성</strong>: 말한 사람이 반드시 구현의 책임을 지는 것은 아니다.</li>
+<li><strong>짧고 빈번한 논의</strong>: 논의가 다 된 사항에 대해서는 즉시 종료. 추가 사항이 있다면 1:1로 해결.</li>
+<li><strong>실행</strong>: Plan - Do - See 중 ‘Do’가 가장 중요하다.</li>
+<li><strong>자아 실현</strong>: 좋은 제품을 개발하는 것은 회사의 성공이기도 하지만, 본인의 성공이기도 하다.</li>
+</ul>
+<h2 id="진행-과정">진행 과정</h2>
+<p>1개의 스프린트는 5단계로 나뉘어 실행되었습니다.</p>
+<ul>
+<li>1단계 : 아이디어 퍼붓기</li>
+<li>2단계 : 기술 탐색</li>
+<li>3단계 : 방향 결정 및 구현</li>
+<li>4단계 : 더 열심히 구현</li>
+<li>5단계 : 테스트 및 보완</li>
+</ul>
+<h2 id="1단계-아이디어-쏟아내기">1단계. 아이디어 쏟아내기</h2>
+<p>업무 영역별이 아닌 모든 크루가 모여 본인의 업무 영역이 아니더라도 함께 아이디어를 개진할 수 있도록 하였습니다. 이른바 ‘아이디어 쏟아내기’ 미팅은 우리가 갖고 있는 제한된 리소스는 배제한 상태에서 ‘우리가 할 수 있는’, ‘선택할 수 있는’ 모든 아이디어에 대해서 다양하게 발언하며 진행했습니다. 여러 아이디어들은 대략 아래와 같은 형태였습니다.</p>
+<blockquote>
+<p><em>“개발 스택은 이러한 이유로 이렇게 선정해야 합니다.” “디자인 테마는 유료 템플릿을 구매하여 최적화 하면 작업 시간을 줄일 수 있습니다.” “개발DB, 운영DB 에 대한 운영은 이렇게 하는 것이 좋습니다.”</em></p>
+</blockquote>
+<h2 id="2단계-기술-탐색">2단계. 기술 탐색</h2>
+<p>1단계에서 나온 여러가지 아이디어들을 구현해내기 위한 기술 탐색을 진행했습니다. 러닝커브가 얼마나 발생할지, 보안 상 문제가 없는지 등에 대한 점수를 부여하기 보다 오로지 기술 스택을 찾아내는데에만 집중 했습니다.</p>
+<h2 id="3단계-방향-결정-및-구현">3단계. 방향 결정 및 구현</h2>
+<p>3단계에서는 2단계에서 탐색된 다양한 기술들을 한데 모아, 여러가지 측면으로 지표를 설정하여 각 기술을 모든 크루가 평가하였고 획득한 점수가 가장 높은 것을 채택하여 방향을 결정하였습니다. 시간이 여유롭지 않다고 판단되어, 결정된 방향에 맞춰서 바로 구현을 진행했습니다.</p>
+<h2 id="4단계-더-열심히-구현">4단계. 더 열심히 구현</h2>
+<p>4단계에서는 결정된 방향과 구현된 형태를 더욱 집중에서 구현해나갔던 단계였습니다. 아래는 PM 포함 5명의 크루가 각자 구현을 담당했던 job 입니다.</p>
+<ul>
+<li>A크루: 외부 API 또는 SDK 와 연동하여 우리에게 필요한 데이터를 load하여 DB에 적재.</li>
+<li>B크루: DB 내에서 서비스 가능한 형태로 transform. <em>(in fact, me)</em></li>
+<li>C크루: WebApp 전반적인 front-end, back-end 개발</li>
+<li>D크루: WebApp의 admin 기능 개발 (BackOffice)</li>
+<li>E크루: WebApp front-end 에서 데이터 시각화 개발</li>
+</ul>
+<p>서비스 데이터의 흐름을 정의하였고, 대략 이렇게 유통 됩니다.</p>
+<p>B : DB 설계/구축 → A : 외부 데이터 DB 적재 → C : 웹앱에 로그인하여 페이지 호출 → E : 데이터 시각화 표현</p>
+<h2 id="5단계-테스트-및-보완">5단계. 테스트 및 보완</h2>
+<p>Sprint 의 말미에 5단계 ‘테스트 및 보완’ 에서는 구현된 기능에 대해 모두 모여서 (또는 온라인 미팅) 잘 된 점에 대해서 리뷰하고 기능적으로 미진한 부분에 대한 피드백을 전달했습니다. 또한 반복적인 QA 활동을 통하여 디버깅, 기능 향상, UI/UX 향상을 도모했습니다.특정 크루에게만 연관성이 높은 이슈인 경우에는 모두 모인 자리가 아닌 별도의 1:1 미팅을 통하여 피드백을 드렸습니다.</p>
+<h2 id="스프린트-작업-진척도-관리---azure-devops-boards">스프린트 작업 진척도 관리 - Azure DevOps Boards</h2>
+<p>Azure DevOps Boards에서는 Azure DevOps에서 등록한 모든 work item을 관리할 수 있습니다. 특히, Boards 기능 중 제가 가장 좋아하는 기능은 “Sprints” 인데요, 각 각의 작업(work item)에 목표 수행시기(time)를 덧입히는 기능이라고 이해하시면 됩니다. Boards 안에는 Sprints 외에도 좋은 기능들이 많이 있는데요. Boards 에서 칸반보드 형태로 각 스윔레인 마다 feature, story의 상태를 한 눈에 파악할 수 있으며, Backlog에서는 모든 work item에 대한 tree 구조의 백로그 뷰가 제공됩니다.</p>
+<p>각 Sprint 마다 기간은 2주로 설정되어 있고, 비대면 미팅을 개최하여 2주 이내에 완수할 수 있는 task 들을 먼저 각자 sketch-up 할 수 있게 했습니다. 그리고 정해진 개발 일정을 준수할 수 있도록 1~2일 마다 크루의 작업 진행 상황을 체크하였습니다. 아무래도 짧은 기간 내에 MVP를 만들어내기 위해서는 작업 진척도 관리가 필수적이었습니다. 작업이 잘되고 있는지, 잘 안되고 있다면 어떤 부분 때문에 그런지 각 크루들과 온라인 및 오프라인으로 수시로 커뮤니케이션을 하면서 리뷰 및 QA 를 진행하였습니다. 진행 중 예상하지 못한 변수가 발생했을 때에는 함께 해결책을 찾아드리거나, Plan B를 제시하였습니다.</p>
+<p><img src="../resource/img-spr/azureboards.png" alt=""></p>
+<h2 id="결과-및-후기">결과 및 후기</h2>
+<p>약속된 2달이 지난 시점에 우리는 당초 계획했던 MVP를 높은 달성 수준을 보이며 출시할 수 있었습니다. TF 크루들이 굉장한 실력자였던 것은 PM으로서 크나큰 행운이었다고 생각합니다. 모든 크루들은 본인이 해야 할 일을 정확히 이해하고 있었고, 모든 task들이 계획했던 스프린트 기간 내에 모두 완료되었습니다.</p>
+<p>개인적으로 어려웠던 점을 꼽아본다면, 어떤 어려움에 봉착한 크루가 있는지 지속적으로 살피고 업무 진척이 되지 않는 크루에게 다가가 어떤 어려움인지 들어본 후 적절한 솔루션을 찾아서 알려주는 것이었습니다. 각 크루마다의 업무 진척 상황을 살피고 다가갈 때에 너무 재촉하는 느낌으로 다가가지 않으려고 노력했습니다.</p>
+<p>팀 내 협업 능력이 프로젝트를 성공적으로 마무리하는데 정말 큰 몫을 한다는 것을 다시 한 번 깨달았던 좋은 경험이었습니다.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disqus_thread">
+  <script type="text/javascript">
+    (function() {
+      
+      
+      
+      
+    
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'https-rokag3-gb-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#2달-만에-자사-솔루션-mvp-만들기-5명이서">2달 만에 자사 솔루션 MVP 만들기 (5명이서…)</a></li>
+    <li><a href="#스프린트-설정하기">스프린트 설정하기</a></li>
+    <li><a href="#pm으로서-크루들에게-제시한-몇-가지-거버넌스-중-강조한-항목들이-있었습니다">PM으로서 크루들에게 제시한 몇 가지 거버넌스 중 강조한 항목들이 있었습니다.</a></li>
+    <li><a href="#진행-과정">진행 과정</a></li>
+    <li><a href="#1단계-아이디어-쏟아내기">1단계. 아이디어 쏟아내기</a></li>
+    <li><a href="#2단계-기술-탐색">2단계. 기술 탐색</a></li>
+    <li><a href="#3단계-방향-결정-및-구현">3단계. 방향 결정 및 구현</a></li>
+    <li><a href="#4단계-더-열심히-구현">4단계. 더 열심히 구현</a></li>
+    <li><a href="#5단계-테스트-및-보완">5단계. 테스트 및 보완</a></li>
+    <li><a href="#스프린트-작업-진척도-관리---azure-devops-boards">스프린트 작업 진척도 관리 - Azure DevOps Boards</a></li>
+    <li><a href="#결과-및-후기">결과 및 후기</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2fsprint-experience%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2fsprint-experience%2f&text=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2fsprint-experience%2f&title=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2fsprint-experience%2f&is_video=false&description=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0&body=Check out this article: %2fposts%2fsprint-experience%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2fsprint-experience%2f&title=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2fsprint-experience%2f&title=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2fsprint-experience%2f&name=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0&description=2%eb%8b%ac%20%eb%a7%8c%ec%97%90%20%ec%9e%90%ec%82%ac%20%ec%86%94%eb%a3%a8%ec%85%98%20MVP%20%eb%a7%8c%eb%93%a4%ea%b8%b0%20%285%eb%aa%85%ec%9d%b4%ec%84%9c%e2%80%a6%29" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2fsprint-experience%2f&t=%ec%8a%a4%ed%94%84%eb%a6%b0%ed%8a%b8%2c%20%ec%a7%81%ec%a0%91%20%ed%95%b4%eb%b3%b8%20%ec%9d%b4%ec%95%bc%ea%b8%b0" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Jungwoo (Jayden) Kim 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

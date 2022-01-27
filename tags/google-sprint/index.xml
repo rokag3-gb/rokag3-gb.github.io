@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Sprint on GarlicBread blog</title>
+    <link>/tags/google-sprint/</link>
+    <description>Recent content in Google Sprint on GarlicBread blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright>Jungwoo (Jayden) Kim</copyright>
+    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/google-sprint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>스프린트, 직접 해본 이야기</title>
+      <link>/posts/sprint-experience/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/sprint-experience/</guid>
+      <description>2달 만에 자사 솔루션 MVP 만들기 (5명이서…) 자사 솔루션 개발이라는 프로젝트가 주어졌습니다.</description>
+    </item>
+    
+  </channel>
+</rss>

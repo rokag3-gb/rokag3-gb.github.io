@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure SQL 의 data file size 와 IOPS 의 불편한 진실</title>
+      <link>/posts/azure-episode-db-file-iops-2021-11/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/azure-episode-db-file-iops-2021-11/</guid>
+      <description>깔끔하게 정리정돈된 도서관 내부 모습은 마치, 잘 관리되고 있는 데이터베이스를 보는 것 같다.</description>
+    </item>
+    
+    <item>
+      <title>Azure DMS를 활용한 DB migration 에피소드</title>
+      <link>/posts/azure-dms-episode-2021-04/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/azure-dms-episode-2021-04/</guid>
+      <description>1. Azure Database Migration Service 소개 이 글에서는 Azure DMS 에 대한 개요, 소개는 짤막하게 주요 링크들로 대체하고 DMS로 실제 마이그레이션 프로젝트를 진행했던 과정 위주로 기술하겠습니다.</description>
+    </item>
+    
+    <item>
+      <title>스프린트, 직접 해본 이야기</title>
+      <link>/posts/sprint-experience/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/sprint-experience/</guid>
+      <description>2달 만에 자사 솔루션 MVP 만들기 (5명이서…) 자사 솔루션 개발이라는 프로젝트가 주어졌습니다.</description>
+    </item>
+    
     <item>
       <title>AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기</title>
       <link>/posts/aws-dms-from-oracle-to-mysql/</link>

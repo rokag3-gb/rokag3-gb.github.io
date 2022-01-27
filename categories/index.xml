@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DB</title>
       <link>/categories/db/</link>
-      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dev</title>
+      <link>/categories/dev/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/dev/</guid>
       <description></description>
     </item>
     

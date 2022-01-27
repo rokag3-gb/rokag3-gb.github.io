@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Azure SQL 의 data file size 와 IOPS 의 불편한 진실 | GarlicBread blog</title>
+  <link rel = 'canonical' href = '/posts/azure-episode-db-file-iops-2021-11/'>
+  <meta name="description" content="주로 .NET을 사용하여 웹앱, 서버, 응용앱을 개발하고 그 어플리케이션으로 서비스 목적을 달성시키는 일을 하면서 발생하는 다양한 IT 이야기">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Azure SQL 의 data file size 와 IOPS 의 불편한 진실" />
+<meta property="og:description" content="Azure SQL 의 data file size 와 IOPS 의 불편한 진실" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/azure-episode-db-file-iops-2021-11/" /><meta property="og:image" content="/logos/LT20210714.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-20T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logos/LT20210714.jpg"/>
+
+<meta name="twitter:title" content="Azure SQL 의 data file size 와 IOPS 의 불편한 진실"/>
+<meta name="twitter:description" content="Azure SQL 의 data file size 와 IOPS 의 불편한 진실"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+   <link rel="stylesheet" href="/css/custom.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /posts/azure-dms-episode-2021-04/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2fazure-episode-db-file-iops-2021-11%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&text=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&title=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&is_video=false&description=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4&body=Check out this article: %2fposts%2fazure-episode-db-file-iops-2021-11%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&title=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&title=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&name=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4&description=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&t=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#시작하기에-앞서">시작하기에 앞서</a></li>
+    <li><a href="#azure-sql-managed-instance-은-아주-좋은-서비스">Azure SQL Managed Instance 은 아주 좋은 서비스</a></li>
+    <li><a href="#문제-상황의-등장">문제 상황의 등장</a></li>
+    <li><a href="#내가-생각한-솔루션">내가 생각한 솔루션</a></li>
+    <li><a href="#이제-작업을-시작해보자">이제 작업을 시작해보자</a></li>
+    <li><a href="#장애의-시작">장애의 시작</a></li>
+    <li><a href="#트러블슈팅">트러블슈팅</a></li>
+    <li><a href="#교훈">교훈</a></li>
+    <li><a href="#추신">추신</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Azure SQL 의 data file size 와 IOPS 의 불편한 진실
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-12-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021.12.20</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          11 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/db">DB</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/azure-sql-managed-instance" rel="tag">Azure SQL Managed Instance</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/sql-server" rel="tag">SQL Server</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p><img src="../resource/img9/library.chungnam.png" alt=""></p>
+<p>깔끔하게 정리정돈된 도서관 내부 모습은 마치, 잘 관리되고 있는 데이터베이스를 보는 것 같다. 참고로 썸네일 사진은 충남도서관이고 나랑 아무런 연관은 없다.</p>
+<h2 id="시작하기에-앞서">시작하기에 앞서</h2>
+<p>우리가 클라우드 서비스를 사용하게 되면 처음에는 비싸지 않는데 이상하게 점점 더 비싸지는 느낌적인 느낌이 있다. 이에 과금 최적화 작업을 종종 진행하고는 하는데, 얼마 전에 한 account 내에서 과금 최적화를 위하여 데이터베이스 스토리지 최적화를 진행했었는데, 이때 전혀 예상치 못한 일들이 벌어졌었던 삽질 이야기를 공유하고자 글로 옮긴다.</p>
+<h2 id="azure-sql-managed-instance-은-아주-좋은-서비스">Azure SQL Managed Instance 은 아주 좋은 서비스</h2>
+<p>마우스 몇번의 클릭으로 PaaS DB 가 떡하니 생기고, 알아서 vnet과 subnet에 배치해주고, 알아서 public endpoint도 만들어주고, 알아서 연결 구성 만들어주고, 알아서 PITR 구성해주고, 굉장히 편리하고 좋은 서비스이다. <em><strong>(SQL Managed Instance 만세👍)</strong></em></p>
+<p>한번 만들어놓으면 메인터넌스 할 것이 거의 없다. login 추가라던가, 쿼리 튜닝 정도 는 해줘야 겠지만, 뭐 거의 알아서 잘 돌아간다. <em><del>물론 과금도 잘 돌아간다.</del></em></p>
+<p><img src="../resource/img9/Azure_SQL_PaaS.png" alt=""></p>
+<p><a href="https://docs.microsoft.com/ko-kr/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview" rel="noopener" target="_blank">MS docs - Azure SQL Managed Instance란?</a>↗</p>
+<h2 id="문제-상황의-등장">문제 상황의 등장</h2>
+<blockquote>
+<p>어떤 DB 의 reserved storage가 640GiB이고 used storage 는 400GiB 정도였으며, used storage의 96% 가 하나의 테이블에 집중되어 있다. 이 테이블을 <strong>tbl_his</strong> 라고 부르겠다. tbl_his 에는 최근 4~5년간 히스토리 성격의 데이터가 담겨 있고, insert 만 되고 있으며 select 하는 경우는 거의 없다고 한다.</p>
+</blockquote>
+<hr>
+<h2 id="내가-생각한-솔루션">내가 생각한 솔루션</h2>
+<p>데이터 보존 관리 정책을 수립해야겠다고 판단했다. tbl_his 에는 최근 3개월 간의 데이터만 남기고 나머지 데이터는 Azure blob storage 로 옮긴다거나, 또는 아카이브 용도의 Azure SQL single database를 아주 낮은 tier 로 생성하여, 아주 간혹 있을 select 에 대응하면 되겠다.</p>
+<p>tbl_his 에 최근 3개월 간 데이터만 남기게 되면 mdf 의 크기는 너무 헐렁해져 있을 것이니 shrinkfile notruncate 한 이후에 shrinkfile truncateonly 하면 되겠다. 후후 좋아. 이 정도면 완벽한 플랜이고 이제 이 플랜대로 작업을 해야겠다.</p>
+<p><img src="../resource/img9/Everyone_has_a_plan.png" alt=""></p>
+<blockquote>
+<p>누구나 그럴듯한 계획을 갖고 있다. 쳐맞기 전까지는.<br>
+by 전설의 Michael Tyson 옹</p>
+</blockquote>
+<hr>
+<h2 id="이제-작업을-시작해보자">이제 작업을 시작해보자</h2>
+<p>작업 순서는 아래와 같이 구성했다.</p>
+<ul>
+<li>tbl_his 와 동일한 구조를 갖는 tbl_his_new 테이블 생성.<br>
+tbl_his_new 의 년월 단위로 파티셔닝.<br>
+<code>1900-01</code> ~ <code>2099-12</code> 까지 파일그룹 <code>n</code>개. 파일 <code>n</code>개.<br>
+이때 낱개의 데이터 파일은 init size 64 MiB 에 growth는 16MiB 로 설정.</li>
+<li>tbl_his 의 최근 3개월 데이터만 tbl_his_new 테이블에 담기.</li>
+<li>tbl_his 이름 변경 -&gt; tbl_his_old</li>
+<li>tbl_his_new 이름 변경 -&gt; tbl_his</li>
+<li>tbl_his_old 테이블 삭제</li>
+<li>shrinkfile notruncate</li>
+<li>shrinkfile truncateonly</li>
+</ul>
+<p>위 작업 중에서 3번과 4번은 세션이 거의 없는 시간대에 동시에 처리해야 어플리케이션 단에서 에러가 나지 않을 것이다.
+(이른바 <em><strong>테이블 바꿔치기</strong></em> 전략)</p>
+<p>테이블 바꿔치기 전략을 사용한 이유는, tbl_his 테이블에서 최근 3개월 데이터를 제외한 과거 데이터를 모두 delete 하는 시간 보다, tbl_his 테이블에서 최근 3개월 데이터만 별도의 테이블에 담는 시간이 훨씬 짧게 소요될 것으로 판단했기 떄문이다.</p>
+<p>위 작업 순서대로 순조롭게 모든 작업을 마쳤고, 깔끔하게 쉬링크 된 이후의 storage utilization은 아래와 같다.
+<img src="../resource/img9/storage_check.png" alt=""></p>
+<p>used storage가 400GiB에서 196GiB으로 절반 수준으로 줄어든 모습. used storage를 많이 줄였으니 Azure portal에서 reserved storage를 많이 줄일 수 있겠군. 이제 모두가 행복해졌다.</p>
+<hr>
+<h2 id="장애의-시작">장애의 시작</h2>
+<p><img src="../resource/img9/developer_horror.png" alt=""></p>
+<p>메트릭을 가만히 쳐다보고 있던 나는 뭔가 섬뜩해져 오는 기분을 느꼈다. 아래 메트릭을 보자.</p>
+<blockquote>
+<p><em>참고로 이 account 내의 어플리케이션 환경은 .NET Core 2.1 이고 Azure App Service를 활용하여 서비스 운영 중에 있다.</em></p>
+</blockquote>
+<p><img src="../resource/img9/metric_01.png" alt=""></p>
+<p>App Service의 request metric이 위 그림처럼 규칙적으로 요동을 치기 시작했다.</p>
+<p><img src="../resource/img9/metric_02.png" alt=""></p>
+<p>Azure SQL Managed Instance의 CPU % 값은 App Service의 request metric의 패턴과 일치하게 파도를 쳤고 CPU % 값이 최대 95%까지 육박하였다.</p>
+<p><img src="../resource/img9/metric_03.png" alt=""></p>
+<p>App Service의 response time이다. Avg가 저정도인데 Max는 얼마나 높았을까.. 정말 많은 requests 가 매우 오랫동안 기다리며 응답성이 느려졌던 건데, 이 포스트를 쓰고 있는 시점에도 저 metric을 보면 심장이 두근거린다.</p>
+<hr>
+<h2 id="트러블슈팅">트러블슈팅</h2>
+<p>생각을 해보자. 해당일자에 App은 변경된 것이 없고, 변경된 것은 DB 밖에 없다. 그럼 DB에서도 무엇이 변경됐지? shrink 작업을 통해 DB의 used storage가 절반 수준으로 줄어들었고, 데이터 용량의 대부분을 차지하고 있던 tbl_his 테이블의 파티셔닝 작업을 통하여 단일 데이터 파일의 용량이 작아졌다. App의 요청량이 파도를 쳤고 요청량의 파도에 따라 DB의 CPU % 값 역시 파도를 쳤다. DB 에서의 Batch request/sec 는 일정했으며 Active worker count가 거의 두배로 증가를 했다. 그렇다면..!</p>
+<p><img src="../resource/img9/idea_flash.png" alt=""></p>
+<p>DB의 reserved storage 용량과 used storage 용량에 따라 보장되는 IOPS가 다른 것인가? 라는 가설에 따라 Azure portal에서 DB의 reserved storage 용량을 증설해보았다. (몇분 이내 적용 완료)</p>
+<blockquote>
+<p><em>흠, 그래도 상황은 나아지지 않았다.</em></p>
+</blockquote>
+<p>웹검색을 통하여 몇가지 새로운 인사이트를 얻을 수 있었다. Azure SQL Managed Instance에 장착되어 있는 Premium storage disk 에는 disk size 계층에 따라 각기 다른 maximum IOPS per disk 을 제공한다는 것이다.</p>
+<p>Scalability and performance targets for VM disks<br>
+<a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disks-scalability-targets" rel="noopener" target="_blank">https://docs.microsoft.com/en-us/azure/virtual-machines/disks-scalability-targets</a>↗</p>
+<p>Storage performance best practices and considerations for Azure SQL DB Managed Instance (General Purpose)<br>
+<a href="https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525" rel="noopener" target="_blank">https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525</a>↗</p>
+<p><img src="../resource/img9/Premium_unmanaged_disks_Per-disk_limits.png" alt=""></p>
+<p>tbl_his 테이블을 파티셔닝 하기 전에는 Primary 파일그룹에 담겨있었는데, 이 Primary 단일 파일에서 파티셔닝하면서 단일 data file size가 64MiB로 확 줄어들면서 해당 파일의 IOPS 가 2,300 에서 500 으로 떨어진 것으로 추정된다.</p>
+<p>그렇다면 이번에는!
+<img src="../resource/img9/idea_flash.png" alt=""></p>
+<p>각 개별 data file size를 128GiB 보다 큰 값, 예를 들어 136GiB으로 늘려 장애 상황이 해소되는지 알아보기로 했다.</p>
+<blockquote>
+<p><em>오오! 문제가 해결되었다.</em></p>
+</blockquote>
+<p>아래 메트릭처럼 data file size를 늘리자마자 App의 requests가 일정하게 유입되는 것으로 확인된다.</p>
+<p><img src="../resource/img9/metric_normal_03.png" alt=""></p>
+<p>아래 메트릭처럼, 11:30 AM을 기점으로 App의 response time(avg,max) 이 정상 수준으로 내려간 것이 확인된다.</p>
+<p><img src="../resource/img9/metric_normal_05.png" alt=""></p>
+<p>또한 DB의 CPU % 역시 아래 메트릭처럼, 기존 장애 상황에서 스파이크 치던 모습에서 11:30 AM을 기점으로 스파이크가 거의 없어진 모습이 확인된다.</p>
+<p><img src="../resource/img9/metric_normal_04.png" alt=""></p>
+<hr>
+<h2 id="교훈">교훈</h2>
+<ol>
+<li>Azure SQL Managed Instance의 IOPS는 reserved storage, used storage가 아닌 <strong>data file size</strong> 에 따라 제공된다.</li>
+<li>과금 최적화한다고 무작정 데이터 용량을 줄였다가는 폭풍야근을 하게될 수 있다.</li>
+<li>글자 많은 블로그라고 대충 넘기지 말고 자세히 읽어보면 그 안에 지혜가 담겨있다.</li>
+</ol>
+<hr>
+<h2 id="추신">추신</h2>
+<blockquote>
+<p><em>닷넷이 미래 입니다. (.NET 6 LTS 만세)</em></p>
+</blockquote>
+<p><img src="../resource/img9/dotnet_is_future.png" alt=""></p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disqus_thread">
+  <script type="text/javascript">
+    (function() {
+      
+      
+      
+      
+    
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'https-rokag3-gb-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#시작하기에-앞서">시작하기에 앞서</a></li>
+    <li><a href="#azure-sql-managed-instance-은-아주-좋은-서비스">Azure SQL Managed Instance 은 아주 좋은 서비스</a></li>
+    <li><a href="#문제-상황의-등장">문제 상황의 등장</a></li>
+    <li><a href="#내가-생각한-솔루션">내가 생각한 솔루션</a></li>
+    <li><a href="#이제-작업을-시작해보자">이제 작업을 시작해보자</a></li>
+    <li><a href="#장애의-시작">장애의 시작</a></li>
+    <li><a href="#트러블슈팅">트러블슈팅</a></li>
+    <li><a href="#교훈">교훈</a></li>
+    <li><a href="#추신">추신</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2fazure-episode-db-file-iops-2021-11%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&text=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&title=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&is_video=false&description=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4&body=Check out this article: %2fposts%2fazure-episode-db-file-iops-2021-11%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&title=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&title=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&name=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4&description=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2fazure-episode-db-file-iops-2021-11%2f&t=Azure%20SQL%20%ec%9d%98%20data%20file%20size%20%ec%99%80%20IOPS%20%ec%9d%98%20%eb%b6%88%ed%8e%b8%ed%95%9c%20%ec%a7%84%ec%8b%a4" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Jungwoo (Jayden) Kim 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

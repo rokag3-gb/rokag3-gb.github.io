@@ -7,20 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AWS DMS</title>
-      <link>/tags/aws-dms/</link>
-      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      <title>Azure SQL Managed Instance</title>
+      <link>/tags/azure-sql-managed-instance/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/aws-dms/</guid>
+      <guid>/tags/azure-sql-managed-instance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL Server</title>
+      <link>/tags/sql-server/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/sql-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure DMS</title>
+      <link>/tags/azure-dms/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/azure-dms/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Database Migration Service</title>
       <link>/tags/database-migration-service/</link>
-      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/database-migration-service/</guid>
       <description></description>
@@ -29,9 +47,45 @@
     <item>
       <title>DB migration</title>
       <link>/tags/db-migration/</link>
-      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/db-migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agile 개발방법론</title>
+      <link>/tags/agile-%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/agile-%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Sprint</title>
+      <link>/tags/google-sprint/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/google-sprint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minimum Viable Product</title>
+      <link>/tags/minimum-viable-product/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/minimum-viable-product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS DMS</title>
+      <link>/tags/aws-dms/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aws-dms/</guid>
       <description></description>
     </item>
     
