@@ -309,30 +309,30 @@
 <h2 id="2-타겟-db-셋팅">2. 타겟 DB 셋팅</h2>
 <h3 id="21-buffer-pool">2.1. Buffer pool</h3>
 <p>DMS가 타겟DB에 값을 쓸 때 버퍼캐쉬 크기가 처리 성능을 크게 좌우합니다. 디폴트값(128MB)에서 일시적으로 서버 메모리 한도 내에서 최대한으로 설정하도록 권장 드립니다. 금번 프로젝트의 경우 64GiB 로 설정하여 진행했습니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- buffer pool size 확인 (GiB)
-</span><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">@@</span><span class="n">innodb_buffer_pool_size</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#6272a4">-- buffer pool size 확인 (GiB)
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">@@</span>innodb_buffer_pool_size <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">1024</span> <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">1024</span> <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">1024</span>;</code></pre></td></tr></table>
 </div>
 </div>
 <p>※ Innodb buffer pool size가 쓰기 성능에 얼만큼 영향이 큰지 테스트한 블로그 링크 참고 바랍니다.
 출처: <a href="https://santander.co.kr/151" rel="noopener" target="_blank">innodb mysql/mariadb insert 속도 높이기</a>↗</p>
 <h3 id="22-timezone">2.2. Timezone</h3>
 <p>타겟 EC2 에 MySQL 바이너리 설치한 초기 상태에서는 timezone 을 소스와 동일한 timezone 으로 설정해주어야 합니다. 먼저 소스 DB의 timezone을 확인합니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span><span class="w">   </span><span class="n">DBTIMEZONE</span><span class="p">,</span><span class="w">
-</span><span class="w">   </span><span class="n">SESSIONTIMEZONE</span><span class="w">
-</span><span class="w"></span><span class="k">FROM</span><span class="w">  </span><span class="n">DUAL</span><span class="p">;</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">SELECT</span>   DBTIMEZONE,
+   SESSIONTIMEZONE
+<span style="color:#ff79c6">FROM</span>  DUAL;</code></pre></td></tr></table>
 </div>
 </div>
 <blockquote>
@@ -352,49 +352,49 @@
 </table>
 </blockquote>
 <p>소스DB의 timezone 은 UTC + 09:00 인 Korea Standard Time(KST) 인 것을 확인 했습니다. 타겟DB에 Asia/Seoul timezone이 존재하는지 아래 SQL문을 실행해봅니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- 타겟DB timezone 중에 &#39;Seoul&#39;이 존재하는지 확인
-</span><span class="c1"></span><span class="k">SELECT</span><span class="w">  </span><span class="n">B</span><span class="p">.</span><span class="n">NAME</span><span class="p">,</span><span class="n">A</span><span class="p">.</span><span class="n">TIME_ZONE_ID</span><span class="w">
-</span><span class="w"></span><span class="k">FROM</span><span class="w">    </span><span class="n">MYSQL</span><span class="p">.</span><span class="n">TIME_ZONE</span><span class="w"> </span><span class="n">A</span><span class="w">
-</span><span class="w">        </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">MYSQL</span><span class="p">.</span><span class="n">TIME_ZONE_NAME</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TIME_ZONE_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">TIME_ZONE_ID</span><span class="w">
-</span><span class="w"></span><span class="k">WHERE</span><span class="w">   </span><span class="n">B</span><span class="p">.</span><span class="n">NAME</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Seoul&#39;</span><span class="p">;</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#6272a4">-- 타겟DB timezone 중에 &#39;Seoul&#39;이 존재하는지 확인
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">SELECT</span>  B.NAME,A.TIME_ZONE_ID
+<span style="color:#ff79c6">FROM</span>    MYSQL.TIME_ZONE A
+        <span style="color:#ff79c6">INNER</span> <span style="color:#ff79c6">JOIN</span> MYSQL.TIME_ZONE_NAME B <span style="color:#ff79c6">ON</span> A.TIME_ZONE_ID <span style="color:#ff79c6">=</span> B.TIME_ZONE_ID
+<span style="color:#ff79c6">WHERE</span>   B.NAME <span style="color:#ff79c6">LIKE</span> <span style="color:#f1fa8c">&#39;%Seoul&#39;</span>;</code></pre></td></tr></table>
 </div>
 </div>
 <p><code>Asia/Seoul</code> timezone이 존재하지 않는다면 타겟 EC2 에 다음과 같은 명령을 실행합니다.<br>
 <a href="https://dev.mysql.com/doc/refman/8.0/en/mysql-tzinfo-to-sql.html" rel="noopener" target="_blank">MySQL 8.0 참조 매뉴얼 / ... / mysql_tzinfo_to_sql — 시간대 테이블로드</a>↗</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>mysql_tzinfo_to_sql /usr/share/zoneinfo <span class="p">|</span> mysql -u root -p mysql
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -p mysql
 </code></pre></div><p>타겟DB 설치경로 안에 <code>/etc/my.cnf</code> 또는 <code>/etc/my.cnf.d/</code> 경로 안에 my.cnf 파일 또는 my.ini 파일을 열어 안에 다음 내용을 추가해줍니다.</p>
-<p><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
+<p><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[mysqld]</span>
-<span class="na">default-time-zone</span><span class="o">=</span><span class="s">Asia/Seoul</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#ff79c6">[mysqld]</span>
+<span style="color:#50fa7b">default-time-zone</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">Asia/Seoul</span></code></pre></td></tr></table>
 </div>
 </div>
 소스DB의 timezone에 맞춰 타겟DB 의 timezone 을 Asia/Seoul(KST) 로 변경해주어야 합니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">time_zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Asia/Seoul&#39;</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="c1">-- 변경된 timezone 확인
-</span><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">@@</span><span class="n">TIME_ZONE</span><span class="p">,</span><span class="w"> </span><span class="o">@@</span><span class="n">system_time_zone</span><span class="p">,</span><span class="w"> </span><span class="o">@@</span><span class="k">GLOBAL</span><span class="p">.</span><span class="n">TIME_ZONE</span><span class="p">,</span><span class="w"> </span><span class="o">@@</span><span class="k">SESSION</span><span class="p">.</span><span class="n">TIME_ZONE</span><span class="p">;</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">SET</span> <span style="color:#ff79c6">GLOBAL</span> time_zone <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Asia/Seoul&#39;</span>;
+
+<span style="color:#6272a4">-- 변경된 timezone 확인
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">@@</span>TIME_ZONE, <span style="color:#ff79c6">@@</span>system_time_zone, <span style="color:#ff79c6">@@</span><span style="color:#ff79c6">GLOBAL</span>.TIME_ZONE, <span style="color:#ff79c6">@@</span><span style="color:#ff79c6">SESSION</span>.TIME_ZONE;</code></pre></td></tr></table>
 </div>
 </div>
 <blockquote>
@@ -421,30 +421,30 @@
 ※ MySQL on RDS 는 AWS 콘솔에서 Parameter Group 생성 및 적용하여 비교적 간단하게 변경 가능합니다.</p>
 <h3 id="23-charset">2.3. Charset</h3>
 <p>소스DB의 charset을 확인하여 타겟DB에 적용해주도록 합니다. 데이터를 이관하기 전에 신중히 결정해야할 사항이며 이관 완료 이후에 charset, collation 변경 작업은 지옥문을 여는 경험이 될 수 있습니다. 일단 먼저 소스 DB의 charset을 확인합니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span><span class="w">  </span><span class="n">NAME</span><span class="p">,</span><span class="w"> </span><span class="n">VALUE$</span><span class="w">
-</span><span class="w"></span><span class="k">FROM</span><span class="w">    </span><span class="n">SYS</span><span class="p">.</span><span class="n">PROPS$</span><span class="w">
-</span><span class="w"></span><span class="k">WHERE</span><span class="w">   </span><span class="n">NAME</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;NLS_LANGUAGE&#39;</span><span class="w">
-</span><span class="w">    </span><span class="p">,</span><span class="s1">&#39;NLS_DATE_LANGUAGE&#39;</span><span class="w">
-</span><span class="w">    </span><span class="p">,</span><span class="s1">&#39;NLS_CHARACTERSET&#39;</span><span class="w">
-</span><span class="w">    </span><span class="p">,</span><span class="s1">&#39;NLS_NCHAR_CHARACTERSET&#39;</span><span class="p">);</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">SELECT</span><span class="w">  </span><span class="k">PARAMETER</span><span class="p">,</span><span class="w"> </span><span class="n">VALUE</span><span class="w">
-</span><span class="w"></span><span class="k">FROM</span><span class="w">    </span><span class="n">NLS_DATABASE_PARAMETERS</span><span class="w">
-</span><span class="w"></span><span class="k">WHERE</span><span class="w">   </span><span class="k">PARAMETER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;NLS_CHARACTERSET&#39;</span><span class="p">;</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">SELECT</span>  NAME, VALUE$
+<span style="color:#ff79c6">FROM</span>    SYS.PROPS$
+<span style="color:#ff79c6">WHERE</span>   NAME <span style="color:#ff79c6">IN</span> (<span style="color:#f1fa8c">&#39;NLS_LANGUAGE&#39;</span>
+    ,<span style="color:#f1fa8c">&#39;NLS_DATE_LANGUAGE&#39;</span>
+    ,<span style="color:#f1fa8c">&#39;NLS_CHARACTERSET&#39;</span>
+    ,<span style="color:#f1fa8c">&#39;NLS_NCHAR_CHARACTERSET&#39;</span>);
+
+<span style="color:#ff79c6">SELECT</span>  <span style="color:#ff79c6">PARAMETER</span>, VALUE
+<span style="color:#ff79c6">FROM</span>    NLS_DATABASE_PARAMETERS
+<span style="color:#ff79c6">WHERE</span>   <span style="color:#ff79c6">PARAMETER</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;NLS_CHARACTERSET&#39;</span>;</code></pre></td></tr></table>
 </div>
 </div>
 <blockquote>
@@ -499,32 +499,32 @@
 <li><code>EUCKR_KOREAN_CI</code>: 한국어, 대소문자 구분 안함</li>
 </ul>
 <p>Charset EUCKR, collation EUCKR_BIN을 결정했으니 이제 서버에 아래 명령을 실행해줍니다.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ vi /etc/mysql/my.cnf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>$ vi /etc/mysql/my.cnf
 </code></pre></div><p>파일 내용의 마지막에 다음 부분을 덧붙여준 후 :wq 로 저장 후 닫아줍니다. 그리고 서비스를 재시작하면 적용됩니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[client]</span>
-<span class="na">default-character-set</span><span class="o">=</span><span class="s">euckr</span>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#ff79c6">[client]</span>
+<span style="color:#50fa7b">default-character-set</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">euckr</span>
 
-<span class="k">[mysql]</span>
-<span class="na">default-character-set</span><span class="o">=</span><span class="s">euckr</span>
+<span style="color:#ff79c6">[mysql]</span>
+<span style="color:#50fa7b">default-character-set</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">euckr</span>
 
-<span class="k">[mysqld]</span>
-<span class="na">collation-server</span> <span class="o">=</span> <span class="s">euckr_bin</span>
-<span class="na">init-connect</span><span class="o">=</span><span class="s">&#39;SET NAMES euckr&#39;</span>
-<span class="na">character-set-server</span> <span class="o">=</span> <span class="s">euckr</span></code></pre></td></tr></table>
+<span style="color:#ff79c6">[mysqld]</span>
+<span style="color:#50fa7b">collation-server</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">euckr_bin</span>
+<span style="color:#50fa7b">init-connect</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;SET NAMES euckr&#39;</span>
+<span style="color:#50fa7b">character-set-server</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">euckr</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Charset, collation 도 설정 완료했습니다. 😅</p>
@@ -540,77 +540,77 @@
 <p>소스(좌측)에서 DDL을 추출할 스키마와 개체유형을 선택하고 Convert schema를 클릭합니다. 타겟(우측)에서 선택 체크된 항목들에 대해서 DDL을 적용하려면 Apply to database를 클릭하면 타겟 DB에 실제로 DDL이 적용됩니다.</p>
 <p><img src="../resource/img6/sct_05.png" alt=""></p>
 <p>타겟 DB에 아래 SQL을 실행해서 정상적으로 스키마가 적용되어 있는지 확인합니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span><span class="w">    </span><span class="n">A</span><span class="p">.</span><span class="n">TABLE_SCHEMA</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="k">TABLE_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TABLE_COLLATION</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TABLE_COMMENT</span><span class="p">,</span><span class="w">
-</span><span class="w">     </span><span class="n">I</span><span class="p">.</span><span class="n">INDEX_COUNT</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">TRIGGER_COUNT</span><span class="w">
-</span><span class="w"></span><span class="k">FROM</span><span class="w">    </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">TABLES</span><span class="w"> </span><span class="n">A</span><span class="w">
-</span><span class="w">     </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="k">LATERAL</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="c1">-- like OUTER APPLY
-</span><span class="c1"></span><span class="w">     </span><span class="k">SELECT</span><span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">I</span><span class="p">.</span><span class="n">INDEX_NAME</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">INDEX_COUNT</span><span class="w">
-</span><span class="w">     </span><span class="k">FROM</span><span class="w">    </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="k">STATISTICS</span><span class="w"> </span><span class="n">I</span><span class="w">
-</span><span class="w">     </span><span class="k">WHERE</span><span class="w">    </span><span class="n">I</span><span class="p">.</span><span class="n">TABLE_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TABLE_SCHEMA</span><span class="w">
-</span><span class="w">     </span><span class="k">AND</span><span class="w">    </span><span class="n">I</span><span class="p">.</span><span class="k">TABLE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="k">TABLE_NAME</span><span class="w">
-</span><span class="w">     </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="w">     </span><span class="p">)</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="w">     </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="k">LATERAL</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span><span class="w">     </span><span class="k">SELECT</span><span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">TRIGGER_COUNT</span><span class="w">
-</span><span class="w">     </span><span class="k">FROM</span><span class="w">    </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">TRIGGERS</span><span class="w"> </span><span class="n">T</span><span class="w">
-</span><span class="w">     </span><span class="k">WHERE</span><span class="w">    </span><span class="n">T</span><span class="p">.</span><span class="k">TRIGGER_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">TABLE_SCHEMA</span><span class="w">
-</span><span class="w">     </span><span class="k">AND</span><span class="w">    </span><span class="n">T</span><span class="p">.</span><span class="n">EVENT_OBJECT_TABLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="k">TABLE_NAME</span><span class="w">
-</span><span class="w">     </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="w">     </span><span class="p">)</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="w"></span><span class="k">WHERE</span><span class="w">    </span><span class="n">A</span><span class="p">.</span><span class="n">TABLE_SCHEMA</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%&#39;</span><span class="p">;</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">SELECT</span>    A.TABLE_SCHEMA, A.<span style="color:#ff79c6">TABLE_NAME</span>, A.TABLE_COLLATION, A.TABLE_COMMENT,
+     I.INDEX_COUNT, T.TRIGGER_COUNT
+<span style="color:#ff79c6">FROM</span>    INFORMATION_SCHEMA.TABLES A
+     <span style="color:#ff79c6">LEFT</span> <span style="color:#ff79c6">JOIN</span> <span style="color:#ff79c6">LATERAL</span> ( <span style="color:#6272a4">-- like OUTER APPLY
+</span><span style="color:#6272a4"></span>     <span style="color:#ff79c6">SELECT</span>    <span style="color:#ff79c6">COUNT</span>(<span style="color:#ff79c6">DISTINCT</span> I.INDEX_NAME) <span style="color:#ff79c6">AS</span> INDEX_COUNT
+     <span style="color:#ff79c6">FROM</span>    INFORMATION_SCHEMA.<span style="color:#ff79c6">STATISTICS</span> I
+     <span style="color:#ff79c6">WHERE</span>    I.TABLE_SCHEMA <span style="color:#ff79c6">=</span> A.TABLE_SCHEMA
+     <span style="color:#ff79c6">AND</span>    I.<span style="color:#ff79c6">TABLE_NAME</span> <span style="color:#ff79c6">=</span> A.<span style="color:#ff79c6">TABLE_NAME</span>
+     <span style="color:#ff79c6">LIMIT</span> <span style="color:#bd93f9">1</span>
+     ) I <span style="color:#ff79c6">ON</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+     <span style="color:#ff79c6">LEFT</span> <span style="color:#ff79c6">JOIN</span> <span style="color:#ff79c6">LATERAL</span> (
+     <span style="color:#ff79c6">SELECT</span>    <span style="color:#ff79c6">COUNT</span>(<span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">AS</span> TRIGGER_COUNT
+     <span style="color:#ff79c6">FROM</span>    INFORMATION_SCHEMA.TRIGGERS T
+     <span style="color:#ff79c6">WHERE</span>    T.<span style="color:#ff79c6">TRIGGER_SCHEMA</span> <span style="color:#ff79c6">=</span> A.TABLE_SCHEMA
+     <span style="color:#ff79c6">AND</span>    T.EVENT_OBJECT_TABLE <span style="color:#ff79c6">=</span> A.<span style="color:#ff79c6">TABLE_NAME</span>
+     <span style="color:#ff79c6">LIMIT</span> <span style="color:#bd93f9">1</span>
+     ) T <span style="color:#ff79c6">ON</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+<span style="color:#ff79c6">WHERE</span>    A.TABLE_SCHEMA <span style="color:#ff79c6">LIKE</span> <span style="color:#f1fa8c">&#39;%&#39;</span>;</code></pre></td></tr></table>
 </div>
 </div>
 <p><img src="../resource/img6/wb_resultset.png" alt=""></p>
 <p>※ 타겟DB가 MySQL 인 경우 테이블과 컬럼의 comment가 SCT로 이관되지 않음을 확인했습니다. 금번 프로젝트 진행하면서 AWS 케이스 오픈을 통하여 정식 요청하였으며, 추후 픽스될 것으로 보입니다.</p>
 <p>SCT에 대한 상세한 가이드는 <a href="https://docs.aws.amazon.com/ko_kr/SchemaConversionTool/latest/userguide/CHAP_Welcome.html" rel="noopener" target="_blank">AWS Schema Conversion Tool User Guide↗</a>를 참고 바랍니다.</p>
 <p>만약 SCT로 trigger 까지 이관시켰다면 DMS 태스크 실행 시 trigger로 인해 오류가 떨어지고 태스크가 멈출 수 있으므로 trigger 를 백업받아놓고 모두 제거하는 것을 추천드립니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- 트리거 리스트 출력
-</span><span class="c1"></span><span class="k">SHOW</span><span class="w"> </span><span class="n">TRIGGERS</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="c1">-- SCT 가 이관해준 트리거 소스는 메모장에 백업해놓고 모두 제거
-</span><span class="c1"></span><span class="k">DROP</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="o">&lt;</span><span class="k">SCHEMA_NAME</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="k">TABLE_NAME</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="k">TRIGGER_NAME</span><span class="o">&gt;</span><span class="p">;</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#6272a4">-- 트리거 리스트 출력
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">SHOW</span> TRIGGERS;
+
+<span style="color:#6272a4">-- SCT 가 이관해준 트리거 소스는 메모장에 백업해놓고 모두 제거
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">DROP</span> <span style="color:#ff79c6">TRIGGER</span> <span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">SCHEMA_NAME</span><span style="color:#ff79c6">&gt;</span>.<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">TABLE_NAME</span><span style="color:#ff79c6">&gt;</span>.<span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">TRIGGER_NAME</span><span style="color:#ff79c6">&gt;</span>;</code></pre></td></tr></table>
 </div>
 </div>
 <p>다시 한번 강조하지만 DMS로 데이터를 들이부은 이후에는 charset, collation 을 변경하는 데에 굉장히 긴 시간이 소요될 수 있습니다. 그래서 SCT 작업 끝나고 DMS 작업을 시작하기 이전에 아래 쿼리를 다시 실행해주면 세상 시원하겠습니다.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="o">&lt;</span><span class="n">database_name</span><span class="o">&gt;</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EUCKR</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EUCKR_BIN</span><span class="p">;</span><span class="w">
-</span><span class="w"></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">&lt;</span><span class="k">table_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CONVERT</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">EUCKR</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">EUCKR_BIN</span><span class="p">;</span></code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">ALTER</span> <span style="color:#ff79c6">DATABASE</span> <span style="color:#ff79c6">&lt;</span>database_name<span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">CHARACTER</span> <span style="color:#ff79c6">SET</span> <span style="color:#ff79c6">=</span> EUCKR <span style="color:#ff79c6">COLLATE</span> <span style="color:#ff79c6">=</span> EUCKR_BIN;
+<span style="color:#ff79c6">ALTER</span> <span style="color:#ff79c6">TABLE</span> <span style="color:#ff79c6">&lt;</span><span style="color:#ff79c6">table_name</span><span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">CONVERT</span> <span style="color:#ff79c6">TO</span> <span style="color:#8be9fd;font-style:italic">CHARACTER</span> <span style="color:#ff79c6">SET</span> EUCKR <span style="color:#ff79c6">COLLATE</span> EUCKR_BIN;</code></pre></td></tr></table>
 </div>
 </div>
 <p><img src="../resource/img6/doubleaction.png" alt=""></p>
