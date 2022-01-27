@@ -72,18 +72,6 @@
         <li><a href="/tags">Tags</a></li>
          
         <li><a href="/about">About me</a></li>
-         
-        <li><a href="/posts/aws-dms-from-oracle-to-mysql/">AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기</a></li>
-         
-        <li><a href="/posts/grand-open/">Grand open</a></li>
-         
-        <li><a href="/posts/mssql-repeatable-read-isolation-lavel/">MS-SQL Repeatable read isolation lavel</a></li>
-         
-        <li><a href="/posts/sql-agent-sp_purge_jobhistory/">SQL Agent 기록 제거에 대한 오해</a></li>
-         
-        <li><a href="/posts/ms-dtc/">SQL Server 분산 트랜잭션</a></li>
-         
-        <li><a href="/posts/floating-point/">부동 소수점은 표현상 효율적이지만, 정확하진 않다.</a></li>
         
       </ul>
     </span>
@@ -252,20 +240,20 @@
 <p>즉, 현재 상황에서 기준에 해당하는 기록을 지우는 것이지, 향후에 생성될 기록들에 대한 제거 예약 작업은 아니라는 것 입니다.</p>
 <h2 id="job-실행-기록을-자동으로-지우고-싶다면">job 실행 기록을 자동으로 지우고 싶다면</h2>
 <p>기록을 자동으로 지우고자 한다면 아래의 쿼리를 실행하는 별도의 job 을 등록해야할 것 입니다.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">declare</span> <span style="color:#ff79c6">@</span><span style="color:#8be9fd;font-style:italic">date</span> datetime;
-<span style="color:#ff79c6">set</span> <span style="color:#ff79c6">@</span><span style="color:#8be9fd;font-style:italic">date</span> <span style="color:#ff79c6">=</span> dateadd(<span style="color:#ff79c6">month</span>, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>, getdate());
-
-<span style="color:#6272a4">-- @date 보다 오래된 msdb.dbo.sysjobhistory 를 delete
-</span><span style="color:#6272a4"></span><span style="color:#ff79c6">exec</span> msdb.dbo.sp_purge_jobhistory <span style="color:#ff79c6">@</span>oldest_date <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">@</span><span style="color:#8be9fd;font-style:italic">date</span>;</code></pre></td></tr></table>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">declare</span><span class="w"> </span><span class="o">@</span><span class="nb">date</span><span class="w"> </span><span class="n">datetime</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">set</span><span class="w"> </span><span class="o">@</span><span class="nb">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dateadd</span><span class="p">(</span><span class="k">month</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">getdate</span><span class="p">());</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1">-- @date 보다 오래된 msdb.dbo.sysjobhistory 를 delete
+</span><span class="c1"></span><span class="k">exec</span><span class="w"> </span><span class="n">msdb</span><span class="p">.</span><span class="n">dbo</span><span class="p">.</span><span class="n">sp_purge_jobhistory</span><span class="w"> </span><span class="o">@</span><span class="n">oldest_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="nb">date</span><span class="p">;</span></code></pre></td></tr></table>
 </div>
 </div>
 <hr>
@@ -318,18 +306,6 @@
           <li><a href="/tags">Tags</a></li>
          
           <li><a href="/about">About me</a></li>
-         
-          <li><a href="/posts/aws-dms-from-oracle-to-mysql/">AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기</a></li>
-         
-          <li><a href="/posts/grand-open/">Grand open</a></li>
-         
-          <li><a href="/posts/mssql-repeatable-read-isolation-lavel/">MS-SQL Repeatable read isolation lavel</a></li>
-         
-          <li><a href="/posts/sql-agent-sp_purge_jobhistory/">SQL Agent 기록 제거에 대한 오해</a></li>
-         
-          <li><a href="/posts/ms-dtc/">SQL Server 분산 트랜잭션</a></li>
-         
-          <li><a href="/posts/floating-point/">부동 소수점은 표현상 효율적이지만, 정확하진 않다.</a></li>
         
       </ul>
     </div>
@@ -436,18 +412,6 @@
         <li><a href="/tags">Tags</a></li>
          
         <li><a href="/about">About me</a></li>
-         
-        <li><a href="/posts/aws-dms-from-oracle-to-mysql/">AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기</a></li>
-         
-        <li><a href="/posts/grand-open/">Grand open</a></li>
-         
-        <li><a href="/posts/mssql-repeatable-read-isolation-lavel/">MS-SQL Repeatable read isolation lavel</a></li>
-         
-        <li><a href="/posts/sql-agent-sp_purge_jobhistory/">SQL Agent 기록 제거에 대한 오해</a></li>
-         
-        <li><a href="/posts/ms-dtc/">SQL Server 분산 트랜잭션</a></li>
-         
-        <li><a href="/posts/floating-point/">부동 소수점은 표현상 효율적이지만, 정확하진 않다.</a></li>
         
       </ul>
     </nav>

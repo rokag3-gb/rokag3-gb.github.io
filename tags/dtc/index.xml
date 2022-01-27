@@ -14,10 +14,7 @@
       <pubDate>Sun, 22 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>/posts/ms-dtc/</guid>
-      <description>DTC 개념 우리는 종종 물리적으로 분리되어 있는 이기종 (또는 동종) DBMS 간에 트랜잭션 처리를 하고 싶을 수 있습니다. 이럴때 분산 트랜잭션 처리라는걸 해야 합니다. (Distributed Transaction Coordinator, 이하 DTC)
-아래 URL에서 도식화 되어 있는 그림을 보시면 서비스가 어떻게 구성되어야 하는지 이해 하는데에 도움이 되실겁니다.
-출처:http://etutorials.org/SQL/microsoft&amp;#43;sql&amp;#43;server&amp;#43;2000/Part&amp;#43;IV&amp;#43;Transact-SQL/Chapter&amp;#43;32.&amp;#43;Distributed&amp;#43;Transaction&amp;#43;Processing/MS&amp;#43;DTC&amp;#43;Architecture↗
-현재 처한 상황 가산IDC에 회원DB 가 있고, 구로IDC에 마일리지DB 가 있고, 서초IDC에 메인DB 가 있다고 칩시다. 고객님이 인터넷에서 &amp;ldquo;결제&amp;quot;를 눌렀을때 일어날 수 있는 트랜잭션을 상상해봅시다. 트랜잭션 처리가 제대로 안된다면 발생할 수 있는 불상사는 굉장히 많겠지요ㅠ</description>
+      <description>DTC 개념 우리는 종종 물리적으로 분리되어 있는 이기종 (또는 동종) DBMS 간에 트랜잭션 처리를 하고 싶을 수 있습니다.</description>
     </item>
     
   </channel>
