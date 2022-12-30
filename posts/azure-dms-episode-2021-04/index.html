@@ -22,7 +22,6 @@
 <meta property="article:published_time" content="2021-04-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-04-21T00:00:00+00:00" />
 
-
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/logos/LT20210714.jpg"/>
 
@@ -343,73 +342,73 @@
 <p><img src="../resource/img8/mig_complete_01.png" alt=""></p>
 <h3 id="원본대상-의-object-data-차이-비교">원본,대상 의 object, data 차이 비교</h3>
 <p>다음 SQL문을 원본DB, 대상DB에 각각 실행하고 한 엑셀시트에 모아서 테이블의 갯수와 각 테이블의 record count를 비교해보았습니다.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#6272a4">-- 모든 catalog에 대한 각 테이블의 record count 출력
-</span><span style="color:#6272a4"></span>USE tempdb;
-<span style="color:#ff79c6">GO</span>
-<span style="color:#ff79c6">IF</span> OBJECT_ID(<span style="color:#f1fa8c">&#39;tempdb.dbo.#TBL_ROW_COUNT&#39;</span>) <span style="color:#ff79c6">IS</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>
-   <span style="color:#ff79c6">DROP</span> <span style="color:#ff79c6">TABLE</span> tempdb.dbo.<span style="color:#ff79c6">#</span>TBL_ROW_COUNT;
-<span style="color:#ff79c6">GO</span>
-<span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">TABLE</span> <span style="color:#ff79c6">#</span>TBL_ROW_COUNT (DB_NAME NVARCHAR(<span style="color:#bd93f9">100</span>), TBL_NAME NVARCHAR(<span style="color:#bd93f9">100</span>), CNT <span style="color:#8be9fd;font-style:italic">INT</span>);
-<span style="color:#ff79c6">GO</span>
-<span style="color:#ff79c6">EXEC</span> sp_MSforeachdb N<span style="color:#f1fa8c">&#39;USE ?
-</span><span style="color:#f1fa8c">IF DB_ID() &gt; 4 BEGIN
-</span><span style="color:#f1fa8c">SELECT &#39;&#39;INSERT INTO #TBL_ROW_COUNT SELECT DB_NAME = &#39;&#39;&#39;&#39;&#39;&#39; + DB_NAME() + &#39;&#39;&#39;&#39;&#39;&#39;, TABLE_NAME = N&#39;&#39;&#39;&#39;&#39;&#39; + CAST(B.name AS NVARCHAR(100)) + &#39;&#39;.&#39;&#39; + A.name + &#39;&#39;&#39;&#39;&#39;&#39;, CNT = COUNT(*) FROM [&#39;&#39; + DB_NAME() + &#39;&#39;].[&#39;&#39; + B.name + &#39;&#39;].[&#39;&#39; + A.NAME + &#39;&#39;] (nolock)&#39;&#39;
-</span><span style="color:#f1fa8c">FROM SYS.OBJECTS A INNER JOIN SYS.SCHEMAS B ON A.schema_id = B.schema_id
-</span><span style="color:#f1fa8c">WHERE TYPE = &#39;&#39;U&#39;&#39;&#39;</span>
-<span style="color:#ff79c6">END</span>
-<span style="color:#ff79c6">GO</span>
-<span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">FROM</span> tempdb.dbo.<span style="color:#ff79c6">#</span>TBL_ROW_COUNT</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#6272a4">-- 모든 catalog에 대한 각 테이블의 record count 출력
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>USE tempdb;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">GO</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">IF</span> OBJECT_ID(<span style="color:#f1fa8c">&#39;tempdb.dbo.#TBL_ROW_COUNT&#39;</span>) <span style="color:#ff79c6">IS</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">NULL</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">DROP</span> <span style="color:#ff79c6">TABLE</span> tempdb.dbo.<span style="color:#ff79c6">#</span>TBL_ROW_COUNT;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">GO</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">TABLE</span> <span style="color:#ff79c6">#</span>TBL_ROW_COUNT (DB_NAME NVARCHAR(<span style="color:#bd93f9">100</span>), TBL_NAME NVARCHAR(<span style="color:#bd93f9">100</span>), CNT <span style="color:#8be9fd;font-style:italic">INT</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">GO</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">EXEC</span> sp_MSforeachdb N<span style="color:#f1fa8c">&#39;USE ?
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">IF DB_ID() &gt; 4 BEGIN
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">SELECT &#39;&#39;INSERT INTO #TBL_ROW_COUNT SELECT DB_NAME = &#39;&#39;&#39;&#39;&#39;&#39; + DB_NAME() + &#39;&#39;&#39;&#39;&#39;&#39;, TABLE_NAME = N&#39;&#39;&#39;&#39;&#39;&#39; + CAST(B.name AS NVARCHAR(100)) + &#39;&#39;.&#39;&#39; + A.name + &#39;&#39;&#39;&#39;&#39;&#39;, CNT = COUNT(*) FROM [&#39;&#39; + DB_NAME() + &#39;&#39;].[&#39;&#39; + B.name + &#39;&#39;].[&#39;&#39; + A.NAME + &#39;&#39;] (nolock)&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">FROM SYS.OBJECTS A INNER JOIN SYS.SCHEMAS B ON A.schema_id = B.schema_id
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">WHERE TYPE = &#39;&#39;U&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">END</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">GO</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">FROM</span> tempdb.dbo.<span style="color:#ff79c6">#</span>TBL_ROW_COUNT</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="추가적인-조치">추가적인 조치</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#6272a4">-- 마이그레이션 이후에 대상DB에는 원본DB와는 다르게 쿼리저장소 기능이 자동으로 켜져있었습니다.
-</span><span style="color:#6272a4">-- 동일한 환경으로 만들어주기 위해 QUERY_STORE = OFF 처리했습니다.
-</span><span style="color:#6272a4"></span><span style="color:#ff79c6">SELECT</span> <span style="color:#f1fa8c">&#39;ALTER DATABASE [&#39;</span> <span style="color:#ff79c6">+</span> name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;] SET QUERY_STORE = OFF;&#39;</span>
-<span style="color:#ff79c6">FROM</span> sys.databases
-<span style="color:#ff79c6">WHERE</span> database_id <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">4</span>;</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#6272a4">-- 마이그레이션 이후에 대상DB에는 원본DB와는 다르게 쿼리저장소 기능이 자동으로 켜져있었습니다.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">-- 동일한 환경으로 만들어주기 위해 QUERY_STORE = OFF 처리했습니다.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">SELECT</span> <span style="color:#f1fa8c">&#39;ALTER DATABASE [&#39;</span> <span style="color:#ff79c6">+</span> name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;] SET QUERY_STORE = OFF;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">FROM</span> sys.databases
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">WHERE</span> database_id <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">4</span>;</span></span></code></pre></td></tr></table>
 </div>
 </div>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#6272a4">-- 각 데이터베이스에 적용할 옵션 스크립트 생성 - 소유자 변경
-</span><span style="color:#6272a4"></span><span style="color:#ff79c6">SELECT</span> <span style="color:#f1fa8c">&#39;ALTER AUTHORIZATION ON DATABASE::[&#39;</span> <span style="color:#ff79c6">+</span> name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;] TO [owner_name];&#39;</span>
-<span style="color:#ff79c6">FROM</span> sys.databases
-<span style="color:#ff79c6">WHERE</span> database_id <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">4</span>;</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#6272a4">-- 각 데이터베이스에 적용할 옵션 스크립트 생성 - 소유자 변경
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">SELECT</span> <span style="color:#f1fa8c">&#39;ALTER AUTHORIZATION ON DATABASE::[&#39;</span> <span style="color:#ff79c6">+</span> name <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;] TO [owner_name];&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">FROM</span> sys.databases
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">WHERE</span> database_id <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">4</span>;</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="6-느낀-점">6. 느낀 점</h2>

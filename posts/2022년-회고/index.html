@@ -9,23 +9,23 @@
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기 | GarlicBread blog</title>
-  <link rel = 'canonical' href = '/posts/aws-dms-from-oracle-to-mysql/'>
+  <title> 나도 한번 써볼까나 2022년 회고 | GarlicBread blog</title>
+  <link rel = 'canonical' href = '/posts/2022%EB%85%84-%ED%9A%8C%EA%B3%A0/'>
   <meta name="description" content="주로 .NET을 사용하여 웹앱, 서버, 응용앱을 개발하고 그 어플리케이션으로 서비스 목적을 달성시키는 일을 하면서 발생하는 다양한 IT 이야기">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기" />
+  <meta property="og:title" content="나도 한번 써볼까나 2022년 회고" />
 <meta property="og:description" content="AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/aws-dms-from-oracle-to-mysql/" /><meta property="og:image" content="/logos/LT20210714.jpg"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-11-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-11-20T00:00:00+00:00" />
+<meta property="og:url" content="/posts/2022%EB%85%84-%ED%9A%8C%EA%B3%A0/" /><meta property="og:image" content="/logos/LT20210714.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-12-30T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/logos/LT20210714.jpg"/>
 
-<meta name="twitter:title" content="AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기"/>
+<meta name="twitter:title" content="나도 한번 써볼까나 2022년 회고"/>
 <meta name="twitter:description" content="AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기"/>
 
   
@@ -79,17 +79,11 @@
       <ul>
         
         <li>
-          <a class="icon" href=" /about/" aria-label="Previous">
+          <a class="icon" href=" /posts/azure-episode-db-file-iops-2021-11/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
-        
-        <li>
-          <a class="icon" href="/posts/sprint-experience/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
@@ -117,47 +111,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2faws-dms-from-oracle-to-mysql%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&text=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&text=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&title=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&title=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&is_video=false&description=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&is_video=false&description=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0&body=Check out this article: %2fposts%2faws-dms-from-oracle-to-mysql%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0&body=Check out this article: %2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&title=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&title=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&title=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&title=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&name=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0&description=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&name=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0&description=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2faws-dms-from-oracle-to-mysql%2f&t=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&t=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -194,13 +188,13 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기
+        나도 한번 써볼까나 2022년 회고
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2020-11-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020.11.20</time>
+          <time datetime="2022-12-30 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022.12.30</time>
           
         </div>
         
@@ -770,47 +764,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2faws-dms-from-oracle-to-mysql%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&text=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&text=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&title=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&title=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&is_video=false&description=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&is_video=false&description=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0&body=Check out this article: %2fposts%2faws-dms-from-oracle-to-mysql%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0&body=Check out this article: %2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&title=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&title=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&title=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&title=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2faws-dms-from-oracle-to-mysql%2f&name=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0&description=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&name=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0&description=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2faws-dms-from-oracle-to-mysql%2f&t=AWS%20DMS%eb%a5%bc%20%ed%99%9c%ec%9a%a9%ed%95%98%ec%97%ac%20Oracle%ec%97%90%ec%84%9c%20MySQL%eb%a1%9c%20DB%20%eb%a7%88%ec%9d%b4%ea%b7%b8%eb%a0%88%ec%9d%b4%ec%85%98%20%ed%95%98%ea%b8%b0" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2022%25EB%2585%2584-%25ED%259A%258C%25EA%25B3%25A0%2f&t=%eb%82%98%eb%8f%84%20%ed%95%9c%eb%b2%88%20%ec%8d%a8%eb%b3%bc%ea%b9%8c%eb%82%98%202022%eb%85%84%20%ed%9a%8c%ea%b3%a0" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

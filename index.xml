@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>나도 한번 써볼까나 2022년 회고</title>
+      <link>/posts/2022%EB%85%84-%ED%9A%8C%EA%B3%A0/</link>
+      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2022%EB%85%84-%ED%9A%8C%EA%B3%A0/</guid>
+      <description>시작하기 전에 현대차, 카카오, KT, 대한항공 등 에서 촉발된 탈(脫) Oracle 프로젝트(escape from oracle)는 오픈소스 DB, 클라우드 DB 의 안정성이 높아지면서 국내 뿐만 아니라 해외에서 먼저 트렌드로 자리 잡았으나, 그럼에도 불구하고 현존 RDBMS 중 성능 최강인 (가격도 최강) Oracle 을 100% 대체할 수 있는 RDBMS는 안타깝게도 아직까지는 없다고 생각합니다.</description>
+    </item>
+    
     <item>
       <title>Azure SQL 의 data file size 와 IOPS 의 불편한 진실</title>
       <link>/posts/azure-episode-db-file-iops-2021-11/</link>
@@ -50,7 +59,7 @@
       <pubDate>Sat, 24 Aug 2019 17:51:42 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Jungwoo (Jayden) Kim (a.k.a GarlicBread)    Email rokag3@gmail.</description>
+      <description>Jungwoo (Jayden) Kim (a.k.a GarlicBread) Email rokag3@gmail.</description>
     </item>
     
     <item>
