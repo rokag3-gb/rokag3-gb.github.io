@@ -9,12 +9,12 @@
     <copyright>Jungwoo (Jayden) Kim</copyright>
     <lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>나도 한번 써볼까나 2022년 회고</title>
-      <link>/posts/2022%EB%85%84-%ED%9A%8C%EA%B3%A0/</link>
+      <title>생동감 있는 개발 조직에서 격변의 시간을 보낸 2022년 회고</title>
+      <link>/posts/2022-retrospect/</link>
       <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>/posts/2022%EB%85%84-%ED%9A%8C%EA%B3%A0/</guid>
-      <description>시작하기 전에 현대차, 카카오, KT, 대한항공 등 에서 촉발된 탈(脫) Oracle 프로젝트(escape from oracle)는 오픈소스 DB, 클라우드 DB 의 안정성이 높아지면서 국내 뿐만 아니라 해외에서 먼저 트렌드로 자리 잡았으나, 그럼에도 불구하고 현존 RDBMS 중 성능 최강인 (가격도 최강) Oracle 을 100% 대체할 수 있는 RDBMS는 안타깝게도 아직까지는 없다고 생각합니다.</description>
+      <guid>/posts/2022-retrospect/</guid>
+      <description>도입 2022년은 나에게 하나의 새로운 시도였고 흥미진진했고 역동적이었다.</description>
     </item>
     
     <item>

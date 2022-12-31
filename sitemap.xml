@@ -2,19 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/aws-dms/</loc>
-    <lastmod>2022-12-30T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/categories/</loc>
-    <lastmod>2022-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/database-migration-service/</loc>
-    <lastmod>2022-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/db/</loc>
-    <lastmod>2022-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/db-migration/</loc>
     <lastmod>2022-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/</loc>
@@ -23,16 +11,28 @@
     <loc>/posts/</loc>
     <lastmod>2022-12-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/retrospect/</loc>
+    <lastmod>2022-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/story/</loc>
+    <lastmod>2022-12-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/</loc>
     <lastmod>2022-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2022%EB%85%84-%ED%9A%8C%EA%B3%A0/</loc>
+    <loc>/posts/2022-retrospect/</loc>
+    <lastmod>2022-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/%ED%9A%8C%EA%B3%A0/</loc>
     <lastmod>2022-12-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/azure-sql-managed-instance/</loc>
     <lastmod>2021-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/azure-episode-db-file-iops-2021-11/</loc>
+    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/db/</loc>
     <lastmod>2021-12-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/sql-server/</loc>
@@ -42,6 +42,12 @@
     <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/azure-dms-episode-2021-04/</loc>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/database-migration-service/</loc>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/db-migration/</loc>
     <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/agile-%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/</loc>
@@ -58,6 +64,9 @@
   </url><url>
     <loc>/posts/sprint-experience/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/aws-dms/</loc>
+    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/aws-dms-from-oracle-to-mysql/</loc>
     <lastmod>2020-11-20T00:00:00+00:00</lastmod>
@@ -105,9 +114,6 @@
     <lastmod>2015-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/grand-open/</loc>
-    <lastmod>2015-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/story/</loc>
     <lastmod>2015-11-02T00:00:00+00:00</lastmod>
   </url>
 </urlset>

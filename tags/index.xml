@@ -9,29 +9,20 @@
     <copyright>Jungwoo (Jayden) Kim</copyright>
     <lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AWS DMS</title>
-      <link>/tags/aws-dms/</link>
+      <title>Retrospect</title>
+      <link>/tags/retrospect/</link>
       <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>/tags/aws-dms/</guid>
+      <guid>/tags/retrospect/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Database Migration Service</title>
-      <link>/tags/database-migration-service/</link>
+      <title>회고</title>
+      <link>/tags/%ED%9A%8C%EA%B3%A0/</link>
       <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>/tags/database-migration-service/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DB migration</title>
-      <link>/tags/db-migration/</link>
-      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/db-migration/</guid>
+      <guid>/tags/%ED%9A%8C%EA%B3%A0/</guid>
       <description></description>
     </item>
     
@@ -63,6 +54,24 @@
     </item>
     
     <item>
+      <title>Database Migration Service</title>
+      <link>/tags/database-migration-service/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/database-migration-service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DB migration</title>
+      <link>/tags/db-migration/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/db-migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Agile 개발방법론</title>
       <link>/tags/agile-%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
@@ -86,6 +95,15 @@
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/minimum-viable-product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS DMS</title>
+      <link>/tags/aws-dms/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aws-dms/</guid>
       <description></description>
     </item>
     
