@@ -9,7 +9,7 @@ date: 2019-08-24 17:51:42
 |--|--|
 |GitHub|[![GitHub](https://img.shields.io/badge/GitHub-181717?&style=for-the-badge&logo=GitHub&logoColor=white.svg)](https://github.com/rokag3-gb)|
 |Facebook|[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://www.facebook.com/jungwoo.kim1230/)|
-|LinkedIn|[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jungwoo-kim-4975b3198/)|
+|LinkedIn|[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dev-jungwookim/)|
 
 👨‍💻 저는 주로 .NET을 사용하여 웹앱, 서버앱, 클라이언트앱을 개발하고 그 서비스가 비즈니스 목적을 달성하는지에 집중하고 있으며, 내부적으로는 Cloud Native 기반의 어플리케이션을 개발하고자 매진하고 있습니다.
 
