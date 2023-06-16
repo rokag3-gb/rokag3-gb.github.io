@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현</title>
+      <link>/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/</link>
+      <pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/</guid>
+      <description>도입 그렇다. 발표할 일 있으면 해야지 했다가 막상 하게 되면 또 걱정되고 무섭다.</description>
+    </item>
+    
     <item>
       <title>생동감 있는 개발 조직에서 격변의 시간을 보낸 틀딱 개발자의 2022년 회고</title>
       <link>/posts/2022-retrospect/</link>

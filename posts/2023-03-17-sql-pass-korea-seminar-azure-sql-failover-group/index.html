@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현 | GarlicBread blog</title>
+  <link rel = 'canonical' href = '/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/'>
+  <meta name="description" content="주로 .NET을 사용하여 웹앱, 서버, 응용앱을 개발하고 그 어플리케이션으로 서비스 목적을 달성시키는 일을 하면서 발생하는 다양한 IT 이야기">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현" />
+<meta property="og:description" content="SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/" /><meta property="og:image" content="/logos/LT20210714.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-17T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logos/LT20210714.jpg"/>
+
+<meta name="twitter:title" content="Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현"/>
+<meta name="twitter:description" content="SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+   <link rel="stylesheet" href="/css/custom.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /posts/2022-retrospect/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&text=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&title=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&is_video=false&description=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84&body=Check out this article: %2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&title=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&title=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&name=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84&description=SQL%20PASS%20Korea%20%ec%bb%a4%eb%ae%a4%eb%8b%88%ed%8b%b0%ec%9d%98%20%ec%b4%88%ec%b2%ad%ec%9d%84%20%eb%b0%9b%ec%95%84%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%eb%b0%9c%ed%91%9c" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&t=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-03-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023.03.17</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          0 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/db">DB</a>
+            
+             ,  
+            <a class="category-link" href="/categories/story">Story</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/azure-sql" rel="tag">Azure SQL</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/pass-korea" rel="tag">PASS Korea</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/failover" rel="tag">Failover</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/failover-group" rel="tag">Failover group</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    <div class="article-gallery">
+      
+      <a class="gallery-item" href="/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/ss%202023-06-16%20145300.png" rel="gallery_0">
+          <img src="/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/ss%202023-06-16%20145300.png" itemprop="image" />
+      </a>
+      
+    </div>
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h1 id="도입">도입</h1>
+<p>그렇다. 발표할 일 있으면 해야지 했다가 막상 하게 되면 또 걱정되고 무섭다. 여튼 나는 DB 전문가는 아니지만 무장적 해보기로 했다.</p>
+<p><img src="images/ss%202023-06-16%20145300.png" alt=""></p>
+<h1 id="발표-자료">발표 자료</h1>
+<p><a href="images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf"></a></p>
+<p><img src="images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" alt=""></p>
+<!-- raw HTML omitted -->
+<hr>
+<p><code>eof</code></p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+  <div class="blog-post-comments">
+    
+      <div id="disqus_thread">
+  <script type="text/javascript">
+    (function() {
+      
+      
+      
+      
+    
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'https-rokag3-gb-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    
+  </div>
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&text=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&title=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&is_video=false&description=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84&body=Check out this article: %2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&title=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&title=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&name=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84&description=SQL%20PASS%20Korea%20%ec%bb%a4%eb%ae%a4%eb%8b%88%ed%8b%b0%ec%9d%98%20%ec%b4%88%ec%b2%ad%ec%9d%84%20%eb%b0%9b%ec%95%84%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%eb%b0%9c%ed%91%9c" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group%2f&t=Azure%20SQL%20database%ec%9d%98%20Geo%20Replica%ec%99%80%20Managed%20Instance%ec%9d%98%c2%a0Failover%20group%ec%9d%84%20%ed%86%b5%ed%95%9c%c2%a0CQRS%c2%a0%ea%b5%ac%ed%98%84" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Jungwoo (Jayden) Kim 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About me</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
