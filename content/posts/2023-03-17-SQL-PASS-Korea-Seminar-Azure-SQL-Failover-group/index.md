@@ -15,7 +15,7 @@ tags:
 #menu: side # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
-#thumbnail: "images\KakaoTalk_20230616_154117362_05.jpg" # Thumbnail image
+thumbnail: "images\20230616_154117362_05_600_450.jpg" # Thumbnail image
 lead: "SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표" # Lead text
 comments: true # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
@@ -35,18 +35,33 @@ widgets: # Enable sidebar widgets in given order per page
 ![](images/ss%202023-06-16%20145300.png)
 
 # 발표 자료
+
 1
-<embed type="application/pdf" src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" width="100%" height="9000px">
+
+<object data="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
 2
----
+
+<embed type="application/pdf" src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" width="100%" height="9000px">
+
 3
+
+---
+
+4
+
 <iframe
       class="slide"
       src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf"
       width="50%"
       height="500px"
     ></iframe>
-4
+
+5
 
 ---
 `eof`
