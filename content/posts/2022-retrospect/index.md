@@ -5,7 +5,7 @@ date: "2022-12-30"
 description: "생동감 있는 개발 조직에서 격변의 시간을 보낸 틀딱 개발자의 2022년 회고"
 #images: ['img/avatar.jpg']
 categories:
-  - "story"
+  - "Story"
 tags:
   - "회고"
   - "Retrospect"

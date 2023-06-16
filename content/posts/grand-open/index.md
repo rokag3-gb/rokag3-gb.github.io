@@ -5,7 +5,7 @@ date: "2015-11-02"
 description: "Go로 작성된 정적 사이트 생성기 Hugo를 기반으로 cactus theme을 커스텀한 rokag3-gb.github.io 블로그를 개설하였습니다."
 #images: ['img/avatar.jpg']
 categories:
-  - "story"
+  - "Story"
 tags:
   - "Grand open"
 #menu: main # Optional, add page to a menu. Options: main, side, footer
