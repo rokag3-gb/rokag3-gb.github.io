@@ -35,8 +35,18 @@ widgets: # Enable sidebar widgets in given order per page
 ![](images/ss%202023-06-16%20145300.png)
 
 # 발표 자료
-
+1
 <embed type="application/pdf" src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" width="100%" height="9000px">
+2
+---
+3
+<iframe
+      class="slide"
+      src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf"
+      width="50%"
+      height="500px"
+    ></iframe>
+4
 
 ---
 `eof`
