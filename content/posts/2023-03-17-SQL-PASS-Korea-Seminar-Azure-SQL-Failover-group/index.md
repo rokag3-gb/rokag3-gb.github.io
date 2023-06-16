@@ -1,9 +1,9 @@
 ---
 # Common-Defined params
-title: "Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현"
+title: "SQL PASS Korea 세미나 발표 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현"
 date: "2023-03-17"
 description: "SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표"
-#images: ['img/avatar.jpg']
+images: ['images\KakaoTalk_20230616_154117362_05.jpg']
 categories:
   - "DB"
   - "Story"
@@ -15,8 +15,8 @@ tags:
 #menu: side # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
-#thumbnail: "img/avatar.jpg" # Thumbnail image
-lead: "생동감 있는 개발 조직에서 격변의 시간을 보낸 틀딱 개발자의 2022년 회고" # Lead text
+thumbnail: "images\KakaoTalk_20230616_154117362_05.jpg" # Thumbnail image
+lead: "SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표" # Lead text
 comments: true # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page
@@ -33,6 +33,8 @@ widgets: # Enable sidebar widgets in given order per page
 그렇다. 발표할 일 있으면 해야지 했다가 막상 하게 되면 또 걱정되고 무섭다. 여튼 나는 DB 전문가는 아니지만 무장적 해보기로 했다.
 
 ![](images/ss%202023-06-16%20145300.png)
+
+![](images/KakaoTalk_20230616_154117362_05.jpg)
 
 # 발표 자료
 
