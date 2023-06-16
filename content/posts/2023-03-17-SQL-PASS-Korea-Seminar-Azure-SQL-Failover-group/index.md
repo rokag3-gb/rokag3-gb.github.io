@@ -15,7 +15,7 @@ tags:
 #menu: side # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
-thumbnail: "images\20230616_154117362_05_600_450.jpg" # Thumbnail image
+#thumbnail: "images\20230616_154117362_05_600_450.jpg" # Thumbnail image
 lead: "SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표" # Lead text
 comments: true # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
