@@ -38,15 +38,19 @@ widgets: # Enable sidebar widgets in given order per page
 
 1
 
+<html>
 <object data="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf">Download PDF</a>.</p>
     </embed>
 </object>
+</html>
 
 2
 
+<html>
 <embed type="application/pdf" src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" width="100%" height="9000px">
+</html>
 
 3
 
@@ -54,12 +58,14 @@ widgets: # Enable sidebar widgets in given order per page
 
 4
 
+<html>
 <iframe
       class="slide"
       src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf"
       width="50%"
       height="500px"
     ></iframe>
+</html>
 
 5
 
