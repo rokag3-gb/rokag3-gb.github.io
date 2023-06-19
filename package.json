@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "hexo-pdf": "^1.1.1"
+  }
+}
