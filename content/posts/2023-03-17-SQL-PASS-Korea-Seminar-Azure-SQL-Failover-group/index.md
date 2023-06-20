@@ -96,7 +96,13 @@ https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-fa
 
 7
 
+<iframe src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
+
 8
+
+<html>
+<iframe src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
+</html>
 
 ---
 `eof`
