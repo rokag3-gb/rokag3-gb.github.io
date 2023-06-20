@@ -104,5 +104,37 @@ https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-fa
 <iframe src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
 </html>
 
+9
+
+```html
+<p>This is an example of HTML code.</p>
+<div class="my-div">This is a div element.</div>
+\```
+
+위와 같이 작성하면 코드 블록이 생성되며, Hexo는 해당 코드를 그대로 HTML로 인식하여 블로그에서 코드를 표시할 것입니다.
+
+여러 줄의 코드 블록을 생성하려면 백틱을 세 개 붙이면 됩니다. 아래는 예시입니다:
+
+10
+
+````html
+<p>This is an example of HTML code.</p>
+<div class="my-div">This is a div element.</div>
+\````
+
+11
+
+```html
+<iframe src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
+```
+
+12
+
+````html
+<iframe src="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf" style="width:100%; height:600px;" frameborder="0"></iframe>
+````
+
+13
+
 ---
 `eof`
