@@ -32,7 +32,7 @@ widgets: # Enable sidebar widgets in given order per page
 
 그렇다. 발표할 일 있으면 해야지 했다가 막상 하게 되면 또 걱정되고 무섭다. 여튼 나는 DB 전문가는 아니지만 무장적 해보기로 했다.
 
-![](images/ss%202023-06-16%20145300.png)
+<!--![](images/ss%202023-06-16%20145300.png)-->
 
 https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf
 
@@ -135,6 +135,12 @@ https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-fa
 ````
 
 13
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/ux3JY2awIl63Qc?hostedIn=slideshare&page=upload" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+14
+
+[](https://www.slideshare.net/JungwooKim41/sql-pass-korea-seminar-season-2-azure-sql-database-geo-replica-managed-instancefailover-group-cqrs)
 
 ---
 `eof`

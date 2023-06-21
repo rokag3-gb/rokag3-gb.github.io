@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "hexo": "^7.0.0-rc1",
     "hexo-pdf": "^1.1.1"
   }
 }
