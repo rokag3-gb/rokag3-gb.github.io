@@ -142,5 +142,17 @@ https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-fa
 
 [](https://www.slideshare.net/JungwooKim41/sql-pass-korea-seminar-season-2-azure-sql-database-geo-replica-managed-instancefailover-group-cqrs)
 
+https://recruit.hmglobal.com/careers/list.asp
+
+15
+
+https://present.do/documents/64aa85c910ab9a5ae55bad48
+
+16
+
+<iframe src="https://present.do/documents/64aa85c910ab9a5ae55bad48" style="width:100%; height:600px;" frameborder="0"></iframe>
+
+17
+
 ---
 `eof`

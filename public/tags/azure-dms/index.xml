@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure DMS on GarlicBread blog</title>
+    <link>/tags/azure-dms/</link>
+    <description>Recent content in Azure DMS on GarlicBread blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright>Jungwoo (Jayden) Kim</copyright>
+    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/azure-dms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure DMS를 활용한 DB migration 에피소드</title>
+      <link>/posts/azure-dms-episode-2021-04/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/azure-dms-episode-2021-04/</guid>
+      <description>1. Azure Database Migration Service 소개 이 글에서는 Azure DMS 에 대한 개요, 소개는 짤막하게 주요 링크들로 대체하고 DMS로 실제 마이그레이션 프로젝트를 진행했던 과정 위주로 기술하겠습니다.</description>
+    </item>
+    
+  </channel>
+</rss>

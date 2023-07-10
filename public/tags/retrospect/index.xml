@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Retrospect on GarlicBread blog</title>
+    <link>/tags/retrospect/</link>
+    <description>Recent content in Retrospect on GarlicBread blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright>Jungwoo (Jayden) Kim</copyright>
+    <lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/retrospect/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>생동감 있는 개발 조직에서 격변의 시간을 보낸 틀딱 개발자의 2022년 회고</title>
+      <link>/posts/2022-retrospect/</link>
+      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2022-retrospect/</guid>
+      <description>도입 2022년은 나에게 하나의 새로운 시도였고 흥미진진했고 역동적이었다.</description>
+    </item>
+    
+  </channel>
+</rss>

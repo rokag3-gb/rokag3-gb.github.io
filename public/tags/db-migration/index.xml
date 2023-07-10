@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DB migration on GarlicBread blog</title>
+    <link>/tags/db-migration/</link>
+    <description>Recent content in DB migration on GarlicBread blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <copyright>Jungwoo (Jayden) Kim</copyright>
+    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/db-migration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure DMS를 활용한 DB migration 에피소드</title>
+      <link>/posts/azure-dms-episode-2021-04/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/azure-dms-episode-2021-04/</guid>
+      <description>1. Azure Database Migration Service 소개 이 글에서는 Azure DMS 에 대한 개요, 소개는 짤막하게 주요 링크들로 대체하고 DMS로 실제 마이그레이션 프로젝트를 진행했던 과정 위주로 기술하겠습니다.</description>
+    </item>
+    
+    <item>
+      <title>AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기</title>
+      <link>/posts/aws-dms-from-oracle-to-mysql/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/aws-dms-from-oracle-to-mysql/</guid>
+      <description>시작하기 전에 현대차, 카카오, KT, 대한항공 등 에서 촉발된 탈(脫) Oracle 프로젝트(escape from oracle)는 오픈소스 DB, 클라우드 DB 의 안정성이 높아지면서 국내 뿐만 아니라 해외에서 먼저 트렌드로 자리 잡았으나, 그럼에도 불구하고 현존 RDBMS 중 성능 최강인 (가격도 최강) Oracle 을 100% 대체할 수 있는 RDBMS는 안타깝게도 아직까지는 없다고 생각합니다.</description>
+    </item>
+    
+  </channel>
+</rss>
