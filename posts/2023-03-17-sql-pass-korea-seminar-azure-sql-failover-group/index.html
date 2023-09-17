@@ -18,12 +18,12 @@
   <meta property="og:title" content="SQL PASS Korea 세미나 발표 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현" />
 <meta property="og:description" content="SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/" /><meta property="og:image" content="/logos/LT20210714.jpg"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/" /><meta property="og:image" content="/20230616_154117362_05_600_450.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-03-17T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="/logos/LT20210714.jpg"/>
+<meta name="twitter:image" content="/20230616_154117362_05_600_450.jpg"/>
 
 <meta name="twitter:title" content="SQL PASS Korea 세미나 발표 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현"/>
 <meta name="twitter:description" content="SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표"/>
@@ -184,7 +184,7 @@
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          1 minute read
+          0 minute read
         </div>
         
         
@@ -238,61 +238,8 @@
       <h1 id="도입">도입</h1>
 <p>그렇다. 발표할 일 있으면 해야지 했다가 막상 하게 되면 또 걱정되고 무섭다. 여튼 나는 DB 전문가는 아니지만 무장적 해보기로 했다.</p>
 <!-- raw HTML omitted -->
-<p><a href="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf">https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf</a></p>
-<p><a href="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf"></a></p>
-<h1 id="발표-자료">발표 자료</h1>
-<p>1</p>
 <!-- raw HTML omitted -->
-<p>2</p>
 <!-- raw HTML omitted -->
-<p>3</p>
-<hr>
-<p>4</p>
-<!-- raw HTML omitted -->
-<p>5</p>
-<pre tabindex="0"><code>{% pdf https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf %}
-</code></pre><p>{% pdf <a href="https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf">https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf</a> %}</p>
-<!-- raw HTML omitted -->
-<p>6</p>
-<pre tabindex="0"><code>{% pdf ./images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf %}
-</code></pre><p>{% pdf ./images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf %}</p>
-<!-- raw HTML omitted -->
-<p>7</p>
-<!-- raw HTML omitted -->
-<p>8</p>
-<!-- raw HTML omitted -->
-<p>9</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>&lt;<span style="color:#ff79c6">p</span>&gt;This is an example of HTML code.&lt;/<span style="color:#ff79c6">p</span>&gt;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;my-div&#34;</span>&gt;This is a div element.&lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>\```
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>위와 같이 작성하면 코드 블록이 생성되며, Hexo는 해당 코드를 그대로 HTML로 인식하여 블로그에서 코드를 표시할 것입니다.
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>여러 줄의 코드 블록을 생성하려면 백틱을 세 개 붙이면 됩니다. 아래는 예시입니다:
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>10
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>````html
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>&lt;<span style="color:#ff79c6">p</span>&gt;This is an example of HTML code.&lt;/<span style="color:#ff79c6">p</span>&gt;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>&lt;<span style="color:#ff79c6">div</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;my-div&#34;</span>&gt;This is a div element.&lt;/<span style="color:#ff79c6">div</span>&gt;
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>\````
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>11
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>```html
-</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>&lt;<span style="color:#ff79c6">iframe</span> <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf&#34;</span> <span style="color:#50fa7b">style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;width:100%; height:600px;&#34;</span> <span style="color:#50fa7b">frameborder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;0&#34;</span>&gt;&lt;/<span style="color:#ff79c6">iframe</span>&gt;
-</span></span></code></pre></div><p>12</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&lt;<span style="color:#ff79c6">iframe</span> <span style="color:#50fa7b">src</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf&#34;</span> <span style="color:#50fa7b">style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;width:100%; height:600px;&#34;</span> <span style="color:#50fa7b">frameborder</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;0&#34;</span>&gt;&lt;/<span style="color:#ff79c6">iframe</span>&gt;
-</span></span></code></pre></div><p>13</p>
-<!-- raw HTML omitted -->
-<p>14</p>
-<p><a href="https://www.slideshare.net/JungwooKim41/sql-pass-korea-seminar-season-2-azure-sql-database-geo-replica-managed-instancefailover-group-cqrs"></a></p>
-<p><a href="https://recruit.hmglobal.com/careers/list.asp">https://recruit.hmglobal.com/careers/list.asp</a></p>
-<p>15</p>
-<p><a href="https://present.do/documents/64aa85c910ab9a5ae55bad48">https://present.do/documents/64aa85c910ab9a5ae55bad48</a></p>
-<p>16</p>
-<!-- raw HTML omitted -->
-<p>17</p>
 <hr>
 <p><code>eof</code></p>
 
