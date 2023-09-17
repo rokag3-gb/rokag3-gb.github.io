@@ -3,7 +3,7 @@
 title: "SQL PASS Korea 세미나 발표 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현"
 date: "2023-03-17"
 description: "SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표"
-#images: ['images\KakaoTalk_20230616_154117362_05.jpg']
+images: ['20230616_154117362_05_600_450.jpg']
 categories:
   - "DB"
   - "Story"
@@ -16,6 +16,7 @@ tags:
 
 # Theme-Defined params
 #thumbnail: "images\20230616_154117362_05_600_450.jpg" # Thumbnail image
+#thumbnail: "content\posts\2023-03-17-SQL-PASS-Korea-Seminar-Azure-SQL-Failover-group\images\20230616_154117362_05_600_450.jpg"
 lead: "SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표" # Lead text
 comments: true # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
@@ -33,7 +34,7 @@ widgets: # Enable sidebar widgets in given order per page
 그렇다. 발표할 일 있으면 해야지 했다가 막상 하게 되면 또 걱정되고 무섭다. 여튼 나는 DB 전문가는 아니지만 무장적 해보기로 했다.
 
 <!--![](images/ss%202023-06-16%20145300.png)-->
-
+<!--
 https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf
 
 [](https://rokag3-gb.github.io/posts/2023-03-17-sql-pass-korea-seminar-azure-sql-failover-group/images/SQL%20PASS%20Korea%20Seminar%20Season%202%20%EB%B0%9C%ED%91%9C%202023.03.17.pdf)
@@ -153,6 +154,7 @@ https://present.do/documents/64aa85c910ab9a5ae55bad48
 <iframe src="https://present.do/documents/64aa85c910ab9a5ae55bad48" style="width:100%; height:600px;" frameborder="0"></iframe>
 
 17
+-->
 
 ---
 `eof`
