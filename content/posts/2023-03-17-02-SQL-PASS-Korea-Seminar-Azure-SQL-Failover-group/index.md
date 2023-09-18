@@ -44,6 +44,15 @@ widgets: # Enable sidebar widgets in given order per page
 
 {{<openinnewtab href="../resource/images_pass_korea_azure_sql/CQRS%20implementation%20through%20Azure%20SQL%20Database%20Geo%20Replica%20or%20Failover%20group%20of%20Managed%20Instance%20-%20Jungwoo%20Kim%202023.03.17.pdf" title="발표자료 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현">}}↗
 
+# 세션 주요 내용
+
+Architecture comparison - Azure SQL Database Geo Replica VS Failover group
+
+![Architecture comparison - Azure SQL Database Geo Replica VS Failover group](../resource/images_pass_korea_azure_sql/Azure%20SQL%20Database%20Geo%20Replica%20vs%20Failover%20groups.png)
+
+Feature comparison - Azure SQL Database Geo Replica VS Failover group
+
+![Feature comparison - Azure SQL Database Geo Replica VS Failover group](../resource/images_pass_korea_azure_sql/Feature%20comparison%20-%20Azure%20SQL%20Database%20Geo%20Replica%20VS%20Failover%20group.png)
 
 
 
