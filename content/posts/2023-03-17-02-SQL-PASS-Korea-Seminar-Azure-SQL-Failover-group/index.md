@@ -33,6 +33,7 @@ widgets: # Enable sidebar widgets in given order per page
 
 발표할 일 있으면 해야지 했다가 막상 하게 되면 또 걱정되고 두렵다. 비록 나는 DB 전문가는 아니지만 무장적 해보기로 했다. (어떻게든 되겠지ㅎ)
 
+시퀄로 김정선
 
 https://onoffmix.com/event/270849
 
