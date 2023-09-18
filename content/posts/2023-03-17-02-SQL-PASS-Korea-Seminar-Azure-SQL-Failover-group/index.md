@@ -31,12 +31,13 @@ widgets: # Enable sidebar widgets in given order per page
 
 # 도입
 
-발표할 일 있으면 해야지 했다가 막상 하게 되면 또 걱정되고 두렵다. 비록 나는 DB 전문가는 아니지만 무장적 해보기로 했다. (어떻게든 되겠지ㅎ)
+몇달 전에 시퀄로 김정선 이사님께 내가 "발표할 일 있음 연락주세요" 말씀 드렸다가 "발표해보시겠어요?" 막상 제안 받으니까 걱정되고 두렵다. 비록 나는 DB 전문가는 아니지만 무장적 해보기로 했다. (어떻게든 되겠지ㅎ)
 
-시퀄로 김정선
-
+### 세미나 신청 페이지
 https://onoffmix.com/event/270849
 
+### 발표자료 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현
+![](images\CQRS implementation through Azure SQL Database Geo Replica or Failover group of Managed Instance - Jungwoo Kim 2023.03.17.pdf)
 
 <!--![](images/ss%202023-06-16%20145300.png)-->
 <!--
