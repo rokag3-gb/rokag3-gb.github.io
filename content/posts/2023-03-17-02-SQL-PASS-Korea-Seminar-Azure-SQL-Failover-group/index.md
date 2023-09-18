@@ -34,13 +34,15 @@ widgets: # Enable sidebar widgets in given order per page
 
 몇달 전에 시퀄로 김정선 이사님께 내가 "발표할 일 있음 연락주세요" 말씀 드렸다가 "발표해보시겠어요?" 막상 제안 받으니까 걱정되고 두렵다. 비록 나는 DB 전문가는 아니지만 무장적 해보기로 했다. (어떻게든 되겠지ㅎ)
 
-### 세미나 신청 페이지
+## 세미나 신청 페이지
 
-[세미나 신청 페이지](https://onoffmix.com/event/270849)
+{{<openinnewtab href="https://onoffmix.com/event/270849" title="SQL PASS Korea 세미나 시즌2 - 신청 페이지">}}↗
 
-### 발표자료 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현
+![SQL PASS Korea 세미나 시즌2 세션 목차](../resource//images_pass_korea_azure_sql/onoffmix%20-%20table%20of%20contents.png)
 
-[발표자료 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현](../resource/images_pass_korea_azure_sql/CQRS%20implementation%20through%20Azure%20SQL%20Database%20Geo%20Replica%20or%20Failover%20group%20of%20Managed%20Instance%20-%20Jungwoo%20Kim%202023.03.17.pdf)
+## 발표자료 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현
+
+{{<openinnewtab href="../resource/images_pass_korea_azure_sql/CQRS%20implementation%20through%20Azure%20SQL%20Database%20Geo%20Replica%20or%20Failover%20group%20of%20Managed%20Instance%20-%20Jungwoo%20Kim%202023.03.17.pdf" title="발표자료 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현">}}↗
 
 
 
