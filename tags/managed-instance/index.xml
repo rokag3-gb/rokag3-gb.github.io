@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Failover group on GarlicBread blog</title>
-    <link>/tags/failover-group/</link>
-    <description>Recent content in Failover group on GarlicBread blog</description>
+    <title>Managed Instance on GarlicBread blog</title>
+    <link>/tags/managed-instance/</link>
+    <description>Recent content in Managed Instance on GarlicBread blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Fri, 17 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/failover-group/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/managed-instance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL PASS Korea 세미나 발표 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현</title>
       <link>/posts/2023-03-17-pass-korea-seminar2/</link>
