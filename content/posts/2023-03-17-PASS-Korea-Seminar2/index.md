@@ -9,9 +9,11 @@ categories:
   - "Story"
 tags:
   - "Azure SQL"
-  - "PASS Korea"
+  - "Managed Instance"
+  - "Geo Replica"
   - "Failover"
   - "Failover group"
+  - "PASS Korea"
 #menu: side # Optional, add page to a menu. Options: main, side, footer
 
 # Theme-Defined params
@@ -38,7 +40,7 @@ widgets: # Enable sidebar widgets in given order per page
 
 {{<openinnewtab href="https://onoffmix.com/event/270849" title="SQL PASS Korea 세미나 시즌2 - 신청 페이지">}}↗
 
-![SQL PASS Korea 세미나 시즌2 세션 목차](../resource//images_pass_korea_azure_sql/onoffmix - table of contents.png)
+![SQL PASS Korea 세미나 시즌2 세션 목차](../resource/images_pass_korea_azure_sql/onoffmix%20-%20table%20of%20contents.png)
 
 - 등록 및 교류시간 (PM 1:30 ~ 2:00)
 - SQL PASS Korea 소개 (발표자 김정선 @ PASS Korea Leader)
@@ -59,31 +61,31 @@ WAS에서 Command(CUD)는 RW로 요청하고, Query(R)는 Readonly로 요청하�
 
 Architecture comparison - Azure SQL Database Geo Replica VS Failover group
 
-![Architecture comparison - Azure SQL Database Geo Replica VS Failover group](../resource/images_pass_korea_azure_sql/Azure SQL Database Geo Replica vs Failover groups.png)
+![Architecture comparison - Azure SQL Database Geo Replica VS Failover group](../resource/images_pass_korea_azure_sql/Azure%20SQL%20Database%20Geo%20Replica%20vs%20Failover%20groups.png)
 
 Feature comparison - Azure SQL Database Geo Replica VS Failover group
 
-![Feature comparison - Azure SQL Database Geo Replica VS Failover group](../resource/images_pass_korea_azure_sql/Feature comparison - Azure SQL Database Geo Replica VS Failover group.png)
+![Feature comparison - Azure SQL Database Geo Replica VS Failover group](../resource/images_pass_korea_azure_sql/Feature%20comparison%20-%20Azure%20SQL%20Database%20Geo%20Replica%20VS%20Failover%20group.png)
 
 CQRS Pattern - Event Sourcing Pattern.png
 
-![CQRS Pattern - Event Sourcing Pattern.png](../resource/images_pass_korea_azure_sql/CQRS Pattern - Event Sourcing Pattern.png)
+![CQRS Pattern - Event Sourcing Pattern.png](../resource/images_pass_korea_azure_sql/CQRS%20Pattern%20-%20Event%20Sourcing%20Pattern.png)
 
 Micro service Architecture Basic Design
 
-![Micro service Architecture Basic Design](../resource/images_pass_korea_azure_sql/Micro service Architecture Basic Design.png)
+![Micro service Architecture Basic Design](../resource/images_pass_korea_azure_sql/Micro%20service%20Architecture%20Basic%20Design.png)
 
 Azure SQL Database의 Geo Replica 및 Failover Group demo 구성
 
-![Azure SQL Database의 Geo Replica 및 Failover Group demo 구성](../resource/images_pass_korea_azure_sql/Azure SQL Database의 Geo Replica 및 Failover Group 구성 demo.png)
+![Azure SQL Database의 Geo Replica 및 Failover Group demo 구성](../resource/images_pass_korea_azure_sql/Azure%20SQL%20Database의%20Geo%20Replica%20및%20Failover%20Group%20구성%20demo.png)
 
 Azure SQL Managed Instance의 Failover Group demo 구성
 
-![Azure SQL Managed Instance의 Failover Group demo 구성](../resource/images_pass_korea_azure_sql/Azure SQL Managed Instance의 Failover Group 구성 demo.png)
+![Azure SQL Managed Instance의 Failover Group demo 구성](../resource/images_pass_korea_azure_sql/Azure%20SQL%20Managed%20Instance의%20Failover%20Group%20구성%20demo.png)
 
 Azure SQL Managed Instance의 Failover Group Insights
 
-![Azure SQL Managed Instance의 Failover Group Insights](../resource/images_pass_korea_azure_sql/Azure SQL Managed Instance의 Failover Group demo 구성 insights.png)
+![Azure SQL Managed Instance의 Failover Group Insights](../resource/images_pass_korea_azure_sql/Azure%20SQL%20Managed%20Instance의%20Failover%20Group%20demo%20구성%20insights.png)
 
 # 스냅 사진
 
@@ -97,8 +99,7 @@ Azure SQL Managed Instance의 Failover Group Insights
 
 ![](../resource/images_pass_korea_azure_sql/KakaoTalk_20230917_205807945_18.jpg)
 
-
-# 발표자료 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현
+# 발표자료
 
 {{<openinnewtab href="../resource/images_pass_korea_azure_sql/CQRS implementation through Azure SQL Database Geo Replica or Failover group of Managed Instance - Jungwoo Kim 2023.03.17.pdf" title="발표자료 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현">}}↗
 
