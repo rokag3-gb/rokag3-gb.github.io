@@ -3,7 +3,7 @@
 title: "SQL PASS Korea 세미나 발표 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현"
 date: "2023-03-17"
 description: "SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표"
-images: ['20230616_154117362_05_600_450.jpg']
+images: ['..\resource\images_pass_korea_azure_sql\KakaoTalk_20230917_205807945_04_down.jpg']
 categories:
   - "DB"
   - "Story"
@@ -17,7 +17,7 @@ tags:
 # Theme-Defined params
 #thumbnail: "images\20230616_154117362_05_600_450.jpg" # Thumbnail image
 #thumbnail: "content\posts\2023-03-17-SQL-PASS-Korea-Seminar-Azure-SQL-Failover-group\images\20230616_154117362_05_600_450.jpg"
-thumbnail: "..\resource\images_pass_korea_azure_sql\KakaoTalk_20230917_205807945_04_down.jpg"
+#thumbnail: "..\resource\images_pass_korea_azure_sql\KakaoTalk_20230917_205807945_04_down.jpg"
 lead: "SQL PASS Korea 커뮤니티의 초청을 받아 컨퍼런스 발표" # Lead text
 comments: true # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
