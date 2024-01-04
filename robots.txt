@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rokag3-db.github.io/sitemap.xml
