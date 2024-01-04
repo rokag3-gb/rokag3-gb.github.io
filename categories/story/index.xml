@@ -7,33 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Fri, 17 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/story/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/story/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL PASS Korea 세미나 발표 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현</title>
       <link>/posts/2023-03-17-pass-korea-seminar2/</link>
       <pubDate>Fri, 17 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>/posts/2023-03-17-pass-korea-seminar2/</guid>
       <description>도입 2023년2월 경 시퀄로 김정선 이사님께 내가 &amp;ldquo;발표할 일 있음 연락주세요&amp;rdquo; 말씀 드렸다가 막상 &amp;ldquo;발표해보시겠어요?</description>
     </item>
-    
     <item>
       <title>생동감 있는 개발 조직에서 격변의 시간을 보낸 틀딱 개발자의 2022년 회고</title>
       <link>/posts/2022-retrospect/</link>
       <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>/posts/2022-retrospect/</guid>
       <description>도입 2022년은 나에게 하나의 새로운 시도였고 흥미진진했고 역동적이었다.</description>
     </item>
-    
     <item>
       <title>Grand open</title>
       <link>/posts/grand-open/</link>
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>/posts/grand-open/</guid>
       <description>대제목 - 첫번째 대제목 중제목 - 블로그 개설 Hello World!</description>
     </item>
-    
   </channel>
 </rss>

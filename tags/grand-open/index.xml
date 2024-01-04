@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate><atom:link href="/tags/grand-open/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/grand-open/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Grand open</title>
       <link>/posts/grand-open/</link>
       <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>/posts/grand-open/</guid>
       <description>대제목 - 첫번째 대제목 중제목 - 블로그 개설 Hello World!</description>
     </item>
-    
   </channel>
 </rss>

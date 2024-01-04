@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Wed, 16 Mar 2016 00:00:00 +0000</lastBuildDate><atom:link href="/tags/sp_purge_jobhistory/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Mar 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/sp_purge_jobhistory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL Agent 기록 제거에 대한 오해</title>
       <link>/posts/sql-agent-sp_purge_jobhistory/</link>
       <pubDate>Wed, 16 Mar 2016 00:00:00 +0000</pubDate>
-      
       <guid>/posts/sql-agent-sp_purge_jobhistory/</guid>
       <description>에이전트 기록 제거 SQL Server Management Studio (SSMS) 에서 &amp;ldquo;SQL Server 에이전트&amp;rdquo; 의 기록을 어느 정도(?</description>
     </item>
-    
   </channel>
 </rss>

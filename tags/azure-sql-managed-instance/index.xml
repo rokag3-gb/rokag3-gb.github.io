@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/azure-sql-managed-instance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/azure-sql-managed-instance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure SQL 의 data file size 와 IOPS 의 불편한 진실</title>
       <link>/posts/azure-episode-db-file-iops-2021-11/</link>
       <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>/posts/azure-episode-db-file-iops-2021-11/</guid>
       <description>깔끔하게 정리정돈된 도서관 내부 모습은 마치, 잘 관리되고 있는 데이터베이스를 보는 것 같다.</description>
     </item>
-    
   </channel>
 </rss>

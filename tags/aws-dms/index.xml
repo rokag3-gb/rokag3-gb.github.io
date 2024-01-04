@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <copyright>Jungwoo (Jayden) Kim</copyright>
-    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/aws-dms/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/aws-dms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기</title>
       <link>/posts/aws-dms-from-oracle-to-mysql/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
-      
       <guid>/posts/aws-dms-from-oracle-to-mysql/</guid>
       <description>시작하기 전에 현대차, 카카오, KT, 대한항공 등 에서 촉발된 탈(脫) Oracle 프로젝트(escape from oracle)는 오픈소스 DB, 클라우드 DB 의 안정성이 높아지면서 국내 뿐만 아니라 해외에서 먼저 트렌드로 자리 잡았으나, 그럼에도 불구하고 현존 RDBMS 중 성능 최강인 (가격도 최강) Oracle 을 100% 대체할 수 있는 RDBMS는 안타깝게도 아직까지는 없다고 생각합니다.</description>
     </item>
-    
   </channel>
 </rss>
