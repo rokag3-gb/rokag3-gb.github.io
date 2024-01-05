@@ -5,6 +5,10 @@
   {% for post in site.posts %}
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>
+      <loc>https://rokag3-gb.github.io{{ post.url }}</loc>
+      <loc>"https://rokag3-gb.github.io"{{ post.url }}</loc>
+      <loc>{{ https://rokag3-gb.github.io }}{{ post.url }}</loc>
+      <loc>{{ "https://rokag3-gb.github.io" }}{{ post.url }}</loc>
       {% if post.lastmod == null %}
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       {% else %}
