@@ -1145,3 +1145,11 @@ static_prefix:
   hint: https://lib.baomitu.com/hint.css/2.7.0/
 
   moment: https://lib.baomitu.com/moment.js/2.29.4/
+
+
+#---------------------------
+#sitemap
+#---------------------------
+
+sitemap:
+  path: sitemap.xml
