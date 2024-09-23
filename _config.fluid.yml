@@ -43,7 +43,7 @@ code:
   # Code language
   language:
     enable: true
-    default: "TEXT"
+    default: "ko-KR"
 
   # 代码高亮
   # Code highlight
@@ -373,10 +373,10 @@ navbar:
   menu:
     - { key: "home", name: "Home", link: "/", icon: "iconfont icon-home-fill" }
     #- { key: "archive", name: "아카이브", link: "/archives/", icon: "iconfont icon-archive-fill" }
-    - { key: "category", name: "Category", link: "/categories/", icon: "iconfont icon-category-fill" }
-    - { key: "tag", name: "Tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "category", name: "Categories", link: "/categories/", icon: "iconfont icon-category-fill" }
+    - { key: "tag", name: "Tags", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", name: "About", link: "/about/", icon: "iconfont icon-user-fill" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    #- { key: "links", name: "Links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
