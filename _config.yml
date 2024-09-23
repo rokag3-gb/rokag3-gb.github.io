@@ -8,7 +8,7 @@ subtitle: 'GarlicBread Blog'
 description: 'GarlicBread IT Story'
 keywords: ['IT', 'Dev', 'Software Developer', 'Cloud', 'DB', '.NET', 'Go', 'Python', 'Backend', 'PM', 'Data Engineer', 'Conference']
 author: 'GarlicBread'
-language: 'ko-KR'
+language: en # 'ko-KR'
 timezone: 'Asia/Seoul'
 
 # URL

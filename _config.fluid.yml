@@ -63,7 +63,7 @@ code:
       # 在链接中挑选 style 填入
       # Select a style in the link
       # See: https://highlightjs.org/demo/
-      style: "github"
+      style: 'Github Gist'
       style_dark: "dark"
 
     prismjs:
