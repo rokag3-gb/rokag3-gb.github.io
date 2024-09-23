@@ -1,0 +1,883 @@
+
+
+<!DOCTYPE html>
+<html lang="ko-KR" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_Jayden.jpg">
+  <link rel="icon" href="/img/favicon_Jayden.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="GarlicBread">
+  <meta name="keywords" content="IT,Dev,Software Developer,Cloud,DB,.NET,Go,Python,Backend,PM,Data Engineer,Conference">
+  
+    <meta name="description" content="GarlicBread IT Story">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GarlicBread Blog">
+<meta property="og:url" content="https://rokag3-gb.github.io/page/2/index.html">
+<meta property="og:site_name" content="GarlicBread Blog">
+<meta property="og:description" content="GarlicBread IT Story">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:author" content="GarlicBread">
+<meta property="article:tag" content="IT">
+<meta property="article:tag" content="Dev">
+<meta property="article:tag" content="Software Developer">
+<meta property="article:tag" content="Cloud">
+<meta property="article:tag" content="DB">
+<meta property="article:tag" content=".NET">
+<meta property="article:tag" content="Go">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Backend">
+<meta property="article:tag" content="PM">
+<meta property="article:tag" content="Data Engineer">
+<meta property="article:tag" content="Conference">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>GarlicBread Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"rokag3-gb.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":30,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 40vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>GarlicBread Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Hejmpaĝo</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Kategorio</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Etikedoj</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>Pri</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/jeju_seongsan.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="GarlicBread Blog"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/04/sprint-experience/" target="_self">
+          <img src="/img/agile-exp-2021-04/sprint.png" srcset="/img/loading.gif" lazyload alt="스프린트, 직접 해본 이야기">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2021/04/sprint-experience/" target="_self">
+          스프린트, 직접 해본 이야기
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2021/04/sprint-experience/" target="_self">
+        <div>
+          2달 만에 자사 솔루션 MVP 만들기 (5명이서…)
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-19 00:00" pubdate>
+              2021-04-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Story/" class="category-chain-item">Story</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Google-Sprint/">#Google Sprint</a>
+            
+              <a href="/tags/Minimum-Viable-Product/">#Minimum Viable Product</a>
+            
+              <a href="/tags/Agile-%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/">#Agile 개발방법론</a>
+            
+              <a href="/tags/MVP/">#MVP</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/11/aws-dms-from-ora-to-mysql/" target="_self">
+          <img src="/img/aws-dms-2020-11/toon.png" srcset="/img/loading.gif" lazyload alt="AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2020/11/aws-dms-from-ora-to-mysql/" target="_self">
+          AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2020/11/aws-dms-from-ora-to-mysql/" target="_self">
+        <div>
+          AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-11-20 00:00" pubdate>
+              2020-11-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DB/" class="category-chain-item">DB</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AWS-DMS/">#AWS DMS</a>
+            
+              <a href="/tags/DB-migration/">#DB migration</a>
+            
+              <a href="/tags/Database-Migrtation-Service/">#Database Migrtation Service</a>
+            
+              <a href="/tags/SCT/">#SCT</a>
+            
+              <a href="/tags/Schema-Conversion-Tool/">#Schema Conversion Tool</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2017/01/floating-point/" target="_self">
+          <img src="/img/floating-point-2017-01/01.png" srcset="/img/loading.gif" lazyload alt="부동 소수점은 표현상 효율적이지만, 정확하진 않다.">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2017/01/floating-point/" target="_self">
+          부동 소수점은 표현상 효율적이지만, 정확하진 않다.
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2017/01/floating-point/" target="_self">
+        <div>
+          부동 소수점은 표현상 효율적이지만, 정확하진 않다.
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2017-01-19 00:00" pubdate>
+              2017-01-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Dev/" class="category-chain-item">Dev</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%EB%B6%80%EB%8F%99%EC%86%8C%EC%88%98%EC%A0%90/">#부동소수점</a>
+            
+              <a href="/tags/float/">#float</a>
+            
+              <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">#자료구조</a>
+            
+              <a href="/tags/data-type/">#data type</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2016/03/sql-agent-sp-purge-jobhistory/" target="_self">
+          <img src="/img/sp_purge-2016-03/agent03.png" srcset="/img/loading.gif" lazyload alt="SQL Agent 기록 제거에 대한 오해">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2016/03/sql-agent-sp-purge-jobhistory/" target="_self">
+          SQL Agent 기록 제거에 대한 오해
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2016/03/sql-agent-sp-purge-jobhistory/" target="_self">
+        <div>
+          SQL Agent 속성 화면에서 에이전트 기록 제거를 체크했을 때 무슨 일이 발생하는가?
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2016-03-16 00:00" pubdate>
+              2016-03-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DB/" class="category-chain-item">DB</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/SQL-Agent-%EA%B8%B0%EB%A1%9D-%EC%A0%9C%EA%B1%B0/">#SQL Agent 기록 제거</a>
+            
+              <a href="/tags/sp-purge-jobhistory/">#sp_purge_jobhistory</a>
+            
+              <a href="/tags/SSMS/">#SSMS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2015/11/ms-dtc/" target="_self">
+          <img src="/img/ms-dtc-2015-11/32fig07.gif" srcset="/img/loading.gif" lazyload alt="SQL Server 분산 트랜잭션">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2015/11/ms-dtc/" target="_self">
+          SQL Server 분산 트랜잭션
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2015/11/ms-dtc/" target="_self">
+        <div>
+          DTC를 통하여 물리적으로 분리된 SQL Server 간의 분산 트랜잭션을 설정해본 이야기
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2015-11-22 00:00" pubdate>
+              2015-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DB/" class="category-chain-item">DB</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MS-DTC/">#MS-DTC</a>
+            
+              <a href="/tags/Distribution-Transaction/">#Distribution Transaction</a>
+            
+              <a href="/tags/DTC/">#DTC</a>
+            
+              <a href="/tags/%EB%B6%84%EC%82%B0-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/">#분산 트랜잭션</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2015/11/mssql-repeatable-read/" target="_self">
+          <img src="/img/repeatable-read-2015-11/005.png" srcset="/img/loading.gif" lazyload alt="MS SQL Server Repeatable Read Isolation Level">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2015/11/mssql-repeatable-read/" target="_self">
+          MS SQL Server Repeatable Read Isolation Level
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2015/11/mssql-repeatable-read/" target="_self">
+        <div>
+          Repeatable read 격리수준 궁금해서 테스트 해봤습니다.
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2015-11-20 00:00" pubdate>
+              2015-11-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/DB/" class="category-chain-item">DB</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Repeatable-read/">#Repeatable read</a>
+            
+              <a href="/tags/SQL-Server-isolation-level/">#SQL Server isolation level</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2015/09/hello-world/" target="_self">
+          <img src="/img/unuse_KakaoTalk_20240919_174900314.jpg" srcset="/img/loading.gif" lazyload alt="Hello World">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2015/09/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2015/09/hello-world/" target="_self">
+        <div>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2015-09-20 00:00" pubdate>
+              2015-09-20
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/test-posting/">#test posting</a>
+            
+              <a href="/tags/hexo/">#hexo</a>
+            
+              <a href="/tags/Fluid-theme/">#Fluid theme</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2015/09/my-first-post/" target="_self">
+          <img src="/img/avatar_Jayden.jpg" srcset="/img/loading.gif" lazyload alt="연습 삼아 작성해보는 첫번째 포스트">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2015/09/my-first-post/" target="_self">
+          연습 삼아 작성해보는 첫번째 포스트
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2015/09/my-first-post/" target="_self">
+        <div>
+          대제목 - 첫번째 대제목중제목 - 블로그 개설Hello World! rokag3-gb.github.io 블로그를 개설하였습니다. Hugo에서 Hexo로 변경했고, 테마 적용하는 부분부터 모르겠군요. Fluid 테마를 적용하고 처음 생성한 포스트 입니다. 이 하이퍼링크를 누르면 현재 페이지에서 바로 이동합니다. markdown 연습이미지 인용구, 리스트, 체
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2015-09-19 14:40" pubdate>
+              2015-09-19
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/first/">#first</a>
+            
+              <a href="/tags/test-posting/">#test posting</a>
+            
+              <a href="/tags/hexo/">#hexo</a>
+            
+              <a href="/tags/Fluid-theme/">#Fluid theme</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Serĉi</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">ŝlosivorto</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <p> <div id="current_date"> <script> date = new Date(); year = date.getFullYear(); month = date.getMonth() + 1; day = date.getDate(); document.getElementById("current_date").innerHTML = "ⓒ " + year + "."; </script> Jayden Kim All Rights Reserved. </div> <!--<a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>--> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Hexo Fluid</span></a> </p> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blogo funkcias plej bone kun JavaScript ebligita</div>
+  </noscript>
+</body>
+</html>
