@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: GarlicBread Blog
-subtitle: 'GarlicBread Blog'
-description: 'GarlicBread IT Story'
+title: GarlicBread IT Story
+subtitle: 'GarlicBread IT Story'
+description: "마늘빵's IT Story"
 keywords: ['IT', 'Dev', 'Software Developer', 'Cloud', 'DB', '.NET', 'Go', 'Python', 'Backend', 'PM', 'Data Engineer', 'Conference']
 author: 'GarlicBread'
 language: en # 'ko-KR'
