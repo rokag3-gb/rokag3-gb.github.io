@@ -576,7 +576,7 @@ post:
 
   # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
   # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
-  default_index_img:
+  default_index_img: /img/jeju_seongsan.jpg
 
   # 文章标题下方的元信息
   # Meta information below title
@@ -1026,7 +1026,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/jeju_seongsan.jpg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
@@ -1040,7 +1040,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/jeju_seongsan.jpg
   banner_img_height: 40
   banner_mask_alpha: 0.3
   # 友链的成员项
