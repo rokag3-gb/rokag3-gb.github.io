@@ -1,12 +1,12 @@
 ---
-title: about
+title: 🧄마늘빵🍞 소개
 date: 2015-09-02 13:13:09
 layout: about
 index_img: img/20230729_google_io_2023_181.jpg
 tags: [about me, 자기소개, Career Overview, 핵심역량, Core Competencies]
 ---
 
-# Career Overview
+# GarlicBread Career Overview
 
 - 몇가지 개발 스택을 활용하여 웹, 서버, 클라이언트를 개발하고 그 서비스가 비즈니스 목적을 달성하는지에 집중하고 있으며, Cloud Native 기반 애플리케이션을 개발하고자 노력하고 있습니다.
 
