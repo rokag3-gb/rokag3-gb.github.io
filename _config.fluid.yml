@@ -1152,4 +1152,8 @@ static_prefix:
 #---------------------------
 
 sitemap:
-  path: sitemap.xml
+  path:
+    - sitemap.xml
+    - sitemap.txt
+  tags: true
+  categories: true
