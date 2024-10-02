@@ -1,7 +1,7 @@
 ---
-title: Ubucon Korea 2023 컨퍼런스 발표
+title: '닷넷과 함께하는 경량 컨테이너 - 부제: 얼마까지 알아보셨어요?'
 date: 2023-09-09
-description: 닷넷과 함께하는 경량 컨테이너
+description: Ubucon Korea 2023 컨퍼런스 발표
 categories: [Story]
 tags: [.NET, .NET 7, Ubuntu, Ubuntu Korea, Ubucon Korea 2023, Alpine, Chiseled Ubuntu, Distroless]
 index_img: img/ubucon-korea-2023-09/cover.png

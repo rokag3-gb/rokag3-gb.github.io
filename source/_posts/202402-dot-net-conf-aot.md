@@ -1,7 +1,7 @@
 ---
-title: '.NET Conf 2024 x Seoul 컨퍼런스 발표'
+title: 'Native AOT와 Chiselled Ubuntu로 쉽게 빠르고 가볍게 배포하자'
 date: 2024-02-21
-description: Native AOT와 Chiselled Ubuntu로 쉽게 빠르고 가볍게 배포하자
+description: '.NET Conf 2024 x Seoul 컨퍼런스 발표'
 categories: [Story]
 tags: [.NET, .NET 8, Ubuntu, Chiseled Ubuntu]
 index_img: img/net-conf-2024-02/net-conf-2024-cover.png

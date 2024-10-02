@@ -1,9 +1,9 @@
 ---
-title: SQL PASS Korea 세미나 발표 - Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현
+title: 'Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현'
 date: 2023-03-17
 description: SQL PASS Korea 세미나 발표
 categories: [DB]
-tags: [Azure SQL, Managed Instance, Geo Replica, Failover, Failover Group, PASS Korea]
+tags: [Azure SQL, Azure SQL single database, SQL Managed Instance, Managed Instance, Geo Replica, Failover, Failover Group, FOG, PASS Korea, readonly listener]
 index_img: img/sql-pass-korea-seminar-2023-03/KakaoTalk_20230917_205807945_11.jpg
 ---
 
