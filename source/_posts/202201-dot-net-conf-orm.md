@@ -1,7 +1,7 @@
 ---
-title: '.NET Conf 2022 x Seoul 온라인 컨퍼런스 발표'
+title: 'ORM의 특성을 비교해보자'
 date: 2022-01-21
-description: ORM의 특성을 비교해보자
+description: '.NET Conf 2022 x Seoul 온라인 컨퍼런스 발표'
 categories: [Dev]
 tags: [ORM, Object-Relational Mapping, Dapper, Entity Framework, ADO.NET]
 index_img: img/dot-net-conf-2022-orm-2022-01/cover.png
