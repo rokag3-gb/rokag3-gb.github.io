@@ -33,4 +33,12 @@ index_img: img/dot-net-conf-2022-orm-2022-01/cover.png
 
 # Youtube 발표 영상
 
-[Youtube - .NET Conf 2022 x Seoul 발표 자료 - ORM의 특성을 비교해보자](https://youtu.be/42fRHSOQwZ0)
+<!-- {% video <iframe width="560" height="315" src="https://www.youtube.com/embed/42fRHSOQwZ0" title=".Net Conf 2022 x Seoul 발표 자료 - ORM의 특성을 비교해보자" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> %} -->
+
+{% raw %}
+<div class="video-embed">
+  <iframe width="100%" height="480" src="https://www.youtube.com/embed/42fRHSOQwZ0" title="ORM의 특성을 비교해보자 - .NET Conf 2022 x Seoul 발표" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endraw %}
+
+[Youtube - ORM의 특성을 비교해보자 - .NET Conf 2022 x Seoul 발표](https://youtu.be/42fRHSOQwZ0)

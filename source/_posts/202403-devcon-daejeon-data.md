@@ -61,9 +61,19 @@ Grafana에서는 DBMS에 쿼리하여 JSON 데이터를 시각화하도록 대�
 
 # 발표 자료
 
+발표 자료
 [스타트업에서 데이터를 허투로 버리지 않고 소중히 모시는 방법 - 2024.03.20 김정우.pdf](https://drive.google.com/file/d/1crx4cqKEC2C3ZcXd9NB5TmYA1Ei1JA4B/view?usp=sharing)
 
+발표 영상
+{% raw %}
+<div class="video-embed" style="text-align: center;">
+  <iframe width="100%" height="480" src="https://www.youtube.com/embed/2Ezz2saXGfY" title="스타트업에서 데이터를 허투로 버리지 않고 소중히 모시는 방법 - 데브콘 대전 삼월엔 데이터 컨퍼런스" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endraw %}
+
 [Youtube 발표 영상 - 스타트업에서 데이터를 허투로 버리지 않고 소중히 모시는 방법 - 데브콘 대전 "삼월엔 데이터" 컨퍼런스](https://youtu.be/2Ezz2saXGfY)
+
+<br>
 
 <!--![성욱님은 Proxy SQL 발표 중](img/202403-devcon-dj/KakaoTalk-20241002-093250512-(13).jpg)-->
 

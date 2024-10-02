@@ -1157,3 +1157,10 @@ sitemap:
     - sitemap.txt
   tags: true
   categories: true
+
+#---------------------------
+#plugins
+#---------------------------
+
+plugins:
+  - hexo-tag-video

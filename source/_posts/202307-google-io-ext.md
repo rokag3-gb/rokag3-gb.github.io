@@ -35,6 +35,18 @@ index_img: img/google-io-ext-2023-07/cover.png
 
 # 관련 영상
 
+{% raw %}
+<div class="video-embed">
+  <iframe width="100%" height="480" src="https://www.youtube.com/embed/j7JD2FX0IV4" title="Google I/O Extended 2023 Seoul 컨퍼런스 발표 현장 클립 영상" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endraw %}
+
 [Youtube - Google I/O Extended 2023 Seoul 컨퍼런스 발표 현장 클립 영상](https://youtu.be/j7JD2FX0IV4)
+
+{% raw %}
+<div class="video-embed-shorts" style="text-align: center;">
+  <iframe width="300" height="532" src="https://www.youtube.com/embed/2-3ZPI2WYPU" title="Google BigQuery 일타강사" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{% endraw %}
 
 [Youtube shorts - Google BigQuery 일타강사](https://youtube.com/shorts/2-3ZPI2WYPU?si=0G76wwIixKGc2u3c)
