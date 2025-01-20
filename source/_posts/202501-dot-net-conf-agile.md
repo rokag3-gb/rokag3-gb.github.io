@@ -93,3 +93,5 @@ Azure DevOps Repository(Git) 기반으로 commit message를 통한 Azure DevOps 
 [Azure DevOps Services](https://azure.microsoft.com/en-us/products/devops)
 [Manifesto for Agile Software Development](https://agilemanifesto.org)
 [Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html)
+
+`eof`
