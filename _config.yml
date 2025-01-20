@@ -119,3 +119,6 @@ index:
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
     text: 'GarlicBread IT Story'
+
+# SEO Related
+google_site_verification: google-site-verification=LU2IBjrPqopSjIM3XNBGdi1KMjf_eKiRg-bDs8pr9do
