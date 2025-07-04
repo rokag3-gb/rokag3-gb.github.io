@@ -1,10 +1,11 @@
 ---
 title: 'Google Cloud를 최대한 활용하여 Data Engineering하기'
 date: 2023-07-29
-description: 'Google I/O Extended 2023 Seoul 컨퍼런스 발표'
+description: 'Google Cloud의 데이터 플랫폼 생태계를 활용한 데이터 엔지니어링 방법을 다룹니다. BigQuery, BigQuery Omni, Data Transfer Services, Dataflow의 실제 활용 사례를 Google I/O Extended 2023 Seoul에서 발표한 내용을 통해 알아봅니다.'
 categories: [Story]
-tags: [Google, Google Cloud, Google I/O Extended 2023 Seoul, Data Engineering, Dataflow, BigQuery, Data Transfer Services, DTS, BigQuery Omni, Google I/O Extended 2023, Google I/O Extended, Google I/O]
+tags: [Google, Google Cloud, Google I/O Extended 2023 Seoul, Data Engineering, Dataflow, BigQuery, Data Transfer Services, DTS, BigQuery Omni, Google I/O Extended 2023, Google I/O Extended, Google I/O, 데이터엔지니어링, 클라우드]
 index_img: img/google-io-ext-2023-07/cover.png
+keywords: [Google Cloud, Data Engineering, BigQuery, Dataflow, 데이터엔지니어링, 클라우드]
 ---
 
 ![](img/google-io-ext-2023-07/cover.png)

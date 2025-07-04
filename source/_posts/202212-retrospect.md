@@ -1,10 +1,11 @@
 ---
 title: 생동감 있는 개발 조직에서 격변의 시간을 보낸 틀딱 개발자의 2022년 회고
 date: 2022-12-30
-description: 생동감 있는 개발 조직에서 격변의 시간을 보낸 틀딱 개발자의 2022년 회고
+description: '2022년 개발 조직 리더로서의 경험과 성장 과정을 다룹니다. 신규 서비스 개발(IAM, SalesOps, Colson), 팀 빌딩, 기술 스택 도입 등의 실제 경험을 통해 개발 조직 운영의 노하우를 공유합니다.'
 categories: [Story]
-tags: [Retrospect, 회고, 틀딱 개발자]
+tags: [Retrospect, 회고, 틀딱 개발자, 개발조직, 팀빌딩, 프로젝트관리, Azure, .NET, React, KeyCloak, 챗봇, IAM, 개발문화]
 index_img: img/retrospect-2022-12/20221021_104901.jpg
+keywords: [회고, 개발조직, 팀빌딩, 프로젝트관리, Azure, 개발문화]
 ---
 
 # 도입

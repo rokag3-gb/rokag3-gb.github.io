@@ -1,10 +1,11 @@
 ---
 title: AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기
 date: 2020-11-20
-description: AWS DMS를 활용하여 Oracle에서 MySQL로 DB 마이그레이션 하기
+description: 'AWS Database Migration Service(DMS)와 Schema Conversion Tool(SCT)을 활용한 Oracle에서 MySQL로의 데이터베이스 마이그레이션 가이드입니다. 실제 프로젝트 경험을 바탕으로 한 상세한 마이그레이션 과정과 문제 해결 방법을 다룹니다.'
 categories: [DB]
-tags: [AWS DMS, Database Migrtation Service, SCT, Schema Conversion Tool, DB migration]
+tags: [AWS DMS, AWS, Database Migration Service, SCT, Schema Conversion Tool, DB migration, Oracle, MySQL, 클라우드, 마이그레이션, 데이터베이스, Amazon]
 index_img: img/aws-dms-2020-11/toon.png
+keywords: [AWS DMS, Oracle, MySQL, 마이그레이션, 데이터베이스, 클라우드, Amazon]
 ---
 
 ## 시작하기 전에

@@ -1,8 +1,11 @@
 ---
 title: 연습 삼아 작성해보는 첫번째 포스트
 date: 2015-09-19 14:40:55
-tags: [first, test posting, hexo, Fluid theme]
+description: 'Hexo 블로그 첫 포스트 작성 예제입니다. 마크다운 문법, 코드 하이라이팅, 테이블, 이미지 삽입 등 다양한 마크다운 기능을 연습해봅니다.'
+categories: [Dev]
+tags: [first, test posting, hexo, Fluid theme, 마크다운, 블로그, 예제, C#, SQL, 코드하이라이팅]
 index_img: img/avatar_Jayden.jpg
+keywords: [Hexo, 마크다운, 블로그, 예제, C#, SQL, 코드하이라이팅]
 ---
 
 # 대제목 - 첫번째 대제목

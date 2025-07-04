@@ -1,10 +1,11 @@
 ---
 title: SQL Agent 기록 제거에 대한 오해
 date: 2016-03-16
-description: SQL Agent 속성 화면에서 에이전트 기록 제거를 체크했을 때 무슨 일이 발생하는가?
+description: 'SQL Server Agent의 기록 제거 기능에 대한 오해와 실제 동작 방식을 설명합니다. sp_purge_jobhistory 저장 프로시저의 실제 동작과 자동 기록 정리 방법을 알아봅니다.'
 categories: [DB]
-tags: [SQL Agent 기록 제거, sp_purge_jobhistory, SSMS]
+tags: [SQL Agent 기록 제거, sp_purge_jobhistory, SSMS, SQL Server, Microsoft, 데이터베이스, 유지보수, 기록관리]
 index_img: img/sp_purge-2016-03/agent03.png
+keywords: [SQL Agent, 기록 제거, sp_purge_jobhistory, SSMS, SQL Server, 유지보수]
 ---
 
 ## 에이전트 기록 제거

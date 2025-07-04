@@ -1,10 +1,11 @@
 ---
 title: 스프린트, 직접 해본 이야기
 date: 2021-04-19
-description: 2달 만에 자사 솔루션 MVP 만들기 (5명이서…)
+description: '스프린트 경험 회고, 애자일 개발, 팀 협업, 스프린트 회고 문화와 실제 사례를 공유합니다. 2달 만에 자사 솔루션 MVP를 5명의 팀으로 개발한 실제 경험담을 통해 애자일 개발 방법론의 적용 사례를 알아봅니다.'
 categories: [Story]
-tags: [Google Sprint, Minimum Viable Product, MVP, Agile 개발방법론]
+tags: [Google Sprint, Minimum Viable Product, MVP, Agile 개발방법론, 스프린트, 애자일, 회고, 팀빌딩, 협업, 개발문화, 프로젝트관리, Azure DevOps]
 index_img: img/agile-exp-2021-04/sprint.png
+keywords: [스프린트, 애자일, MVP, 팀빌딩, 협업, 프로젝트관리, Azure DevOps]
 ---
 
 ## 2달 만에 자사 솔루션 MVP 만들기 (5명이서…)

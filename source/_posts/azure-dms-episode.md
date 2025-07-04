@@ -1,10 +1,11 @@
 ---
 title: Azure DMS를 활용한 DB migration 에피소드
 date: 2021-04-21
-description: Azure DMS를 활용한 DB migration 에피소드
+description: 'Azure Database Migration Service(DMS)를 활용한 SQL Server에서 Azure SQL Managed Instance로의 데이터베이스 마이그레이션 경험담입니다. 실제 프로젝트에서 발생한 문제들과 해결 방법, 마이그레이션 과정을 상세히 다룹니다.'
 categories: [DB]
-tags: [Azure DMS, Database Migration Service, DB migration]
+tags: [Azure DMS, Azure, Database Migration Service, DB migration, SQL Server, Azure SQL Managed Instance, Microsoft, 클라우드, 마이그레이션, 데이터베이스]
 index_img: img/azure-dms-2021-04/Azure_DMS.png
+keywords: [Azure DMS, SQL Server, Azure SQL, 마이그레이션, 데이터베이스, 클라우드, Microsoft]
 ---
 
 ![](img/azure-dms-2021-04/Azure_DMS.png)

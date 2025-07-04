@@ -1,10 +1,11 @@
 ---
-title: 'Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현'
+title: 'Azure SQL database의 Geo Replica와 Managed Instance의 Failover group을 통한 CQRS 구현'
 date: 2023-03-17
-description: SQL PASS Korea 세미나 발표
+description: 'Azure SQL Database의 Geo Replica와 Managed Instance의 Failover Group을 활용한 CQRS(Command Query Responsibility Segregation) 패턴 구현 방법을 다룹니다. SQL PASS Korea 세미나에서 발표한 내용을 통해 실제 아키텍처 구성과 성능 최적화 방법을 알아봅니다.'
 categories: [DB]
-tags: [Azure SQL, Azure SQL single database, SQL Managed Instance, Managed Instance, Geo Replica, Failover, Failover Group, FOG, PASS Korea, readonly listener]
+tags: [Azure SQL, Azure SQL Database, SQL Managed Instance, Geo Replica, Failover, Failover Group, FOG, CQRS, PASS Korea, readonly listener, Microsoft, 클라우드, 데이터베이스, 고가용성]
 index_img: img/sql-pass-korea-seminar-2023-03/KakaoTalk_20230917_205807945_11.jpg
+keywords: [Azure SQL, Geo Replica, Failover Group, CQRS, 고가용성, 데이터베이스, 클라우드, Microsoft]
 ---
 
 # 도입

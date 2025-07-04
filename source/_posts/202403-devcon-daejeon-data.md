@@ -1,10 +1,11 @@
 ---
 title: '스타트업에서 데이터를 허투로 버리지 않고 소중히 모시는 방법'
 date: 2024-03-23
-description: '데브콘 대전 "삼월엔 데이터" 컨퍼런스 발표'
+description: '스타트업에서 데이터 관측성(Observability)을 구축한 실제 경험담입니다. Fluentd, Azure Blob, Grafana를 활용한 로그 수집, 분석, 시각화 시스템 구축 사례를 데브콘 대전에서 발표한 내용을 통해 알아봅니다.'
 categories: [Story]
-tags: [.NET, .NET 8, Ubuntu, Chiseled Ubuntu, 데브콘, 데브콘 대전, Devcon, Devcon Daejeon]
+tags: [.NET, .NET 8, Ubuntu, Chiseled Ubuntu, 데브콘, 데브콘 대전, Devcon, Devcon Daejeon, 데이터, 관측성, Observability, Fluentd, Azure Blob, Grafana, 로그수집, 시각화]
 index_img: img/202403-devcon-dj/event-cover.png
+keywords: [데이터, 관측성, Observability, Fluentd, Azure Blob, Grafana, 로그수집, 시각화, 스타트업]
 ---
 
 # 데브콘 대전 : 삼월엔 데이터

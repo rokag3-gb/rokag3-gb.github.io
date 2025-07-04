@@ -1,10 +1,11 @@
 ---
 title: 'ORM의 특성을 비교해보자'
 date: 2022-01-21
-description: '.NET Conf 2022 x Seoul 온라인 컨퍼런스 발표'
+description: '.NET에서 사용하는 ORM(Object-Relational Mapping) 도구들의 성능과 특성을 비교 분석합니다. Entity Framework, Dapper, ADO.NET의 장단점과 실제 성능 테스트 결과를 .NET Conf 2022 x Seoul 발표 내용을 통해 알아봅니다.'
 categories: [Dev]
-tags: [ORM, Object-Relational Mapping, Dapper, Entity Framework, ADO.NET]
+tags: [ORM, Object-Relational Mapping, Dapper, Entity Framework, ADO.NET, .NET, 성능비교, 데이터베이스, Microsoft, 개발도구]
 index_img: img/dot-net-conf-2022-orm-2022-01/cover.png
+keywords: [ORM, Dapper, Entity Framework, ADO.NET, .NET, 성능비교, 데이터베이스]
 ---
 
 # 온라인 컨퍼런스

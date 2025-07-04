@@ -1,10 +1,11 @@
 ---
 title: SQL Server 분산 트랜잭션
 date: 2015-11-22
-description: DTC를 통하여 물리적으로 분리된 SQL Server 간의 분산 트랜잭션을 설정해본 이야기
+description: 'MS DTC(Microsoft Distributed Transaction Coordinator)의 개념, 분산 트랜잭션 처리, 장애 사례와 해결 방법을 실제 경험을 바탕으로 설명합니다. 물리적으로 분리된 SQL Server 간의 트랜잭션 설정 방법을 다룹니다.'
 categories: [DB]
-tags: [MS-DTC, Distribution Transaction, DTC, 분산 트랜잭션]
+tags: [MS-DTC, Distribution Transaction, DTC, 분산 트랜잭션, SQL Server, Microsoft, 데이터베이스, 트랜잭션, 장애처리]
 index_img: img/ms-dtc-2015-11/32fig07.gif
+keywords: [MS DTC, 분산 트랜잭션, SQL Server, 장애처리, 데이터베이스, Microsoft]
 ---
 
 ## DTC 개념

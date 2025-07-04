@@ -1,10 +1,11 @@
 ---
 title: '닷넷과 함께하는 경량 컨테이너 - 부제: 얼마까지 알아보셨어요?'
 date: 2023-09-09
-description: Ubucon Korea 2023 컨퍼런스 발표
+description: '.NET 애플리케이션을 위한 경량 컨테이너 최적화 방법을 다룹니다. Alpine Linux, Chiseled Ubuntu, Distroless 이미지를 활용한 Docker 컨테이너 크기 최적화와 성능 향상 방법을 Ubucon Korea 2023에서 발표한 내용을 통해 알아봅니다.'
 categories: [Story]
-tags: [.NET, .NET 7, Ubuntu, Ubuntu Korea, Ubucon Korea 2023, Alpine, Chiseled Ubuntu, Distroless]
+tags: [.NET, .NET 7, Ubuntu, Ubuntu Korea, Ubucon Korea 2023, Alpine, Chiseled Ubuntu, Distroless, 컨테이너, Docker, 경량화, 최적화, Microsoft]
 index_img: img/ubucon-korea-2023-09/cover.png
+keywords: [.NET, 컨테이너, Docker, 경량화, 최적화, Alpine, Chiseled Ubuntu, Distroless]
 ---
 
 ![](img/ubucon-korea-2023-09/cover.png)

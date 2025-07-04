@@ -1,8 +1,11 @@
 ---
 title: Hello World
 date: 2015-09-20
-tags: [test posting, hexo, Fluid theme]
+description: 'Hexo 블로그 첫 포스트 예제입니다. 마크다운 문법, Hexo 사용법, 블로그 시작 방법을 소개합니다.'
+categories: [Dev]
+tags: [Hexo, 블로그, 마크다운, 첫 포스트, 예제, 시작하기, Fluid theme, test posting]
 index_img: img/unuse_KakaoTalk_20240919_174900314.jpg
+keywords: [Hexo, 블로그, 마크다운, 시작하기, 예제]
 sitemap: false
 ---
 

@@ -1,10 +1,11 @@
 ---
 title: MS SQL Server Repeatable Read Isolation Level
 date: 2015-11-20
-description: Repeatable read 격리수준 궁금해서 테스트 해봤습니다.
+description: 'SQL Server의 Repeatable Read 격리 수준에 대한 실제 테스트와 분석입니다. 트랜잭션 격리 수준의 개념, 잠금 메커니즘, 동시성 제어 방법을 실제 쿼리 예제를 통해 설명합니다.'
 categories: [DB]
-tags: [SQL Server isolation level, Repeatable read]
+tags: [SQL Server, isolation level, Repeatable read, 트랜잭션, 격리수준, 잠금, 동시성, Microsoft, 데이터베이스]
 index_img: img/repeatable-read-2015-11/005.png
+keywords: [SQL Server, Repeatable Read, 격리수준, 트랜잭션, 잠금, 동시성, 데이터베이스]
 ---
 
 ## Repeatable read isolation lavel
