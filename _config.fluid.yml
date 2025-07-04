@@ -909,9 +909,9 @@ cusdis:
 # See: https://giscus.app/
 giscus:
   repo: rokag3-gb/rokag3-gb.github.io
-  repo-id: R_kgDOGYt_ew
+  repo-id: "R_kgDOGYt_ew"
   category: Announcements
-  category-id: DIC_kwDOGYt_e84CsdRI
+  category-id: "DIC_kwDOGYt_e84CsdRI"
   theme-light: light
   theme-dark: dark
   mapping: pathname
