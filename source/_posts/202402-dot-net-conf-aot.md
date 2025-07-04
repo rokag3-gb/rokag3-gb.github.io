@@ -1,10 +1,11 @@
 ---
 title: 'Native AOT와 Chiselled Ubuntu로 쉽게 빠르고 가볍게 배포하자'
 date: 2024-02-21
-description: '.NET Conf 2024 x Seoul 컨퍼런스 발표'
+description: '.NET 8 Native AOT와 Chiseled Ubuntu를 활용한 컨테이너 최적화 방법을 다룹니다. .NET Conf 2024 x Seoul에서 발표한 내용을 통해 빠르고 가벼운 배포 전략을 알아봅니다.'
 categories: [Story]
-tags: [.NET, .NET 8, Ubuntu, Chiseled Ubuntu]
+tags: [.NET, .NET 8, Native AOT, Ubuntu, Chiseled Ubuntu, 컨테이너, Docker, 성능최적화, 배포, Microsoft, 개발도구]
 index_img: img/net-conf-2024-02/net-conf-2024-cover.png
+keywords: [.NET 8, Native AOT, Chiseled Ubuntu, 컨테이너, Docker, 성능최적화, 배포]
 ---
 
 # 행사 개요

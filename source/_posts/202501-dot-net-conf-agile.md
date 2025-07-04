@@ -1,10 +1,11 @@
 ---
 title: 'Azure DevOps와 .NET을 활용하여 개발 조직의 생산성을 증가시킨 이야기'
 date: 2025-01-16
-description: '.NET Conf 2025 x Seoul 컨퍼런스 발표'
+description: 'Azure DevOps와 .NET을 활용한 Agile 개발 프로세스 구현 방법과 개발 조직 생산성 향상 사례를 다룹니다. .NET Conf 2025 x Seoul 컨퍼런스 발표 내용을 통해 실제 적용 경험을 공유합니다.'
 categories: [Story]
-tags: [Agile, 개발문화, 협업문화, 코드리뷰, 스프린트, PM]
+tags: [Azure DevOps, .NET, Agile, 개발문화, 협업문화, 코드리뷰, 스프린트, PM, CI/CD, Azure, Microsoft, 개발도구, 프로젝트관리]
 index_img: img/202501-dotnet-conf/dotnet-conf-cover.png
+keywords: [Azure DevOps, .NET, Agile, 개발생산성, CI/CD, Azure, Microsoft, 개발도구]
 ---
 
 # .NET Conf 2025 x Seoul 컨퍼런스

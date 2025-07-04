@@ -1,10 +1,11 @@
 ---
 title: Azure SQL 의 data file size 와 IOPS 의 불편한 진실
 date: 2021-12-20
-description: Azure SQL 의 data file size 와 IOPS 의 불편한 진실
+description: 'Azure SQL Managed Instance에서 데이터 파일 크기와 IOPS의 관계를 다룹니다. 실제 운영 환경에서 발생한 성능 문제와 해결 과정을 통해 Azure SQL의 스토리지 최적화 방법을 알아봅니다.'
 categories: [DB]
-tags: [Azure SQL Managed Instance, SQL Server]
+tags: [Azure SQL, Azure SQL Managed Instance, SQL Server, IOPS, 성능최적화, 스토리지, Azure, Microsoft, 데이터베이스, 클라우드]
 index_img: img/azure-db-file-iops-2021-11/Azure_SQL_PaaS.png
+keywords: [Azure SQL, IOPS, 성능최적화, 스토리지, 데이터베이스, 클라우드]
 ---
 
 ![](img/azure-db-file-iops-2021-11/library.chungnam.png)
