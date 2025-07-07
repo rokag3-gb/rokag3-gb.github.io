@@ -910,8 +910,8 @@ cusdis:
 giscus:
   repo: rokag3-gb/rokag3-gb.github.io
   repo-id: 428572539
-  category: Announcements
-  category-id: 45208648
+  category: "Announcements"
+  category-id: "DIC_kwDOGYt_e84CsdRI"
   theme-light: light
   theme-dark: dark
   mapping: pathname
