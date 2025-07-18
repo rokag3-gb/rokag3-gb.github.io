@@ -4,7 +4,7 @@ date: 2025-07-18
 description: '.NET 8 Native AOT 컴파일로 빌드한 애플리케이션을 WSL2 Ubuntu에서 테스트하는 완전 가이드. 크로스 플랫폼 호환성, 성능 최적화, RHEL 배포 환경까지 실무 적용 방법을 상세히 다룹니다.'
 categories: [Dev]
 tags: [.NET, Native AOT, WSL2, Ubuntu, Linux, 크로스플랫폼, 성능최적화, 배포, RHEL, Docker, 컨테이너, 서버리스, JIT, 컴파일, 빌드, 개발도구, Microsoft]
-index_img: img/202501-dotnet-conf/dotnet-conf-cover.png
+index_img: img/202507-1650/dotnet-aot-wsl2-rhel.png
 keywords: [.NET Native AOT, WSL2 테스트, 크로스 플랫폼 배포, .NET 8 성능 최적화, Linux .NET 배포, RHEL 호환성, 컨테이너 배포, 서버리스 .NET]
 ---
 
@@ -112,9 +112,9 @@ ldd bin/Debug/net8.0/AirBridge
 
 ### 2.2 Native AOT 빌드 전제 조건 설치
 
-Native AOT 빌드에는 추가적인 도구들이 필요합니다:
+Native AOT 빌드에는 추가적인 도구들이 필요합니다. Ubuntu와 RHEL 환경에서 각각 다른 패키지 관리자를 사용합니다:
 
-_(아래 내용들은 각 클라이언트 PC에 따라 상이할 수 있습니다.)_
+#### Ubuntu 환경 (apt 사용)
 
 ```bash
 # C/C++ 컴파일러 및 빌드 도구 설치
@@ -128,6 +128,36 @@ sudo apt install -y zlib1g-dev
 dotnet nuget locals all --clear
 dotnet restore
 ```
+
+#### RHEL/CentOS 환경 (dnf/yum 사용)
+
+```bash
+# EPEL 저장소 활성화 (RHEL의 경우)
+sudo subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+# 또는 CentOS의 경우
+sudo dnf install -y epel-release
+
+# C/C++ 컴파일러 및 빌드 도구 설치
+sudo dnf groupinstall -y "Development Tools"
+sudo dnf install -y clang
+
+# zlib 라이브러리 개발 패키지 설치
+sudo dnf install -y zlib-devel
+
+# NuGet 캐시 정리
+dotnet nuget locals all --clear
+dotnet restore
+```
+
+#### 주요 차이점
+
+| 항목 | Ubuntu (apt) | RHEL/CentOS (dnf/yum) |
+|------|-------------|----------------------|
+| 패키지 관리자 | `apt` | `dnf` (RHEL 8+) / `yum` (이전 버전) |
+| 개발 도구 | `build-essential` | `Development Tools` 그룹 |
+| C/C++ 컴파일러 | `clang` | `clang` |
+| zlib 개발 패키지 | `zlib1g-dev` | `zlib-devel` |
+| 저장소 활성화 | 기본 활성화 | EPEL 저장소 추가 필요 |
 
 ## 3단계: Native AOT 빌드 및 테스트
 
