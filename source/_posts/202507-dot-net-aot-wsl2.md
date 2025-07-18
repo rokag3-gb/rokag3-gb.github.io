@@ -1,11 +1,11 @@
 ---
-title: '.NET Native AOT로 빌드한 애플리케이션을 WSL2에서 테스트하기'
+title: '.NET Native AOT 빌드 및 WSL2 테스트 가이드 - 크로스 플랫폼 배포 최적화'
 date: 2025-07-18
-description: 'Azure DevOps와 .NET을 활용한 Agile 개발 프로세스 구현 방법과 개발 조직 생산성 향상 사례를 다룹니다. .NET Conf 2025 x Seoul 컨퍼런스 발표 내용을 통해 실제 적용 경험을 공유합니다.'
-categories: [Story]
-tags: [Azure DevOps, .NET, Agile, 개발문화, 협업문화, 코드리뷰, 스프린트, PM, CI/CD, Azure, Microsoft, 개발도구, 프로젝트관리]
+description: '.NET 8 Native AOT 컴파일로 빌드한 애플리케이션을 WSL2 Ubuntu에서 테스트하는 완전 가이드. 크로스 플랫폼 호환성, 성능 최적화, RHEL 배포 환경까지 실무 적용 방법을 상세히 다룹니다.'
+categories: [Dev]
+tags: [.NET, Native AOT, WSL2, Ubuntu, Linux, 크로스플랫폼, 성능최적화, 배포, RHEL, Docker, 컨테이너, 서버리스, JIT, 컴파일, 빌드, 개발도구, Microsoft]
 index_img: img/202501-dotnet-conf/dotnet-conf-cover.png
-keywords: [Azure DevOps, .NET, Agile, 개발생산성, CI/CD, Azure, Microsoft, 개발도구]
+keywords: [.NET Native AOT, WSL2 테스트, 크로스 플랫폼 배포, .NET 8 성능 최적화, Linux .NET 배포, RHEL 호환성, 컨테이너 배포, 서버리스 .NET]
 ---
 
 # .NET Native AOT로 빌드한 애플리케이션을 WSL2에서 테스트하기
