@@ -8,7 +8,7 @@ index_img: img/202507-1650/dotnet-aot-wsl2-rhel.png
 keywords: [.NET Native AOT, WSL2 테스트, 크로스 플랫폼 배포, .NET 8 성능 최적화, Linux .NET 배포, RHEL 호환성, 컨테이너 배포, 서버리스 .NET]
 ---
 
-# .NET Native AOT로 빌드한 애플리케이션을 WSL2에서 테스트하기
+# .NET Native AOT 빌드 및 WSL2 테스트 가이드 - 크로스 플랫폼 배포 최적화
 
 ## 개요
 
