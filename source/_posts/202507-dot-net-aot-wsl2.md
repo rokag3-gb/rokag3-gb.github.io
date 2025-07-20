@@ -102,7 +102,9 @@ ldd bin/Debug/net8.0/AirBridge
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PublishAot>true</PublishAot>
+    <!--<RuntimeIdentifier>win-x64</RuntimeIdentifier> -->
     <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+    <!--<RuntimeIdentifier>osx-x64</RuntimeIdentifier>-->
     <OptimizationPreference>Size</OptimizationPreference>
     <IlcOptimizationPreference>Size</IlcOptimizationPreference>
   </PropertyGroup>
