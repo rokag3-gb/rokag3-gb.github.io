@@ -67,6 +67,8 @@ dotnet-dump analyze <dump_file>
 - .NET 관리 힙 자체는 크지 않으나, SFTP 라이브러리 내부 버퍼/스트림과 Serilog 문자열/템플릿 캐시, 네이티브 메모리(스레드 스택, 핸들 등)가 늘어난 것으로 보입니다.
 - GC는 늘어난 커밋 메모리를 OS에 바로 반환하지 않으므로, 작업 관리자 수치가 큰 상태로 유지될 수 있습니다.
 
+<br>
+
 ---
 
 ## 코드 개선 제안
@@ -91,6 +93,7 @@ dotnet-dump analyze <dump_file>
 
 - **`Task.Run` 남용 제거**: SFTP I/O 호출을 불필요하게 쓰레드풀로 감싸지 않습니다.
 
+<br>
 
 ### 코드 예시 (제안)
 
@@ -210,6 +213,8 @@ _logger.LogDebug("_fi.Name = {Name}, _fi.FullPath = {Path}", _fi.Name, _fi.FullP
 
 측정 결과는 장시간 대기 시 불필요한 버퍼/캐시 잔류가 줄어들어 관리 힙 및 커밋 메모리의 상한이 안정화되는 것을 기대합니다. 실제 수치는 운영 환경에서 장시간 관찰 후 추가 개선할 예정입니다.
 
+<br>
+
 ---
 
 ## 배운 점
@@ -230,4 +235,18 @@ dotnet-dump analyze <dump_file>
 
 궁극적으로 본 개선들은 “누수”를 해결한다기보다, 장시간 대기형 서비스가 정상적으로 사용하는 캐시/버퍼/네이티브 리소스의 상한을 낮추고, 필요 이상의 생존 시간을 줄이는 데 목적이 있습니다. 운영 환경 관찰을 통해 지속적으로 조정해보려 합니다.
 
+### References
+
+- Dump collection and analysis utility (dotnet-dump)<br>
+https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-dump
+
+- .NET debugger extensions<br>
+https://learn.microsoft.com/en-us/dotnet/core/diagnostics/debugger-extensions
+
+- Debug Linux dumps<br>
+https://learn.microsoft.com/en-us/dotnet/core/diagnostics/debug-linux-dumps
+
+<br>
+
+---
 `eod`
