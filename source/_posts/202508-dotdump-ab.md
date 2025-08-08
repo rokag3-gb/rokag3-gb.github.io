@@ -1,5 +1,5 @@
 ---
-title: '하룻밤 새 2MB → 19MB? dotnet-dump로 본 .NET 장기 실행 서비스 메모리 최적화'
+title: '내가 개발한 서버 프로세스 메모리가 하룻밤 새 2MB → 19MB? 장기 실행 서비스의 메모리 최적화 전략'
 date: 2025-08-08
 description: 'dotnet-dump로 .NET 장기 실행 서비스의 메모리 증가(2MB→19MB)를 분석하고 GC/LOH/버퍼/스레드 스택 원인과 SFTP·Serilog 최적화까지 실전 대응 전략을 정리합니다.'
 categories: [Dev]
@@ -8,7 +8,7 @@ index_img: img/202508-dotdump-ab/AB_AA.png
 keywords: ['.NET memory optimization', 'dotnet-dump analyze', 'dumpheap -stat', 'eeheap -gc', 'clrstack', 'long-running service memory', 'LOH threshold 85KB', 'SFTP buffer size', 'Serilog buffered false', '메모리 누수 진단', '.NET 장기 실행 서비스 최적화']
 ---
 
-## 내가 개발한 서버 앱이 하룻밤 새 2MB → 19MB? dotnet-dump로 파헤친 .NET 장기 실행 서비스의 메모리 최적화 전략
+# 내가 개발한 서버 프로세스 메모리가 하룻밤 새 2MB → 19MB? dotnet-dump로 파헤친 .NET 장기 실행 서비스의 메모리 최적화 전략
 
 최근에 서버 개발을 하고 있는데, 가칭 AB 서버 앱은 앞으로 특정 호스트에서 절대 죽지 않고 계속 떠있어야 합니다. 그래서 만일의 경우를 대비하여 AB.Awaker를 개발하여 NamedPipe 방식 (IPC 기반)으로 ping/pong을 주고 받아 AB 서버 프로세스가 불능 상태이거나 프로세스가 죽었다면 AB 서버를 재기동 시키도록 개발했습니다.
 
@@ -65,8 +65,10 @@ dotnet-dump analyze <dump_file>
 - .NET 관리 힙 자체는 크지 않으나, SFTP 라이브러리 내부 버퍼/스트림과 Serilog 문자열/템플릿 캐시, 네이티브 메모리(스레드 스택, 핸들 등)가 늘어난 것으로 보입니다.
 - GC는 늘어난 커밋 메모리를 OS에 바로 반환하지 않으므로, 작업 관리자 수치가 큰 상태로 유지될 수 있습니다.
 
+---
 
-### 개선 지점 (코드 제안)
+# 코드 개선 제안
+
 아래 항목은 메모리 잔류(버퍼/캐시/스레드)를 줄이고, LOH 할당 및 장기 생존 객체를 최소화하기 위한 코드 레벨 권장 사항입니다.
 
 - **SFTP 연결 수명 단축**: `SftpClient`를 필드로 오래 유지하지 않고, 매 호출마다 생성/연결/해제합니다.
@@ -206,8 +208,9 @@ _logger.LogDebug("_fi.Name = {Name}, _fi.FullPath = {Path}", _fi.Name, _fi.FullP
 
 측정 결과는 장시간 대기 시 불필요한 버퍼/캐시 잔류가 줄어들어 관리 힙 및 커밋 메모리의 상한이 안정화되는 것을 기대합니다. 실제 수치는 운영 환경에서 장시간 관찰 후 추가 개선할 예정입니다.
 
+---
 
-### 배운 점
+# 배운 점
 - 장기 실행 서비스에서 “메모리는 언젠가 줄어든다”는 가정은 위험합니다. 버퍼/캐시/스레드 스택/네이티브 핸들 등은 쉽게 OS로 반환되지 않습니다.
 - SFTP 등 네트워크 I/O 라이브러리는 연결 수명과 버퍼 크기가 메모리 발자국을 크게 좌우합니다. 호출 단위로 짧게 생성·해제하고, LOH 임계(약 85KB)를 넘지 않도록 버퍼를 설정하면 유리합니다.
 - 로깅은 성능과 관찰성에 중요하지만, 과도한 문자열 포맷/버퍼링은 장시간 실행 시 메모리 잔류로 이어질 수 있습니다.
