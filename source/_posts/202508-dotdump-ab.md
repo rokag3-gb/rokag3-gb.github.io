@@ -4,11 +4,13 @@ date: 2025-08-08
 description: 'dotnet-dump로 .NET 장기 실행 서비스의 메모리 증가(2MB→19MB)를 분석하고 GC/LOH/버퍼/스레드 스택 원인과 SFTP·Serilog 최적화까지 실전 대응 전략을 정리합니다.'
 categories: [Dev]
 tags: [.NET, dotnet-dump, 메모리 최적화, 메모리 분석, 메모리 누수, GC, LOH, 장기 실행 서비스, 프로파일링, Serilog, SFTP, 백엔드]
-index_img: img/202508-dotdump-ab/AB_AA.png
+index_img: img/202508-dotdump-ab/Process-Structure.png
 keywords: ['.NET memory optimization', 'dotnet-dump analyze', 'dumpheap -stat', 'eeheap -gc', 'clrstack', 'long-running service memory', 'LOH threshold 85KB', 'SFTP buffer size', 'Serilog buffered false', '메모리 누수 진단', '.NET 장기 실행 서비스 최적화']
 ---
 
 # 내가 개발한 서버 프로세스 메모리가 하룻밤 새 2MB → 19MB? dotnet-dump로 파헤친 .NET 장기 실행 서비스의 메모리 최적화 전략
+
+![](img/202508-dotdump-ab/Process-Structure.png)
 
 최근에 서버 개발을 하고 있는데, 가칭 AB 서버 앱은 앞으로 특정 호스트에서 절대 죽지 않고 계속 떠있어야 합니다. 그래서 만일의 경우를 대비하여 AB.Awaker를 개발하여 NamedPipe 방식 (IPC 기반)으로 ping/pong을 주고 받아 AB 서버 프로세스가 불능 상태이거나 프로세스가 죽었다면 AB 서버를 재기동 시키도록 개발했습니다.
 
@@ -67,7 +69,7 @@ dotnet-dump analyze <dump_file>
 
 ---
 
-# 코드 개선 제안
+## 코드 개선 제안
 
 아래 항목은 메모리 잔류(버퍼/캐시/스레드)를 줄이고, LOH 할당 및 장기 생존 객체를 최소화하기 위한 코드 레벨 권장 사항입니다.
 
@@ -210,7 +212,7 @@ _logger.LogDebug("_fi.Name = {Name}, _fi.FullPath = {Path}", _fi.Name, _fi.FullP
 
 ---
 
-# 배운 점
+## 배운 점
 - 장기 실행 서비스에서 “메모리는 언젠가 줄어든다”는 가정은 위험합니다. 버퍼/캐시/스레드 스택/네이티브 핸들 등은 쉽게 OS로 반환되지 않습니다.
 - SFTP 등 네트워크 I/O 라이브러리는 연결 수명과 버퍼 크기가 메모리 발자국을 크게 좌우합니다. 호출 단위로 짧게 생성·해제하고, LOH 임계(약 85KB)를 넘지 않도록 버퍼를 설정하면 유리합니다.
 - 로깅은 성능과 관찰성에 중요하지만, 과도한 문자열 포맷/버퍼링은 장시간 실행 시 메모리 잔류로 이어질 수 있습니다.
