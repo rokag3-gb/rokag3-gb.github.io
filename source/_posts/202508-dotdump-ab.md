@@ -235,6 +235,43 @@ dotnet-dump analyze <dump_file>
 
 궁극적으로 본 개선들은 “누수”를 해결한다기보다, 장시간 대기형 서비스가 정상적으로 사용하는 캐시/버퍼/네이티브 리소스의 상한을 낮추고, 필요 이상의 생존 시간을 줄이는 데 목적이 있습니다. 운영 환경 관찰을 통해 지속적으로 조정해보려 합니다.
 
+<br>
+
+---
+
+## 후기
+
+AB 코드 개선 이후에 3일간 켜놓은 결과에 대해서 Before/After 비교 분석 해봤습니다.
+
+![](img/202508-dotdump-ab/task-manager-before-after.png)
+
+결론: 프로세스의 메모리 용량이 25MB 선에서 지속 유지되었습니다. 👍👍
+
+특히 LOH(대객체 힙)이 압도적으로 감소했습니다. “큰 byte[] 버퍼”가 거의 사라졌습니다.
+
+다만, 추가로 체크가 필요한 사항도 발생했습니다.
+
+Renci.SshNet.Session이 24개, SafeWaitHandle/SafeNCrypt*Handle 수치가 꽤 많아서, “연결/핸들 누수 또는 미해제” 가능성 체크가 필요할 것 같습니다.
+
+전체 힙은 여전히 작고(8.2MB). 작업관리자에서 보이는 20MB는 JIT/스택/네이티브 포함이니 정상 범주라고 보여집니다.
+
+<br>
+
+Before/After를 비교해보면,
+총 관리 힙(Allocated): ~6.67MB → ~8.56MB (약간↑, 여전히 작음)
+
+LOH: ~2.0MB → ~0.40MB (−80% 줄었다!)
+→ 큰 버퍼 재사용/해제 잘 된 듯.
+
+byte[] 합계: ~2.12MB → ~3.00MB (↑)
+→ LOH에서 SOH(작은 배열)로 쪼개져서 생긴 자연스러운 증가일 수 있음. 빈도 높은 I/O라면 정상.
+
+string 합계: ~2.63MB → ~2.64MB (유지)
+
+Renci.SshNet.Common.SshDataStream: 940 → 1,418 (수는 늘었지만 총합 90KB대라 용량 영향은 미미)
+
+<br>
+
 ### References
 
 - Dump collection and analysis utility (dotnet-dump)<br>
