@@ -1015,7 +1015,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/jeju_seongsan.jpg
+  banner_img: /img/20250811-090131-nxt.jpg
   banner_img_height: 40
   banner_mask_alpha: 0.3
 
