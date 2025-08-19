@@ -267,7 +267,7 @@ AirBridge v1.2508.28 (Build: 28, Git: 64290d8)
 
 ### 작동 결과
 
-![](img/202508-headver-apply/Windows Terminal - WSL.png)
+![](img/202508-headver-apply/windows-terminal-wsl.png)
 
 **사족: ASCII Art 만들어서 넣어봄**
 
