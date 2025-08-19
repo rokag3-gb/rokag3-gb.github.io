@@ -57,14 +57,14 @@ code:
     # 实现高亮的库，对应下面的设置
     # Highlight library
     # Options: highlightjs | prismjs
-    lib: "highlightjs"
+    lib: "highlightjs" # "prismjs"
 
     highlightjs:
       # 在链接中挑选 style 填入
       # Select a style in the link
       # See: https://highlightjs.org/demo/
-      style: 'Github Gist'
-      style_dark: "dark"
+      style: "vs" # 'Github Gist'
+      style_dark: "vs2015" # "dark"
 
     prismjs:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
@@ -143,7 +143,7 @@ color:
   body_bg_color: "#eee"
   # 暗色模式下的 body 背景色，下同
   # Color in dark mode, the same below
-  body_bg_color_dark: "#181c27"
+  body_bg_color_dark: "#1F1B24" # "#121212" # "#181c27"
 
   # 顶部菜单背景色
   # Color of navigation bar background
@@ -231,9 +231,9 @@ color:
 # Font
 font:
   font_size: 16px
-  font_family: [Pretendard, Apple SD Gothic Neo, Roboto]
+  font_family: [Cacading Code, Pretendard, Apple SD Gothic Neo, Roboto]
   letter_spacing: 0.02em
-  code_font_size: 85%
+  code_font_size: 90%
 
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
@@ -498,12 +498,12 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/20250811-090131-nxt.jpg # /img/jeju_seongsan.jpg # /img/1410872714306.jpg
+  banner_img: /img/space_bg_4k.jpeg # /img/20250811-090131-nxt.jpg # /img/jeju_seongsan.jpg # /img/1410872714306.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
   # Available: 0 - 100
-  banner_img_height: 40
+  banner_img_height: 50
 
   # 头图黑色蒙版的不透明度，available: 0 - 1.0，1 是完全不透明
   # Opacity of the banner mask, 1.0 is completely opaque
@@ -570,13 +570,13 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/20250811-090131-nxt.jpg
-  banner_img_height: 35
-  banner_mask_alpha: 0.6
+  banner_img: /img/space_bg_4k.jpeg
+  banner_img_height: 40
+  banner_mask_alpha: 0.5
 
   # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
   # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
-  default_index_img: /img/20250811-090131-nxt.jpg
+  default_index_img: /img/space_bg_4k.jpeg
 
   # 文章标题下方的元信息
   # Meta information below title
