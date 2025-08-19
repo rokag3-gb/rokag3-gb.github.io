@@ -4,7 +4,7 @@ date: 2025-08-19
 description: '복잡한 SemVer 대신 직관적인 HeadVer 기반 버전 관리 시스템을 도입한 경험담이에요. MSBuild, PowerShell/Bash 스크립트, AOT 빌드를 결합하고 활용하여 사람의 손이 덜 가는 자동화된 버전 관리 전략을 만들어봤어요.'
 categories: [Dev]
 tags: [.NET, 버전관리, HeadVer, MSBuild, AOT, PowerShell, Bash, 자동화, CI/CD, AssemblyInfo, 버전자동증가, 빌드자동화]
-index_img: img/202508-headver-apply/headver.jpg
+index_img: img/202508-headver-apply/headver-thumbnail.jpg
 keywords: ['.NET version management', 'HeadVer system', 'MSBuild', 'AOT build versioning', 'PowerShell build script', 'Bash build script', 'AssemblyInfo auto-update', '버전 자동 관리', '.NET 빌드 자동화', 'MSBuild Directory.Build.targets', 'Directory.Build.targets']
 ---
 
@@ -36,6 +36,9 @@ SemVer의 한계점 외에도,
 - AOT 빌드에서 별도 파일이 생성되지 않아야 하는 상황에서 버전 관리를 해야 하는 부담이 있었어요.
 
 ### HeadVer의 매력
+
+![](img/202508-headver-apply/headver2.png)
+
 HeadVer는 **Head-based Versioning**의 줄임말로, Git의 HEAD 커밋을 기반으로 버전을 관리하는 방식이에요.
 
 예전에 영재님 (LINE, ABC Studio)을 몇번 직접 뵙고 기술적인 경험을 공유할 수 있는 기회가 있었는데 HeadVer에 대해서 `우리 조직에 접목해보고 싶다`는 생각을 했었어요.
