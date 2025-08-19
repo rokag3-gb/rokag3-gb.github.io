@@ -265,7 +265,11 @@ $ dotnet run --project AirBridge -- --version
 AirBridge v1.2508.28 (Build: 28, Git: 64290d8)
 ```
 
-### 사족: ASCII Art 만들어서 넣어봄
+### 작동 결과
+
+![](img/202508-headver-apply/Windows Terminal - WSL.png)
+
+**사족: ASCII Art 만들어서 넣어봄**
 
 이번에 구글링해보다가 처음 알게된건데 이런걸 ASCII Art라고 부르더라구요?
 (회사 업무라서 애플리케이션 이름은 숨기고 엉뚱한 이름으로 대체하였어요)
