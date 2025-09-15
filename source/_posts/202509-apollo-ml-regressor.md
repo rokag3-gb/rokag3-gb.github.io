@@ -4,7 +4,7 @@ date: 2025-09-15
 description: 'SQL Server 실행 계획 데이터를 활용한 쿼리 실행 시간 예측 모델 구축 프로젝트입니다. 초기 R² 0.089에서 최종 R² 0.9297을 달성하여 1000% 성능 개선을 이루었으며, 데이터 품질 개선, 고급 피처 엔지니어링, overfitting 방지 기법을 통해 프로덕션 적용 가능한 고성능 모델을 구축했습니다.'
 categories: [ML, DataScience]
 tags: [머신러닝, 회귀분석, XGBoost, 데이터품질, 피처엔지니어링, Overfitting방지, SQL서버, 실행계획, 쿼리최적화, 교차검증, 정규화, 앙상블모델, 클러스터링, 시계열분석]
-index_img: 202509-apollo-ml-regressor/regressor-chart-thumbnail.png
+index_img: img/202509-apollo-ml-regressor/regressor-chart-thumbnail.png
 keywords: ['SQL Server execution plan', 'query performance prediction', 'XGBoost regression', 'data quality improvement', 'feature engineering', 'overfitting prevention', 'machine learning pipeline', '쿼리 성능 예측', '머신러닝 파이프라인', '데이터 전처리', '피처 선택', '교차 검증', '정규화 기법', '앙상블 모델링']
 ---
 
@@ -38,6 +38,112 @@ print(f"1ms 미만 비율: {(df['last_ms'] < 1).mean()*100:.1f}%")
 print(f"이상치 비율: {((df['last_ms'] > df['last_ms'].quantile(0.95))).mean()*100:.1f}%")
 ```
 
+아래 출력 결과에서 이 값들은 데이터의 극심한 불균형을 보여주는데, 중앙값 0.43ms와 평균 3784.07ms 사이의 큰 차이, 그리고 전체 데이터의 56.3%가 1ms 미만의 매우 빠른 실행 시간을 보이는 것을 확인할 수 있습니다.
+
+```pwsh
+중앙값: 0.43ms
+평균: 3784.07ms
+1ms 미만 비율: 56.3%
+이상치 비율: 5.0%
+```
+
+데이터셋을 분석한 내용을 아래와 같이 출력해보았습니다.
+
+```
+## 원본 데이터셋 분석 시작
+원본 데이터 크기 (before): (8500, 12)
+전체 데이터 크기 (after): (12624, 12)
+
+## 타겟 변수 (last_ms) 분석
+기본 통계:
+  평균: 4173.62
+  중앙값: 0.44
+  표준편차: 28672.71
+  최솟값: 0.02
+  최댓값: 438160.92
+  사분위수:
+    Q1: 0.09
+    Q3: 177.50
+  IQR: 177.40
+  이상치 개수: 1726 (20.3%)
+
+## 피처 분석
+총 피처 수: 38
+
+피처별 기본 통계:
+         num_nodes    num_edges  ...  index_scan_ops  index_seek_ops
+count  8500.000000  8500.000000  ...          4093.0          4093.0
+mean      1.037765     0.562588  ...             0.0             0.0
+std       3.209530     2.812485  ...             0.0             0.0
+min       0.000000     0.000000  ...             0.0             0.0
+25%       0.000000     0.000000  ...             0.0             0.0
+50%       0.000000     0.000000  ...             0.0             0.0
+75%       1.000000     0.000000  ...             0.0             0.0
+max      55.000000    53.000000  ...             0.0             0.0
+
+[8 rows x 35 columns]
+
+## 타겟과 피처 간 상관관계
+상위 10개 상관관계:
+unique_logical_ops     0.190560
+unique_physical_ops    0.185405
+avg_in_degree          0.178289
+avg_out_degree         0.178289
+sort_ops_count         0.152877
+max_out_degree         0.147615
+max_in_degree          0.135761
+num_logical_ops        0.121997
+scan_ops_count         0.120945
+num_components         0.094844
+Name: last_ms, dtype: float64
+
+## 피처별 분포 확인
+수치형 피처 수: 35
+
+피처별 분산 (상위 10개):
+total_rows             2.015857e+09
+max_rows               1.315724e+09
+avg_rows               1.558628e+08
+total_avg_row_size     1.721800e+07
+total_cpu_cost         5.334251e+01
+num_logical_ops        1.898643e+01
+num_nodes              1.030108e+01
+num_physical_ops       1.030108e+01
+num_edges              7.910072e+00
+unique_physical_ops    3.469233e+00
+dtype: float64
+
+## 결측값 확인
+결측값이 있는 컬럼:
+                         Missing Count  Missing %
+avg_out_degree                    4407  51.847059
+diameter                          4407  51.847059
+num_components                    4407  51.847059
+is_connected                      4407  51.847059
+...
+nonclustered_index_ops            4407  51.847059
+index_scan_ops                    4407  51.847059
+scan_ops_count                    4407  51.847059
+index_seek_ops                    4407  51.847059
+
+## 데이터 품질 이슈
+80% 이상이 0인 피처들: 2개
+num_edges          7500
+index_ops_count    8500
+dtype: int64
+상수 피처들: 9개
+['index_ops_count', 'diameter', 'avg_clustering', 'parallel_ops_ratio', 'unique_index_kinds', 'clustered_index_ops', 'nonclustered_index_ops', 'index_scan_ops', 'index_seek_ops']                                                              
+
+## 원본 vs 확장 데이터 비교
+before 데이터 크기: 8,500건
+after 데이터 크기: 12,624건
+증가율: 48.5%
+
+타겟 변수 비교:
+before - 평균: 4173.62ms, 중앙값: 0.44ms
+after - 평균: 3784.07ms, 중앙값: 0.43ms
+```
+
 <br>
 
 ---
@@ -61,7 +167,7 @@ SELECT query_id, plan_id, plan_xml, count_exec, est_total_subtree_cost,
 FROM dbo.collected_plans
 ```
 
-이러한 확장을 통해 데이터셋 크기가 9,000건에서 12,624건으로 40% 증가했으며, 8개의 성능 관련 메트릭 컬럼이 추가되어 더 풍부한 컨텍스트 정보를 확보할 수 있었습니다.
+이러한 확장을 통해 데이터셋 크기가 8,500건에서 12,624건으로 48.5% 증가했으며, 8개의 성능 관련 메트릭 컬럼이 추가되어 더 풍부한 컨텍스트 정보를 확보할 수 있었습니다.
 
 ### 3.2 고급 피처 엔지니어링
 
@@ -100,9 +206,15 @@ Phase 1의 목표는 R² 0.089에서 0.2~0.3 수준으로 개선하는 것이었
 
 **결과**: R² 0.9922 (목표 대비 3,300% 초과 달성)
 
+<br>
+
+---
+
+![각 feature 간의 correlation matrix도 출력해보았습니다.](img/202509-apollo-ml-regressor/Feature-Correlation-Matrix.png)
+
 ### 4.2 Phase 2: 고급 피처 엔지니어링
 
-Phase 2의 목표는 R² 0.2~0.3에서 0.4~0.5 수준으로 개선하는 것이었습니다. 이를 위해 고급 피처 엔지니어링 기법을 적용했습니다.
+Phase 2의 목표는 R² 0.2~0.3에서 0.5~0.7 수준으로 개선하는 것이었습니다. 이를 위해 고급 피처 엔지니어링 기법을 적용했습니다.
 
 실행계획 구조 분석을 강화하여 SQL 실행 계획의 복잡성을 정량화했습니다. 실행계획 트리 깊이를 계산하고, 병렬 처리 레벨과 조인 복잡도를 분석하여 쿼리의 구조적 특성을 파악했습니다.
 
@@ -125,7 +237,7 @@ join_ops = sum(1 for node, attrs in g.nodes(data=True)
 
 ### 4.3 Phase 3: 앙상블 모델링
 
-Phase 3의 목표는 R² 0.4~0.5에서 0.6~0.7 수준으로 개선하는 것이었습니다. 이를 위해 다양한 머신러닝 모델들을 조합한 앙상블 방법을 시도했습니다.
+Phase 3의 목표는 R² 0.5~0.7에서 0.7~0.9 수준으로 개선하는 것이었습니다. 이를 위해 다양한 머신러닝 모델들을 조합한 앙상블 방법을 시도했습니다.
 
 구현된 모델들로는 XGBoost, LightGBM, CatBoost, Random Forest, Gradient Boosting, Neural Network (MLP)를 사용했습니다. 앙상블 방법으로는 Voting Regressor를 통한 평균 방법, 가중 평균 앙상블, 그리고 Stacking 앙상블을 적용했습니다.
 
