@@ -4,7 +4,7 @@ date: 2025-09-15
 description: 'SQL Server 실행 계획 데이터를 활용한 쿼리 실행 시간 예측 모델 구축 프로젝트입니다. 초기 R² 0.089에서 최종 R² 0.9297을 달성하여 1000% 성능 개선을 이루었으며, 데이터 품질 개선, 고급 피처 엔지니어링, overfitting 방지 기법을 통해 프로덕션 적용 가능한 고성능 모델을 구축했습니다.'
 categories: [ML, DataScience]
 tags: [머신러닝, 회귀분석, XGBoost, 데이터품질, 피처엔지니어링, Overfitting방지, SQL서버, 실행계획, 쿼리최적화, 교차검증, 정규화, 앙상블모델, 클러스터링, 시계열분석]
-index_img: img/202509-apollo-ml-regressor/regressor-chart-thumbnail.png
+index_img: img/202509-apollo-ml-regressor/regressor-chart-thumbnail-2.png
 keywords: ['SQL Server execution plan', 'query performance prediction', 'XGBoost regression', 'data quality improvement', 'feature engineering', 'overfitting prevention', 'machine learning pipeline', '쿼리 성능 예측', '머신러닝 파이프라인', '데이터 전처리', '피처 선택', '교차 검증', '정규화 기법', '앙상블 모델링']
 ---
 
