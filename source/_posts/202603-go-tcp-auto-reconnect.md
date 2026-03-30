@@ -140,5 +140,6 @@ connect() 내부에서는 net.DialTimeout에 ConnectTimeout(기본 5s)을 적용
 이 재연결 로직 도입 이후 상대 서버 재시작 시 수동 개입 없이 평균 10~15초 내에 세션이 자동 복구되는 것을 확인함.
 Exponential Backoff는 TCP reconnect 외에도 HTTP 클라이언트, 메시지 큐 소비자 등 재시도가 필요한 모든 곳에 적용 가능한 기본 패턴임.
 재연결 루프는 프로세스 수명 동안 단 하나만 실행되어야 함 — 중복 실행 방지는 호출부 책임임.
+ReconnectMaxDelay를 0으로 설정하면 delay가 무한 증가할 수 있어 반드시 양수 값으로 설정해야 함.
 ---
 `eod`
