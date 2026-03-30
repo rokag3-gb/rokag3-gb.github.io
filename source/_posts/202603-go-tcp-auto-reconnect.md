@@ -1,0 +1,125 @@
+---
+title: 'Go TCP 소켓 자동 재연결 구현 (Exponential Backoff)'
+date: 2026-03-30
+description: 'FEP Gateway의 TCP 소켓이 끊겼을 때 Exponential Backoff로 자동 재연결하는 로직을 구현한 과정을 정리했습니다.'
+categories: [Go, Backend]
+tags: [Go, Golang, TCP, Reconnect, ExponentialBackoff, Concurrency]
+keywords: ['Go TCP reconnect', 'exponential backoff', '자동 재연결', 'goroutine', 'channel']
+---
+
+FEP Gateway는 PowerBase(증권 거래 서버)와 TCP 소켓을 장기 유지해요. 소켓이 끊기면 수동 재시작 없이 자동으로 재연결돼야 해서 Exponential Backoff 기반 재연결 루프를 구현했어요.
+
+## 구조
+
+재연결 루프는 별도 고루틴으로 실행하고, 연결 끊김 이벤트를 채널로 수신해요.
+
+```go
+type RQProtocol struct {
+    reconnectCh  chan struct{}     // 재연결 트리거 채널
+    reconnecting atomic.Bool      // 재연결 진행 중 여부
+    config       RQConfig
+}
+
+type RQConfig struct {
+    ReconnectInitialDelay time.Duration // 첫 재시도 대기 (기본 5s)
+    ReconnectMaxDelay     time.Duration // 최대 대기 간격 (기본 60s)
+}
+```
+
+## StartReconnectLoop
+
+```go
+func (rq *RQProtocol) StartReconnectLoop() {
+    go func() {
+        delay := rq.config.ReconnectInitialDelay
+        for {
+            select {
+            case <-rq.reconnectCh:
+                rq.reconnecting.Store(true)
+            case <-rq.shutdownCh:
+                return
+            }
+
+            for {
+                rq.log.Info("재연결 시도", zap.Duration("delay", delay))
+                time.Sleep(delay)
+
+                if err := rq.connect(); err != nil {
+                    // 실패 시 delay를 두 배로, 최대값 초과하지 않게
+                    delay = min(delay*2, rq.config.ReconnectMaxDelay)
+                    continue
+                }
+
+                // 연결 성공 → 핸드셰이크
+                if err := rq.PerformHandshake(); err != nil {
+                    rq.log.Warn("핸드셰이크 실패, 재시도", zap.Error(err))
+                    delay = min(delay*2, rq.config.ReconnectMaxDelay)
+                    continue
+                }
+
+                // 성공 → delay 초기화
+                delay = rq.config.ReconnectInitialDelay
+                rq.reconnecting.Store(false)
+                break
+            }
+        }
+    }()
+}
+```
+
+## TriggerReconnect
+
+연결 끊김을 감지한 곳(readLoop, Send 실패 등)에서 호출해요. 채널이 non-blocking이라 이미 재연결 중이면 중복 트리거를 무시해요.
+
+```go
+func (rq *RQProtocol) TriggerReconnect() {
+    select {
+    case rq.reconnectCh <- struct{}{}:
+    default: // 이미 재연결 대기 중이면 skip
+    }
+}
+```
+
+## 초기 연결 실패 처리
+
+서버 시작 시 PB가 아직 안 떠있을 수 있어요. 초기 연결 실패도 재연결 루프에서 처리해요.
+
+```go
+// main.go
+rqProtocol.StartReconnectLoop()
+
+if err := rqProtocol.Start(); err != nil {
+    log.Warn("초기 TCP 연결 실패, 재연결 루프에서 재시도", zap.Error(err))
+    rqProtocol.StartReadLoops()
+    rqProtocol.TriggerReconnect()
+} else {
+    if err := rqProtocol.PerformHandshake(); err != nil {
+        rqProtocol.TriggerReconnect()
+    }
+}
+```
+
+## Health API에 재연결 상태 노출
+
+```go
+type HealthResponse struct {
+    Status          string `json:"status"`
+    PbSessionState  string `json:"pb_session_state"`
+    PbReconnecting  bool   `json:"pb_reconnecting"`
+}
+```
+
+`pb_reconnecting: true`가 보이면 재연결 중이라는 뜻이에요. 모니터링에서 이 필드를 감시하면 소켓 단절 시 즉시 알 수 있어요.
+
+## 동작 흐름
+
+```
+TCP 끊김 감지
+    → TriggerReconnect()
+    → 5초 대기 후 connect() 시도
+    → 실패 시 10초, 20초, 40초... (최대 60초)
+    → 성공 시 PerformHandshake()
+    → 세션 복구 완료, delay 5초로 초기화
+```
+
+재연결 성공 후 pending 중이던 요청들은 timeout으로 빠져나오고, 클라이언트에서 재시도하는 구조예요.
