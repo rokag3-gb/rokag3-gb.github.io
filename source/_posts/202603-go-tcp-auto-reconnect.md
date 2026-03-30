@@ -1,17 +1,18 @@
 ---
-title: 'Go TCP 소켓 자동 재연결 구현 (Exponential Backoff)'
+title: 'Exponential Backoff 방식의 TCP 소켓 자동 재연결 구현'
 date: 2026-03-30
-description: 'FEP Gateway의 TCP 소켓이 끊겼을 때 Exponential Backoff로 자동 재연결하는 로직을 구현한 과정을 정리했습니다.'
+description: '서버에서 TCP 소켓이 끊겼을 때 Exponential Backoff로 자동 재연결하는 로직을 구현한 과정을 정리했음.'
 categories: [Go, Backend]
 tags: [Go, Golang, TCP, Reconnect, ExponentialBackoff, Concurrency]
 keywords: ['Go TCP reconnect', 'exponential backoff', '자동 재연결', 'goroutine', 'channel']
+index_img: /img/2026-go/tcp-socket-reconnect.png
 ---
 
-FEP Gateway는 PowerBase(증권 거래 서버)와 TCP 소켓을 장기 유지해요. 소켓이 끊기면 수동 재시작 없이 자동으로 재연결돼야 해서 Exponential Backoff 기반 재연결 루프를 구현했어요.
+TCP 소켓을 장기간 유지해야 하는 서버를 만들고 있었음. 소켓이 끊겼을 때 수동 재시작 없이 자동으로 재연결되도록 Exponential Backoff 기반 재연결 루프를 구현함.
 
 ## 구조
 
-재연결 루프는 별도 고루틴으로 실행하고, 연결 끊김 이벤트를 채널로 수신해요.
+재연결 루프는 별도 고루틴으로 실행하고, 연결 끊김 이벤트를 채널로 수신하는 구조임.
 
 ```go
 type RQProtocol struct {
@@ -69,7 +70,7 @@ func (rq *RQProtocol) StartReconnectLoop() {
 
 ## TriggerReconnect
 
-연결 끊김을 감지한 곳(readLoop, Send 실패 등)에서 호출해요. 채널이 non-blocking이라 이미 재연결 중이면 중복 트리거를 무시해요.
+연결 끊김을 감지한 곳(readLoop, Send 실패 등)에서 호출함. 채널이 non-blocking이라 이미 재연결 중이면 중복 트리거는 무시됨.
 
 ```go
 func (rq *RQProtocol) TriggerReconnect() {
@@ -82,7 +83,7 @@ func (rq *RQProtocol) TriggerReconnect() {
 
 ## 초기 연결 실패 처리
 
-서버 시작 시 PB가 아직 안 떠있을 수 있어요. 초기 연결 실패도 재연결 루프에서 처리해요.
+서버 시작 시 상대 서버가 아직 안 떠있을 수 있음. 초기 연결 실패도 재연결 루프에서 처리하도록 했음.
 
 ```go
 // main.go
@@ -109,7 +110,7 @@ type HealthResponse struct {
 }
 ```
 
-`pb_reconnecting: true`가 보이면 재연결 중이라는 뜻이에요. 모니터링에서 이 필드를 감시하면 소켓 단절 시 즉시 알 수 있어요.
+`pb_reconnecting: true`가 보이면 재연결 중이라는 의미임. 모니터링에서 이 필드를 감시하면 소켓 단절 시 즉시 파악 가능함.
 
 ## 동작 흐름
 
@@ -122,4 +123,9 @@ TCP 끊김 감지
     → 세션 복구 완료, delay 5초로 초기화
 ```
 
-재연결 성공 후 pending 중이던 요청들은 timeout으로 빠져나오고, 클라이언트에서 재시도하는 구조예요.
+재연결 성공 후 pending 중이던 요청들은 timeout으로 빠져나오고, 클라이언트에서 재시도하는 구조임.
+
+오늘의 개발 메모 끝~
+
+---
+`eod`
