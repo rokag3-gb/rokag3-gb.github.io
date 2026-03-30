@@ -128,5 +128,6 @@ TCP 끊김 감지
 오늘의 개발 메모 끝~
 
 delay에 jitter(무작위 오프셋)를 추가하면 여러 인스턴스가 동시에 재연결을 시도하는 thundering herd 문제를 완화할 수 있음.
+reconnectCh를 버퍼 없는 채널 + select default로 구성한 이유는 재연결이 이미 진행 중일 때 중복 신호를 드롭하기 위함임.
 ---
 `eod`
