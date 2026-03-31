@@ -141,5 +141,6 @@ connect() 내부에서는 net.DialTimeout에 ConnectTimeout(기본 5s)을 적용
 Exponential Backoff는 TCP reconnect 외에도 HTTP 클라이언트, 메시지 큐 소비자 등 재시도가 필요한 모든 곳에 적용 가능한 기본 패턴임.
 재연결 루프는 프로세스 수명 동안 단 하나만 실행되어야 함 — 중복 실행 방지는 호출부 책임임.
 ReconnectMaxDelay를 0으로 설정하면 delay가 무한 증가할 수 있어 반드시 양수 값으로 설정해야 함.
+TriggerReconnect()는 여러 고루틴에서 동시에 호출해도 안전함 — 채널 send가 atomic하게 동작하기 때문임.
 ---
 `eod`
