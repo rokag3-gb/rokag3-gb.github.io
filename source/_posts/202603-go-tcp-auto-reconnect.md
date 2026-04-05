@@ -149,5 +149,6 @@ reconnecting.Store(false)는 핸드셰이크 완료 후에 호출해야 함 — 
 재연결 루프 고루틴 내부에 recover를 추가하는 것이 좋음 — 패닉 발생 시 루프 전체가 죽으면 이후 재연결이 불가능해지기 때문임.
 pb_session_state는 INIT / LINK / DATA / CLOSE 세션 상태 머신의 현재 값을 문자열로 노출하는 방식으로 구현됨.
 pb_reconnecting과 pb_session_state를 함께 보면 더 세밀한 상태 파악이 가능함.
+time.Sleep(delay)는 shutdown 신호를 즉시 감지하지 못함 — 엄밀하게는 time.NewTimer + select로 교체하는 것이 더 정확함.
 ---
 `eod`
