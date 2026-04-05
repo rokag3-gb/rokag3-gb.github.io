@@ -134,5 +134,6 @@ inner for loop를 outer select와 분리한 이유는 재연결 시도 중에도
 Start() 실패 시에도 StartReadLoops()를 선행 호출하는 이유는 재연결 성공 직후 readLoop 고루틴이 즉시 데이터 수신 대기 상태가 되도록 미리 띄워두기 위함임.
 pb_reconnecting이 30초 이상 true로 유지될 경우 Slack/PagerDuty로 알림을 보내도록 모니터링을 구성하면 실운영에서 빠른 대응이 가능함.
 initialDelay 5s, maxDelay 60s 기준으로 연속 실패 시 재시도 간격은 5→10→20→40→60→60... 초로 증가함.
+go test -race 플래그로 race detector를 활성화하면 재연결 루프와 readLoop 사이의 동시성 문제를 빌드 단계에서 조기에 발견할 수 있음.
 ---
 `eod`
