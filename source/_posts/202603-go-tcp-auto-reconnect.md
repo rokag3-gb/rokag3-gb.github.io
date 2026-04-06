@@ -152,5 +152,6 @@ pb_reconnecting과 pb_session_state를 함께 보면 더 세밀한 상태 파악
 time.Sleep(delay)는 shutdown 신호를 즉시 감지하지 못함 — 엄밀하게는 time.NewTimer + select로 교체하는 것이 더 정확함.
 테스트 시에는 ReconnectInitialDelay를 100ms 등 짧게 설정해 재연결 시나리오를 빠르게 검증할 수 있음.
 connect() 시 net.TCPConn.SetKeepAlive를 함께 설정하면 OS 레벨에서 dead connection을 더 빠르게 감지할 수 있음.
+keepalive interval을 적절히 설정하면 idle 상태에서 방화벽이 연결을 끊는 문제도 예방할 수 있음.
 ---
 `eod`
