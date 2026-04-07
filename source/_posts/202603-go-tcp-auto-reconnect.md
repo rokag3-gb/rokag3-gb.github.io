@@ -154,5 +154,6 @@ time.Sleep(delay)는 shutdown 신호를 즉시 감지하지 못함 — 엄밀하
 connect() 시 net.TCPConn.SetKeepAlive를 함께 설정하면 OS 레벨에서 dead connection을 더 빠르게 감지할 수 있음.
 keepalive interval을 적절히 설정하면 idle 상태에서 방화벽이 연결을 끊는 문제도 예방할 수 있음.
 readLoop에서 io.EOF 감지 시 TriggerReconnect()를 호출하므로 단절 감지 지연은 ReadTimeout 설정에 따라 달라짐.
+ReadTimeout은 너무 짧으면 정상 idle 상태에서도 재연결이 발생하므로 heartbeat 주기의 2~3배 정도가 적당함.
 ---
 `eod`
