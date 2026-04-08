@@ -155,5 +155,6 @@ connect() 시 net.TCPConn.SetKeepAlive를 함께 설정하면 OS 레벨에서 de
 keepalive interval을 적절히 설정하면 idle 상태에서 방화벽이 연결을 끊는 문제도 예방할 수 있음.
 readLoop에서 io.EOF 감지 시 TriggerReconnect()를 호출하므로 단절 감지 지연은 ReadTimeout 설정에 따라 달라짐.
 ReadTimeout은 너무 짧으면 정상 idle 상태에서도 재연결이 발생하므로 heartbeat 주기의 2~3배 정도가 적당함.
+재연결 로직을 별도 패키지로 분리하면 다른 TCP 클라이언트에서도 재사용 가능 — 현재는 RQProtocol 내부에 인라인으로 구현된 상태임.
 ---
 `eod`
