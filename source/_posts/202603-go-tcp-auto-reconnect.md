@@ -138,5 +138,6 @@ go test -race 플래그로 race detector를 활성화하면 재연결 루프와 
 connect() 내부에서는 net.DialTimeout에 ConnectTimeout(기본 5s)을 적용했음 — 무한 대기 방지가 핵심임.
 핸드셰이크 실패 시에도 delay를 증가시킨 이유는 TCP 연결은 성공했지만 애플리케이션 레이어 핸드셰이크가 반복 실패하는 케이스에서 빠른 재시도로 서버에 부하를 주지 않기 위함임.
 이 재연결 로직 도입 이후 상대 서버 재시작 시 수동 개입 없이 평균 10~15초 내에 세션이 자동 복구되는 것을 확인함.
+Exponential Backoff는 TCP reconnect 외에도 HTTP 클라이언트, 메시지 큐 소비자 등 재시도가 필요한 모든 곳에 적용 가능한 기본 패턴임.
 ---
 `eod`
