@@ -3,7 +3,7 @@ title: '내가 개발한 서버 프로세스 메모리가 하룻밤 새 2MB → 
 date: 2025-08-08
 description: 'dotnet-dump로 .NET 장기 실행 서비스의 메모리 증가(2MB→19MB)를 분석하고 GC/LOH/버퍼/스레드 스택 원인과 SFTP·Serilog 최적화까지 실전 대응 전략을 정리합니다.'
 categories: [Dev]
-tags: [.NET, dotnet-dump, 메모리 최적화, 메모리 분석, 메모리 누수, GC, LOH, 장기 실행 서비스, 프로파일링, Serilog, SFTP, 백엔드]
+tags: [닷넷, dotnet-dump, 메모리 최적화, 메모리 분석, 메모리 누수, GC, LOH, 장기 실행 서비스, 프로파일링, Serilog, SFTP, 백엔드]
 index_img: img/202508-dotdump-ab/Process-Structure.png
 keywords: ['.NET memory optimization', 'dotnet-dump analyze', 'dumpheap -stat', 'eeheap -gc', 'clrstack', 'long-running service memory', 'LOH threshold 85KB', 'SFTP buffer size', 'Serilog buffered false', '메모리 누수 진단', '.NET 장기 실행 서비스 최적화']
 ---
