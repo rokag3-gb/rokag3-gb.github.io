@@ -127,37 +127,5 @@ TCP 끊김 감지
 
 오늘의 개발 메모 끝~
 
-delay에 jitter(무작위 오프셋)를 추가하면 여러 인스턴스가 동시에 재연결을 시도하는 thundering herd 문제를 완화할 수 있음.
-reconnectCh를 버퍼 없는 채널 + select default로 구성한 이유는 재연결이 이미 진행 중일 때 중복 신호를 드롭하기 위함임.
-reconnecting 필드를 sync.Mutex 대신 atomic.Bool로 선택한 이유는 단순 플래그 읽기/쓰기에 뮤텍스 오버헤드가 불필요하기 때문임.
-inner for loop를 outer select와 분리한 이유는 재연결 시도 중에도 shutdownCh 시그널을 즉시 감지하기 위함 — 분리하지 않으면 shutdown 시 최대 delay만큼 응답이 지연됨.
-Start() 실패 시에도 StartReadLoops()를 선행 호출하는 이유는 재연결 성공 직후 readLoop 고루틴이 즉시 데이터 수신 대기 상태가 되도록 미리 띄워두기 위함임.
-pb_reconnecting이 30초 이상 true로 유지될 경우 Slack/PagerDuty로 알림을 보내도록 모니터링을 구성하면 실운영에서 빠른 대응이 가능함.
-initialDelay 5s, maxDelay 60s 기준으로 연속 실패 시 재시도 간격은 5→10→20→40→60→60... 초로 증가함.
-go test -race 플래그로 race detector를 활성화하면 재연결 루프와 readLoop 사이의 동시성 문제를 빌드 단계에서 조기에 발견할 수 있음.
-connect() 내부에서는 net.DialTimeout에 ConnectTimeout(기본 5s)을 적용했음 — 무한 대기 방지가 핵심임.
-핸드셰이크 실패 시에도 delay를 증가시킨 이유는 TCP 연결은 성공했지만 애플리케이션 레이어 핸드셰이크가 반복 실패하는 케이스에서 빠른 재시도로 서버에 부하를 주지 않기 위함임.
-이 재연결 로직 도입 이후 상대 서버 재시작 시 수동 개입 없이 평균 10~15초 내에 세션이 자동 복구되는 것을 확인함.
-Exponential Backoff는 TCP reconnect 외에도 HTTP 클라이언트, 메시지 큐 소비자 등 재시도가 필요한 모든 곳에 적용 가능한 기본 패턴임.
-재연결 루프는 프로세스 수명 동안 단 하나만 실행되어야 함 — 중복 실행 방지는 호출부 책임임.
-ReconnectMaxDelay를 0으로 설정하면 delay가 무한 증가할 수 있어 반드시 양수 값으로 설정해야 함.
-TriggerReconnect()는 여러 고루틴에서 동시에 호출해도 안전함 — 채널 send가 atomic하게 동작하기 때문임.
-재연결 시도 횟수를 별도 카운터로 트래킹해 메트릭으로 노출하면 불안정한 연결 상태를 조기에 감지할 수 있음.
-shutdownCh는 context.Context 대신 chan struct{}를 사용 — 재연결 루프는 프로세스 전체 생명주기를 따르기 때문임.
-재연결 성공 후 delay를 initialDelay로 초기화하지 않으면 다음 단절 시 maxDelay부터 시작하는 버그가 생기므로 반드시 초기화 필요.
-reconnecting.Store(false)는 핸드셰이크 완료 후에 호출해야 함 — 그 전에 false로 바꾸면 모니터링이 부정확해짐.
-재연결 루프 고루틴 내부에 recover를 추가하는 것이 좋음 — 패닉 발생 시 루프 전체가 죽으면 이후 재연결이 불가능해지기 때문임.
-pb_session_state는 INIT / LINK / DATA / CLOSE 세션 상태 머신의 현재 값을 문자열로 노출하는 방식으로 구현됨.
-pb_reconnecting과 pb_session_state를 함께 보면 더 세밀한 상태 파악이 가능함.
-time.Sleep(delay)는 shutdown 신호를 즉시 감지하지 못함 — 엄밀하게는 time.NewTimer + select로 교체하는 것이 더 정확함.
-테스트 시에는 ReconnectInitialDelay를 100ms 등 짧게 설정해 재연결 시나리오를 빠르게 검증할 수 있음.
-connect() 시 net.TCPConn.SetKeepAlive를 함께 설정하면 OS 레벨에서 dead connection을 더 빠르게 감지할 수 있음.
-keepalive interval을 적절히 설정하면 idle 상태에서 방화벽이 연결을 끊는 문제도 예방할 수 있음.
-readLoop에서 io.EOF 감지 시 TriggerReconnect()를 호출하므로 단절 감지 지연은 ReadTimeout 설정에 따라 달라짐.
-ReadTimeout은 너무 짧으면 정상 idle 상태에서도 재연결이 발생하므로 heartbeat 주기의 2~3배 정도가 적당함.
-재연결 로직을 별도 패키지로 분리하면 다른 TCP 클라이언트에서도 재사용 가능 — 현재는 RQProtocol 내부에 인라인으로 구현된 상태임.
-향후 재연결 성공 시 콜백(onReconnect)을 등록할 수 있도록 확장하면 상위 레이어에서 세션 재개 로직을 주입하기 편해짐.
-min() 함수는 Go 1.21 이상에서만 내장 지원 — 그 미만 버전에서는 직접 구현이 필요함.
-최종적으로 이 패턴은 고루틴 하나가 채널로 재연결 이벤트를 독점 처리하는 구조로, 단순하지만 실운영에서 충분히 견고하게 동작하고 있음.
 ---
 `eod`
