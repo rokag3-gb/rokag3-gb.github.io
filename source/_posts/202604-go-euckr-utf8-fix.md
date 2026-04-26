@@ -1,13 +1,16 @@
 ---
 title: 'Go에서 EUC-KR → UTF-8 변환 시 대용량 데이터 잘림 버그 수정'
 date: 2026-04-07
-description: '레거시 금융 서버의 EUC-KR 응답 데이터를 UTF-8로 변환할 때 고정 버퍼 크기로 인해 잘리는 버그를 transform.Bytes로 수정한 과정입니다.'
+description: '서버의 EUC-KR 응답 데이터를 UTF-8로 변환할 때 고정 버퍼 크기로 인해 잘리는 버그를 transform.Bytes로 수정한 과정이에요.'
 categories: [Go, Backend]
 tags: [Go, Golang, EUC-KR, UTF-8, Encoding, 인코딩, 레거시]
 keywords: ['Go EUC-KR UTF-8 변환', 'golang.org/x/text/transform', '인코딩 잘림', 'korean.EUCKR']
+index_img: /img/2026-go/euc-kr-utf-8-data.png
 ---
 
-PowerBase(금융 거래 서버)는 한글 응답을 EUC-KR로 내려줘요. Go는 기본적으로 UTF-8만 다루기 때문에 `golang.org/x/text/encoding/korean` 패키지로 변환하는 코드가 있었는데, 대용량 응답에서 한글이 잘리는 버그가 있었어요.
+요새 제가 개발하고 있는 애플리케이션에서는 서버가 한글 응답을 EUC-KR로 내려줘요. Go는 기본적으로 UTF-8만 다루기 때문에 `golang.org/x/text/encoding/korean` 패키지로 변환하는 코드가 있었는데, 대용량 응답에서 한글이 잘리는 버그가 있었어요.
+
+Btw, 이 블로그 글 썸네일 이미지 AI가 만들어준 건데 정말 너무 잘 만들어주네요ㄷㄷ;;
 
 ## 문제 코드
 
@@ -46,7 +49,7 @@ func (r *byteReader) Read(p []byte) (n int, err error) {
 }
 ```
 
-## 수정 코드
+## 이렇게 수정했어요
 
 `transform.Bytes`는 내부적으로 전체 입력을 완전히 변환할 때까지 반복 처리해줘요. 버퍼 크기 걱정도 없고, 커스텀 Reader도 필요 없어요.
 
@@ -66,4 +69,8 @@ func EucKrToUtf8(data []byte) string {
 
 `io.Reader.Read()`는 스펙상 `len(p)` 바이트보다 적게 읽어도 정상이에요. 전체를 읽으려면 `io.ReadAll()` 같은 루프를 써야 해요. 반면 `transform.Bytes()`는 전체 변환을 보장하는 헬퍼 함수라 이런 문제가 없어요.
 
-레거시 금융 시스템에서 EUC-KR 전문을 다룰 일이 있다면 `transform.Bytes`를 쓰는 걸 권장해요.
+EUC-KR 전문을 다룰 일이 있다면 `transform.Bytes`를 쓰는 걸 권장해요.
+
+참고로 Go의 strings.Builder는 문자열 반복 접합 시 alloc을 줄이는 표준 방법 — EUC-KR 변환 결과물을 이어붙일 때도 유용함.
+---
+`eod`
