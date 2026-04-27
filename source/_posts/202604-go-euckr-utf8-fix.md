@@ -72,5 +72,6 @@ func EucKrToUtf8(data []byte) string {
 EUC-KR 전문을 다룰 일이 있다면 `transform.Bytes`를 쓰는 걸 권장해요.
 
 참고로 Go의 strings.Builder는 문자열 반복 접합 시 alloc을 줄이는 표준 방법 — EUC-KR 변환 결과물을 이어붙일 때도 유용함.
+Go에서 rune은 Unicode 코드포인트(int32), byte는 uint8임. 다국어 처리 시 len(s) 대신 utf8.RuneCountInString(s)을 써야 실제 문자 수를 셀 수 있음.
 ---
 `eod`
