@@ -102,5 +102,6 @@ func (rq *RQProtocol) awaitPending(
 오늘의 코딩 메모 끝~
 
 추가로, 이런 hang 버그는 단위 테스트로 재현하기 까다로워서 결국 통합 테스트에서 잡혔어요.
+pprof의 goroutine 덤프를 보면 대기 중인 고루틴이 어느 select에 멈춰 있는지 바로 보여서 디버깅에 큰 도움이 됐어요.
 ---
 `eod`
