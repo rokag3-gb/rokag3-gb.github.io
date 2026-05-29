@@ -106,5 +106,6 @@ pprof의 goroutine 덤프를 보면 대기 중인 고루틴이 어느 select에 
 registerPending과 unregisterPending은 같은 뮤텍스로 보호해서 map 동시 접근 race를 막았어요.
 오늘은 비가 와서 그런지 커밋할 맛이 안 나네요. 그래도 메모는 남겨둬요.
 awaitPending의 select 분기 순서는 동작에 영향이 없지만, 가독성을 위해 정상 경로를 맨 위에 뒀어요.
+time.After는 타이머를 매번 새로 만들기 때문에 호출이 잦으면 time.NewTimer + Stop 패턴이 더 효율적이에요.
 ---
 `eod`
