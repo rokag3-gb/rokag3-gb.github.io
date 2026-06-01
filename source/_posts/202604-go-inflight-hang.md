@@ -112,5 +112,6 @@ time.After는 타이머를 매번 새로 만들기 때문에 호출이 잦으면
 context.WithTimeout으로 상위에서 데드라인을 걸면 ctx.Done() 전파만으로도 자연스럽게 정리돼요.
 atomic.Uint32 대신 sync.Mutex로도 가능하지만, 단일 값이라 atomic이 더 간결했어요.
 오늘 점심은 김치찌개. 코드 리뷰 전에 든든하게 먹어둬요.
+notifyPendingResponse는 채널이 이미 닫혔는지 확인 후 보내야 panic을 피할 수 있어요.
 ---
 `eod`
