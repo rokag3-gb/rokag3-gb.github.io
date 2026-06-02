@@ -117,5 +117,6 @@ inFlightDataSeq를 0으로 초기화하는 시점을 defer에 둔 게 누락 방
 go test -race로 돌려보니 추가로 잡히는 race는 없었어요. 다행이에요.
 request-response 매핑은 결국 '키를 어떻게 잡느냐'의 문제라는 걸 다시 느꼈어요.
 DR 환경은 네트워크 지연이 커서 race가 더 잘 드러나요. 테스트 환경으로는 오히려 유용했어요.
+select에 default를 넣으면 non-blocking이 되니, 의도와 다르면 조심해야 해요.
 ---
 `eod`
