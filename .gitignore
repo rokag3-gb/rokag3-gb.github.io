@@ -7,3 +7,7 @@ public/
 .deploy*/
 _multiconfig.yml
 .idea
+.claude
+
+# 내부 기획/설계 문서 (공개 레포에 게시 금지)
+docs/superpowers/
