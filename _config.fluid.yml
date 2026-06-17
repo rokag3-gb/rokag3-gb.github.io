@@ -498,12 +498,12 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/space_bg_4k.jpeg # /img/20250811-090131-nxt.jpg # /img/jeju_seongsan.jpg # /img/1410872714306.jpg
+  banner_img: /img/wallhaven-4gjrml.jpg # /img/space_bg_4k.jpeg # /img/20250811-090131-nxt.jpg # /img/jeju_seongsan.jpg # /img/1410872714306.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
   # Available: 0 - 100
-  banner_img_height: 50
+  banner_img_height: 28
 
   # 头图黑色蒙版的不透明度，available: 0 - 1.0，1 是完全不透明
   # Opacity of the banner mask, 1.0 is completely opaque
@@ -570,13 +570,13 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/space_bg_4k.jpeg
-  banner_img_height: 40
+  banner_img: /img/wallhaven-4gjrml.jpg
+  banner_img_height: 24
   banner_mask_alpha: 0.5
 
   # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
   # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
-  default_index_img: /img/space_bg_4k.jpeg
+  default_index_img: /img/wallhaven-4gjrml.jpg
 
   # 文章标题下方的元信息
   # Meta information below title
