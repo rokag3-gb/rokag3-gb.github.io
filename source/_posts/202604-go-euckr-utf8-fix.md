@@ -1,5 +1,5 @@
 ---
-title: 'Go에서 EUC-KR → UTF-8 변환 시 대용량 데이터 잘림 버그 수정'
+title: 'Go에서 EUC-KR -> UTF-8 변환 시 대용량 데이터 잘림 버그 수정'
 date: 2026-04-07
 description: '서버의 EUC-KR 응답 데이터를 UTF-8로 변환할 때 고정 버퍼 크기로 인해 잘리는 버그를 transform.Bytes로 수정한 과정이에요.'
 categories: [Go, Backend]
